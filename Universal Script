@@ -61,15 +61,9 @@ local GravityBox = Instance.new("TextBox")
 local GravityToggle = Instance.new("TextButton")
 local Page3 = Instance.new("Frame")
 local UIListLayout_3 = Instance.new("UIListLayout")
-local ESPToggleRow = Instance.new("Frame")
-local ESPToggleLabel = Instance.new("TextLabel")
-local ESPToggleToggle = Instance.new("TextButton")
 local ESPNameRow = Instance.new("Frame")
 local ESPNameLabel = Instance.new("TextLabel")
 local ESPNameToggle = Instance.new("TextButton")
-local ESPBoxesRow = Instance.new("Frame")
-local ESPBoxesLabel = Instance.new("TextLabel")
-local ESPBoxesToggle = Instance.new("TextButton")
 local ESPHealthRow = Instance.new("Frame")
 local ESPHealthLabel = Instance.new("TextLabel")
 local ESPHealthToggle = Instance.new("TextButton")
@@ -79,6 +73,18 @@ local ESPHighlightToggle = Instance.new("TextButton")
 local ESPDistanceRow = Instance.new("Frame")
 local ESPDistanceToggle = Instance.new("TextButton")
 local ESPDistanceLabel = Instance.new("TextLabel")
+local ESPBoxesRow = Instance.new("Frame")
+local ESPBoxesLabel = Instance.new("TextLabel")
+local ESPBoxesToggle = Instance.new("TextButton")
+local ESPToggleRow = Instance.new("Frame")
+local ESPToggleLabel = Instance.new("TextLabel")
+local ESPToggleToggle = Instance.new("TextButton")
+local ESPTracerRow = Instance.new("Frame")
+local ESPTracerLabel = Instance.new("TextLabel")
+local ESPTracerToggle = Instance.new("TextButton")
+local ESPColorRow = Instance.new("Frame")
+local ESPColorLabel = Instance.new("TextLabel")
+local ESPColorBtn = Instance.new("TextButton")
 local BottomBar = Instance.new("Frame")
 local PageLabel = Instance.new("TextLabel")
 local NextBtn = Instance.new("TextButton")
@@ -355,6 +361,7 @@ Page2.BackgroundTransparency = 1.000
 Page2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page2.BorderSizePixel = 0
 Page2.Size = UDim2.new(0, 200, 0, 339)
+Page2.Visible = false
 
 UIListLayout_2.Parent = Page2
 UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
@@ -662,42 +669,15 @@ Page3.BackgroundTransparency = 1.000
 Page3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page3.BorderSizePixel = 0
 Page3.Size = UDim2.new(0, 200, 0, 372)
-Page3.Visible = false
 
 UIListLayout_3.Parent = Page3
-
-ESPToggleRow.Name = "ESPToggleRow"
-ESPToggleRow.Parent = Page3
-ESPToggleRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPToggleRow.BorderSizePixel = 0
-ESPToggleRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPToggleLabel.Name = "ESPToggleLabel"
-ESPToggleLabel.Parent = ESPToggleRow
-ESPToggleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPToggleLabel.BorderSizePixel = 0
-ESPToggleLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPToggleLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPToggleLabel.Font = Enum.Font.SourceSans
-ESPToggleLabel.Text = "ENABLE ESP"
-ESPToggleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPToggleLabel.TextSize = 14.000
-
-ESPToggleToggle.Name = "ESPToggleToggle"
-ESPToggleToggle.Parent = ESPToggleRow
-ESPToggleToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPToggleToggle.BorderSizePixel = 0
-ESPToggleToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPToggleToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPToggleToggle.Font = Enum.Font.SourceSans
-ESPToggleToggle.Text = "OFF"
-ESPToggleToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPToggleToggle.TextSize = 14.000
+UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
 
 ESPNameRow.Name = "ESPNameRow"
 ESPNameRow.Parent = Page3
 ESPNameRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ESPNameRow.BorderSizePixel = 0
+ESPNameRow.LayoutOrder = 2
 ESPNameRow.Size = UDim2.new(0, 200, 0, 25)
 
 ESPNameLabel.Name = "ESPNameLabel"
@@ -722,38 +702,11 @@ ESPNameToggle.Text = "OFF"
 ESPNameToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
 ESPNameToggle.TextSize = 14.000
 
-ESPBoxesRow.Name = "ESPBoxesRow"
-ESPBoxesRow.Parent = Page3
-ESPBoxesRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPBoxesRow.BorderSizePixel = 0
-ESPBoxesRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPBoxesLabel.Name = "ESPBoxesLabel"
-ESPBoxesLabel.Parent = ESPBoxesRow
-ESPBoxesLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPBoxesLabel.BorderSizePixel = 0
-ESPBoxesLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPBoxesLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPBoxesLabel.Font = Enum.Font.SourceSans
-ESPBoxesLabel.Text = "ESP Boxes"
-ESPBoxesLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPBoxesLabel.TextSize = 14.000
-
-ESPBoxesToggle.Name = "ESPBoxesToggle"
-ESPBoxesToggle.Parent = ESPBoxesRow
-ESPBoxesToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPBoxesToggle.BorderSizePixel = 0
-ESPBoxesToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPBoxesToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPBoxesToggle.Font = Enum.Font.SourceSans
-ESPBoxesToggle.Text = "OFF"
-ESPBoxesToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPBoxesToggle.TextSize = 14.000
-
 ESPHealthRow.Name = "ESPHealthRow"
 ESPHealthRow.Parent = Page3
 ESPHealthRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ESPHealthRow.BorderSizePixel = 0
+ESPHealthRow.LayoutOrder = 5
 ESPHealthRow.Size = UDim2.new(0, 200, 0, 25)
 
 ESPHealthLabel.Name = "ESPHealthLabel"
@@ -782,6 +735,7 @@ ESPHighlightRow.Name = "ESPHighlightRow"
 ESPHighlightRow.Parent = Page3
 ESPHighlightRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ESPHighlightRow.BorderSizePixel = 0
+ESPHighlightRow.LayoutOrder = 3
 ESPHighlightRow.Size = UDim2.new(0, 200, 0, 25)
 
 ESPHighlightLabel.Name = "ESPHighlightLabel"
@@ -811,6 +765,7 @@ ESPDistanceRow.Parent = Page3
 ESPDistanceRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ESPDistanceRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ESPDistanceRow.BorderSizePixel = 0
+ESPDistanceRow.LayoutOrder = 4
 ESPDistanceRow.Position = UDim2.new(0, 0, 0.336021513, 0)
 ESPDistanceRow.Size = UDim2.new(0, 200, 0, 25)
 
@@ -836,6 +791,122 @@ ESPDistanceLabel.Font = Enum.Font.SourceSans
 ESPDistanceLabel.Text = "ESP Distance"
 ESPDistanceLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 ESPDistanceLabel.TextSize = 14.000
+
+ESPBoxesRow.Name = "ESPBoxesRow"
+ESPBoxesRow.Parent = Page3
+ESPBoxesRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESPBoxesRow.BorderSizePixel = 0
+ESPBoxesRow.LayoutOrder = 6
+ESPBoxesRow.Size = UDim2.new(0, 200, 0, 25)
+
+ESPBoxesLabel.Name = "ESPBoxesLabel"
+ESPBoxesLabel.Parent = ESPBoxesRow
+ESPBoxesLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESPBoxesLabel.BorderSizePixel = 0
+ESPBoxesLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
+ESPBoxesLabel.Size = UDim2.new(0, 125, 0, 25)
+ESPBoxesLabel.Font = Enum.Font.SourceSans
+ESPBoxesLabel.Text = "ESP Boxes"
+ESPBoxesLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESPBoxesLabel.TextSize = 14.000
+
+ESPBoxesToggle.Name = "ESPBoxesToggle"
+ESPBoxesToggle.Parent = ESPBoxesRow
+ESPBoxesToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ESPBoxesToggle.BorderSizePixel = 0
+ESPBoxesToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
+ESPBoxesToggle.Size = UDim2.new(0, 75, 0, 25)
+ESPBoxesToggle.Font = Enum.Font.SourceSans
+ESPBoxesToggle.Text = "OFF"
+ESPBoxesToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESPBoxesToggle.TextSize = 14.000
+
+ESPToggleRow.Name = "ESPToggleRow"
+ESPToggleRow.Parent = Page3
+ESPToggleRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESPToggleRow.BorderSizePixel = 0
+ESPToggleRow.LayoutOrder = 1
+ESPToggleRow.Size = UDim2.new(0, 200, 0, 25)
+
+ESPToggleLabel.Name = "ESPToggleLabel"
+ESPToggleLabel.Parent = ESPToggleRow
+ESPToggleLabel.BackgroundColor3 = Color3.fromRGB(199, 199, 199)
+ESPToggleLabel.BorderSizePixel = 0
+ESPToggleLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
+ESPToggleLabel.Size = UDim2.new(0, 125, 0, 25)
+ESPToggleLabel.Font = Enum.Font.SourceSans
+ESPToggleLabel.Text = "ENABLE ESP"
+ESPToggleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESPToggleLabel.TextSize = 14.000
+
+ESPToggleToggle.Name = "ESPToggleToggle"
+ESPToggleToggle.Parent = ESPToggleRow
+ESPToggleToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ESPToggleToggle.BorderSizePixel = 0
+ESPToggleToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
+ESPToggleToggle.Size = UDim2.new(0, 75, 0, 25)
+ESPToggleToggle.Font = Enum.Font.SourceSans
+ESPToggleToggle.Text = "OFF"
+ESPToggleToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESPToggleToggle.TextSize = 14.000
+
+ESPTracerRow.Name = "ESPTracerRow"
+ESPTracerRow.Parent = Page3
+ESPTracerRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESPTracerRow.BorderSizePixel = 0
+ESPTracerRow.LayoutOrder = 7
+ESPTracerRow.Size = UDim2.new(0, 200, 0, 25)
+
+ESPTracerLabel.Name = "ESPTracerLabel"
+ESPTracerLabel.Parent = ESPTracerRow
+ESPTracerLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESPTracerLabel.BorderSizePixel = 0
+ESPTracerLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
+ESPTracerLabel.Size = UDim2.new(0, 125, 0, 25)
+ESPTracerLabel.Font = Enum.Font.SourceSans
+ESPTracerLabel.Text = "ESP Tracer"
+ESPTracerLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESPTracerLabel.TextSize = 14.000
+
+ESPTracerToggle.Name = "ESPTracerToggle"
+ESPTracerToggle.Parent = ESPTracerRow
+ESPTracerToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+ESPTracerToggle.BorderSizePixel = 0
+ESPTracerToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
+ESPTracerToggle.Size = UDim2.new(0, 75, 0, 25)
+ESPTracerToggle.Font = Enum.Font.SourceSans
+ESPTracerToggle.Text = "OFF"
+ESPTracerToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESPTracerToggle.TextSize = 14.000
+
+ESPColorRow.Name = "ESPColorRow"
+ESPColorRow.Parent = Page3
+ESPColorRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESPColorRow.BorderSizePixel = 0
+ESPColorRow.LayoutOrder = 1
+ESPColorRow.Size = UDim2.new(0, 200, 0, 25)
+
+ESPColorLabel.Name = "ESPColorLabel"
+ESPColorLabel.Parent = ESPColorRow
+ESPColorLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ESPColorLabel.BorderSizePixel = 0
+ESPColorLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
+ESPColorLabel.Size = UDim2.new(0, 125, 0, 25)
+ESPColorLabel.Font = Enum.Font.SourceSans
+ESPColorLabel.Text = "ESP Color"
+ESPColorLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESPColorLabel.TextSize = 14.000
+
+ESPColorBtn.Name = "ESPColorBtn"
+ESPColorBtn.Parent = ESPColorRow
+ESPColorBtn.BackgroundColor3 = Color3.fromRGB(127, 127, 127)
+ESPColorBtn.BorderSizePixel = 0
+ESPColorBtn.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
+ESPColorBtn.Size = UDim2.new(0, 75, 0, 25)
+ESPColorBtn.Font = Enum.Font.SourceSans
+ESPColorBtn.Text = "SELECT"
+ESPColorBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+ESPColorBtn.TextSize = 14.000
 
 BottomBar.Name = "BottomBar"
 BottomBar.Parent = MainFrame
@@ -891,7 +962,7 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function UYOLA_fake_script() -- TopBar.DragScript 
+local function SVAZ_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -899,8 +970,8 @@ local function UYOLA_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(UYOLA_fake_script)()
-local function CJGYQ_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(SVAZ_fake_script)()
+local function MDHCNR_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -921,8 +992,8 @@ local function CJGYQ_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(CJGYQ_fake_script)()
-local function DAHC_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(MDHCNR_fake_script)()
+local function CIIATB_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -988,8 +1059,8 @@ local function DAHC_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(DAHC_fake_script)()
-local function PSIITXX_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(CIIATB_fake_script)()
+local function GTBTRX_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1072,8 +1143,8 @@ local function PSIITXX_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(PSIITXX_fake_script)()
-local function DVHJK_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(GTBTRX_fake_script)()
+local function KIGU_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1183,8 +1254,8 @@ local function DVHJK_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(DVHJK_fake_script)()
-local function CKFRUY_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(KIGU_fake_script)()
+local function MCBL_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1225,8 +1296,8 @@ local function CKFRUY_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(CKFRUY_fake_script)()
-local function CZBMS_fake_script() -- TouchFlingRow.TouchFlingScript 
+coroutine.wrap(MCBL_fake_script)()
+local function MCKWID_fake_script() -- TouchFlingRow.TouchFlingScript 
 	local script = Instance.new('LocalScript', TouchFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1270,8 +1341,8 @@ local function CZBMS_fake_script() -- TouchFlingRow.TouchFlingScript
 		end
 	end)
 end
-coroutine.wrap(CZBMS_fake_script)()
-local function VJQKJYQ_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(MCKWID_fake_script)()
+local function SPKRV_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1556,8 +1627,8 @@ local function VJQKJYQ_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(VJQKJYQ_fake_script)()
-local function SKFQZ_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(SPKRV_fake_script)()
+local function SAJE_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -1614,8 +1685,8 @@ local function SKFQZ_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(SKFQZ_fake_script)()
-local function JISAWB_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(SAJE_fake_script)()
+local function WZZYANB_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -1797,8 +1868,8 @@ local function JISAWB_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(JISAWB_fake_script)()
-local function ZMHKAB_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(WZZYANB_fake_script)()
+local function CISMXG_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -1878,8 +1949,8 @@ local function ZMHKAB_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(ZMHKAB_fake_script)()
-local function WWBL_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(CISMXG_fake_script)()
+local function XMXHF_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -1963,8 +2034,8 @@ local function WWBL_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(WWBL_fake_script)()
-local function XWBDMA_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(XMXHF_fake_script)()
+local function ICMGMF_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2050,8 +2121,8 @@ local function XWBDMA_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(XWBDMA_fake_script)()
-local function UOQUE_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(ICMGMF_fake_script)()
+local function JOCBQ_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2384,8 +2455,8 @@ local function UOQUE_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(UOQUE_fake_script)()
-local function QPSCYJB_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(JOCBQ_fake_script)()
+local function PGWQEG_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2447,8 +2518,8 @@ local function QPSCYJB_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(QPSCYJB_fake_script)()
-local function MEXPMO_fake_script() -- GravityRow.GravityScript 
+coroutine.wrap(PGWQEG_fake_script)()
+local function DUQXOJ_fake_script() -- GravityRow.GravityScript 
 	local script = Instance.new('LocalScript', GravityRow)
 
 	local Players = game:GetService("Players")
@@ -2534,8 +2605,8 @@ local function MEXPMO_fake_script() -- GravityRow.GravityScript
 		end
 	end)
 end
-coroutine.wrap(MEXPMO_fake_script)()
-local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(DUQXOJ_fake_script)()
+local function QHZULDG_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -2549,6 +2620,7 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 	local ESPHealthEnabled = false
 	local ESPHighlightEnabled = false
 	local ESPDistanceEnabled = false
+	local ESPTracerEnabled = false
 	
 	local ESPConnections = {}
 	local ESPGuis = {}
@@ -2561,6 +2633,352 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 	local ESPHealthToggle = script.Parent.Parent.ESPHealthRow.ESPHealthToggle
 	local ESPHighlightToggle = script.Parent.Parent.ESPHighlightRow.ESPHighlightToggle
 	local ESPDistanceToggle = script.Parent.Parent.ESPDistanceRow.ESPDistanceToggle
+	local ESPTracerToggle = script.Parent.Parent.ESPTracerRow.ESPTracerToggle
+	local ESPColorBtn = script.Parent.Parent.ESPColorRow.ESPColorBtn
+	
+	-- tracer gui
+	local tracerGui = Instance.new("ScreenGui")
+	tracerGui.Name = "TracerGui"
+	tracerGui.ResetOnSpawn = false
+	tracerGui.IgnoreGuiInset = true
+	tracerGui.Parent = Player.PlayerGui
+	
+	local tracerCanvas = Instance.new("Frame")
+	tracerCanvas.Name = "TracerCanvas"
+	tracerCanvas.Size = UDim2.new(1, 0, 1, 0)
+	tracerCanvas.BackgroundTransparency = 1
+	tracerCanvas.Parent = tracerGui
+	
+	local tracerLines = {}
+	
+	local colorPickerGui = nil
+	local colorPickerOpen = false
+	
+	local function updateESPColor(newColor)
+		ESPColor = newColor
+		ESPColorBtn.BackgroundColor3 = newColor
+		if newColor.R + newColor.G + newColor.B > 1.5 then
+			ESPColorBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+		else
+			ESPColorBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+		end
+	
+		for _, espData in pairs(ESPGuis) do
+			if espData then
+				if espData.NameLabel then
+					espData.NameLabel.TextColor3 = newColor
+				end
+				if espData.BoxAdornment then
+					espData.BoxAdornment.Color3 = newColor
+				end
+				if espData.Highlight then
+					espData.Highlight.OutlineColor = newColor
+				end
+			end
+		end
+		for _, line in pairs(tracerLines) do
+			if line then line.BackgroundColor3 = newColor end
+		end
+	end
+	
+	local function createColorPicker()
+		if colorPickerOpen then
+			if colorPickerGui then colorPickerGui:Destroy() end
+			colorPickerOpen = false
+			return
+		end
+		colorPickerOpen = true
+	
+		local MainFrame = script.Parent.Parent.Parent.Parent
+	
+		colorPickerGui = Instance.new("Frame")
+		colorPickerGui.Name = "ColorPickerFrame"
+		colorPickerGui.Size = UDim2.new(0, 200, 0, 220)
+		colorPickerGui.Position = UDim2.new(0, 0, 0, 25)
+		colorPickerGui.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		colorPickerGui.BorderSizePixel = 1
+		colorPickerGui.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		colorPickerGui.ZIndex = 20
+		colorPickerGui.Parent = MainFrame
+	
+		local titleLabel = Instance.new("TextLabel")
+		titleLabel.Size = UDim2.new(1, 0, 0, 25)
+		titleLabel.Position = UDim2.new(0, 0, 0, 0)
+		titleLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+		titleLabel.BorderSizePixel = 1
+		titleLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		titleLabel.Text = "SELECT COLOR"
+		titleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		titleLabel.TextScaled = true
+		titleLabel.Font = Enum.Font.SourceSans
+		titleLabel.ZIndex = 20
+		titleLabel.Parent = colorPickerGui
+	
+		local hueLabel = Instance.new("TextLabel")
+		hueLabel.Size = UDim2.new(1, -10, 0, 15)
+		hueLabel.Position = UDim2.new(0, 5, 0, 30)
+		hueLabel.BackgroundTransparency = 1
+		hueLabel.Text = "HUE"
+		hueLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		hueLabel.TextScaled = true
+		hueLabel.Font = Enum.Font.SourceSans
+		hueLabel.ZIndex = 20
+		hueLabel.Parent = colorPickerGui
+	
+		local hueSliderBg = Instance.new("Frame")
+		hueSliderBg.Size = UDim2.new(1, -10, 0, 15)
+		hueSliderBg.Position = UDim2.new(0, 5, 0, 47)
+		hueSliderBg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		hueSliderBg.BorderSizePixel = 1
+		hueSliderBg.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		hueSliderBg.ZIndex = 20
+		hueSliderBg.Parent = colorPickerGui
+	
+		local segments = 20
+		for i = 0, segments - 1 do
+			local seg = Instance.new("Frame")
+			seg.Size = UDim2.new(1/segments, 0, 1, 0)
+			seg.Position = UDim2.new(i/segments, 0, 0, 0)
+			seg.BackgroundColor3 = Color3.fromHSV(i/segments, 1, 1)
+			seg.BorderSizePixel = 0
+			seg.ZIndex = 20
+			seg.Parent = hueSliderBg
+		end
+	
+		local hueBtn = Instance.new("TextButton")
+		hueBtn.Size = UDim2.new(1, 0, 1, 0)
+		hueBtn.BackgroundTransparency = 1
+		hueBtn.Text = ""
+		hueBtn.ZIndex = 21
+		hueBtn.Parent = hueSliderBg
+	
+		local hueHandle = Instance.new("Frame")
+		hueHandle.Size = UDim2.new(0, 4, 1, 2)
+		hueHandle.Position = UDim2.new(0, 0, 0, -1)
+		hueHandle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		hueHandle.BorderSizePixel = 1
+		hueHandle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		hueHandle.ZIndex = 22
+		hueHandle.Parent = hueSliderBg
+	
+		local satLabel = Instance.new("TextLabel")
+		satLabel.Size = UDim2.new(1, -10, 0, 15)
+		satLabel.Position = UDim2.new(0, 5, 0, 67)
+		satLabel.BackgroundTransparency = 1
+		satLabel.Text = "SATURATION"
+		satLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		satLabel.TextScaled = true
+		satLabel.Font = Enum.Font.SourceSans
+		satLabel.ZIndex = 20
+		satLabel.Parent = colorPickerGui
+	
+		local satSliderBg = Instance.new("Frame")
+		satSliderBg.Size = UDim2.new(1, -10, 0, 15)
+		satSliderBg.Position = UDim2.new(0, 5, 0, 84)
+		satSliderBg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		satSliderBg.BorderSizePixel = 1
+		satSliderBg.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		satSliderBg.ZIndex = 20
+		satSliderBg.Parent = colorPickerGui
+	
+		local satGradient = Instance.new("UIGradient")
+		satGradient.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255), Color3.fromRGB(255, 0, 0))
+		satGradient.Parent = satSliderBg
+	
+		local satBtn = Instance.new("TextButton")
+		satBtn.Size = UDim2.new(1, 0, 1, 0)
+		satBtn.BackgroundTransparency = 1
+		satBtn.Text = ""
+		satBtn.ZIndex = 21
+		satBtn.Parent = satSliderBg
+	
+		local satHandle = Instance.new("Frame")
+		satHandle.Size = UDim2.new(0, 4, 1, 2)
+		satHandle.Position = UDim2.new(1, -4, 0, -1)
+		satHandle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		satHandle.BorderSizePixel = 1
+		satHandle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		satHandle.ZIndex = 22
+		satHandle.Parent = satSliderBg
+	
+		local briLabel = Instance.new("TextLabel")
+		briLabel.Size = UDim2.new(1, -10, 0, 15)
+		briLabel.Position = UDim2.new(0, 5, 0, 104)
+		briLabel.BackgroundTransparency = 1
+		briLabel.Text = "BRIGHTNESS"
+		briLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+		briLabel.TextScaled = true
+		briLabel.Font = Enum.Font.SourceSans
+		briLabel.ZIndex = 20
+		briLabel.Parent = colorPickerGui
+	
+		local briSliderBg = Instance.new("Frame")
+		briSliderBg.Size = UDim2.new(1, -10, 0, 15)
+		briSliderBg.Position = UDim2.new(0, 5, 0, 121)
+		briSliderBg.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		briSliderBg.BorderSizePixel = 1
+		briSliderBg.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		briSliderBg.ZIndex = 20
+		briSliderBg.Parent = colorPickerGui
+	
+		local briGradient = Instance.new("UIGradient")
+		briGradient.Color = ColorSequence.new(Color3.fromRGB(0, 0, 0), Color3.fromRGB(255, 255, 255))
+		briGradient.Parent = briSliderBg
+	
+		local briBtn = Instance.new("TextButton")
+		briBtn.Size = UDim2.new(1, 0, 1, 0)
+		briBtn.BackgroundTransparency = 1
+		briBtn.Text = ""
+		briBtn.ZIndex = 21
+		briBtn.Parent = briSliderBg
+	
+		local briHandle = Instance.new("Frame")
+		briHandle.Size = UDim2.new(0, 4, 1, 2)
+		briHandle.Position = UDim2.new(1, -4, 0, -1)
+		briHandle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		briHandle.BorderSizePixel = 1
+		briHandle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		briHandle.ZIndex = 22
+		briHandle.Parent = briSliderBg
+	
+		local previewFrame = Instance.new("Frame")
+		previewFrame.Size = UDim2.new(1, -10, 0, 20)
+		previewFrame.Position = UDim2.new(0, 5, 0, 141)
+		previewFrame.BackgroundColor3 = ESPColor
+		previewFrame.BorderSizePixel = 1
+		previewFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		previewFrame.ZIndex = 20
+		previewFrame.Parent = colorPickerGui
+	
+		local presetColors = {
+			Color3.fromRGB(255, 255, 255),
+			Color3.fromRGB(255, 0, 0),
+			Color3.fromRGB(0, 255, 0),
+			Color3.fromRGB(0, 0, 255),
+			Color3.fromRGB(255, 255, 0),
+			Color3.fromRGB(255, 0, 255),
+			Color3.fromRGB(0, 255, 255),
+			Color3.fromRGB(255, 165, 0),
+		}
+	
+		local presetFrame = Instance.new("Frame")
+		presetFrame.Size = UDim2.new(1, -10, 0, 20)
+		presetFrame.Position = UDim2.new(0, 5, 0, 166)
+		presetFrame.BackgroundTransparency = 1
+		presetFrame.ZIndex = 20
+		presetFrame.Parent = colorPickerGui
+	
+		for i, color in ipairs(presetColors) do
+			local presetBtn = Instance.new("TextButton")
+			presetBtn.Size = UDim2.new(0, 20, 0, 20)
+			presetBtn.Position = UDim2.new(0, (i-1) * 23, 0, 0)
+			presetBtn.BackgroundColor3 = color
+			presetBtn.BorderSizePixel = 1
+			presetBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
+			presetBtn.Text = ""
+			presetBtn.ZIndex = 20
+			presetBtn.Parent = presetFrame
+	
+			presetBtn.MouseButton1Click:Connect(function()
+				updateESPColor(color)
+				previewFrame.BackgroundColor3 = color
+			end)
+		end
+	
+		local closeBtn = Instance.new("TextButton")
+		closeBtn.Size = UDim2.new(1, 0, 0, 20)
+		closeBtn.Position = UDim2.new(0, 0, 1, -20)
+		closeBtn.BackgroundColor3 = Color3.fromRGB(124, 124, 124)
+		closeBtn.BorderSizePixel = 1
+		closeBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		closeBtn.Text = "X"
+		closeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+		closeBtn.TextScaled = true
+		closeBtn.Font = Enum.Font.SourceSans
+		closeBtn.ZIndex = 20
+		closeBtn.Parent = colorPickerGui
+	
+		local currentH, currentS, currentB = Color3.toHSV(ESPColor)
+	
+		local function applyColor()
+			local newColor = Color3.fromHSV(currentH, currentS, currentB)
+			updateESPColor(newColor)
+			previewFrame.BackgroundColor3 = newColor
+			satGradient.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255), Color3.fromHSV(currentH, 1, 1))
+		end
+	
+		local function getSliderValue(slider, inputX)
+			local sliderPos = slider.AbsolutePosition.X
+			local sliderSize = slider.AbsoluteSize.X
+			return math.clamp((inputX - sliderPos) / sliderSize, 0, 1)
+		end
+	
+		local hueDragging = false
+		local satDragging = false
+		local briDragging = false
+	
+		hueBtn.MouseButton1Down:Connect(function() hueDragging = true end)
+		satBtn.MouseButton1Down:Connect(function() satDragging = true end)
+		briBtn.MouseButton1Down:Connect(function() briDragging = true end)
+	
+		hueBtn.MouseButton1Click:Connect(function(x, y)
+			currentH = getSliderValue(hueSliderBg, x)
+			hueHandle.Position = UDim2.new(currentH, -2, 0, -1)
+			applyColor()
+		end)
+	
+		satBtn.MouseButton1Click:Connect(function(x, y)
+			currentS = getSliderValue(satSliderBg, x)
+			satHandle.Position = UDim2.new(currentS, -2, 0, -1)
+			applyColor()
+		end)
+	
+		briBtn.MouseButton1Click:Connect(function(x, y)
+			currentB = getSliderValue(briSliderBg, x)
+			briHandle.Position = UDim2.new(currentB, -2, 0, -1)
+			applyColor()
+		end)
+	
+		local UIS = game:GetService("UserInputService")
+	
+		UIS.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				local x = input.Position.X
+				if hueDragging then
+					currentH = getSliderValue(hueSliderBg, x)
+					hueHandle.Position = UDim2.new(currentH, -2, 0, -1)
+					applyColor()
+				elseif satDragging then
+					currentS = getSliderValue(satSliderBg, x)
+					satHandle.Position = UDim2.new(currentS, -2, 0, -1)
+					applyColor()
+				elseif briDragging then
+					currentB = getSliderValue(briSliderBg, x)
+					briHandle.Position = UDim2.new(currentB, -2, 0, -1)
+					applyColor()
+				end
+			end
+		end)
+	
+		UIS.InputEnded:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				hueDragging = false
+				satDragging = false
+				briDragging = false
+			end
+		end)
+	
+		closeBtn.MouseButton1Click:Connect(function()
+			colorPickerGui:Destroy()
+			colorPickerGui = nil
+			colorPickerOpen = false
+		end)
+	
+		hueHandle.Position = UDim2.new(currentH, -2, 0, -1)
+		satHandle.Position = UDim2.new(currentS, -2, 0, -1)
+		briHandle.Position = UDim2.new(currentB, -2, 0, -1)
+		satGradient.Color = ColorSequence.new(Color3.fromRGB(255, 255, 255), Color3.fromHSV(currentH, 1, 1))
+	end
 	
 	local function getHealthColor(health, maxHealth)
 		local healthPercent = health / maxHealth
@@ -2580,6 +2998,70 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end
 	
+	local function createTracerLine(targetPlayer)
+		if tracerLines[targetPlayer] then
+			tracerLines[targetPlayer]:Destroy()
+			tracerLines[targetPlayer] = nil
+		end
+	
+		local line = Instance.new("Frame")
+		line.Name = "TracerLine_" .. targetPlayer.Name
+		line.BackgroundColor3 = ESPColor
+		line.BorderSizePixel = 0
+		line.AnchorPoint = Vector2.new(0, 0)
+		line.Visible = false
+		line.Parent = tracerCanvas
+		tracerLines[targetPlayer] = line
+	end
+	
+	local function removeTracerLine(targetPlayer)
+		if tracerLines[targetPlayer] then
+			tracerLines[targetPlayer]:Destroy()
+			tracerLines[targetPlayer] = nil
+		end
+	end
+	
+	local function updateTracers()
+		if not ESPEnabled or not ESPTracerEnabled then
+			for _, line in pairs(tracerLines) do
+				if line then line.Visible = false end
+			end
+			return
+		end
+	
+		local camera = workspace.CurrentCamera
+		local screenSize = camera.ViewportSize
+		local startPos = Vector2.new(screenSize.X / 2, screenSize.Y)
+	
+		for targetPlayer, line in pairs(tracerLines) do
+			if not line then continue end
+			local character = targetPlayer.Character
+			local hrp = character and character:FindFirstChild("HumanoidRootPart")
+	
+			if not hrp then
+				line.Visible = false
+				continue
+			end
+	
+			local screenPos, onScreen = camera:WorldToViewportPoint(hrp.Position)
+	
+			if not onScreen then
+				line.Visible = false
+				continue
+			end
+	
+			local endPos = Vector2.new(screenPos.X, screenPos.Y)
+			local direction = endPos - startPos
+			local distance = direction.Magnitude
+			local angle = math.atan2(direction.Y, direction.X)
+	
+			line.Size = UDim2.new(0, distance, 0, 1)
+			line.Position = UDim2.new(0, startPos.X, 0, startPos.Y)
+			line.Rotation = math.deg(angle)
+			line.Visible = true
+		end
+	end
+	
 	local function createESPGui(targetPlayer)
 		local character = targetPlayer.Character
 		if not character then return nil end
@@ -2590,7 +3072,6 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 	
 		if not head or not humanoidRootPart or not humanoid then return nil end
 	
-		-- clean up old esp
 		local oldGui = head:FindFirstChild("ESPGui_" .. targetPlayer.Name)
 		if oldGui then oldGui:Destroy() end
 		local oldBox = character:FindFirstChild("ESPBox")
@@ -2605,7 +3086,6 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 	
 		local espData = {}
 	
-		-- name + distance billboard
 		local billboardGui = Instance.new("BillboardGui")
 		billboardGui.Name = "ESPGui_" .. targetPlayer.Name
 		billboardGui.Size = UDim2.new(0, 200, 0, 50)
@@ -2630,7 +3110,6 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 		nameLabel.Parent = billboardGui
 		espData.NameLabel = nameLabel
 	
-		-- selection box wraps tightly around character
 		local selectionBox = Instance.new("SelectionBox")
 		selectionBox.Name = "ESPBox"
 		selectionBox.Color3 = ESPColor
@@ -2641,7 +3120,6 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 		selectionBox.Parent = character
 		espData.BoxAdornment = selectionBox
 	
-		-- health bar on left side of character
 		local healthBarGui = Instance.new("BillboardGui")
 		healthBarGui.Name = "HealthBarGui"
 		healthBarGui.Size = UDim2.new(0, 4, 0, 50)
@@ -2667,22 +3145,23 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 		healthFill.Parent = healthBarGui
 		espData.HealthFill = healthFill
 	
-		-- highlight
 		local highlight = Instance.new("Highlight")
 		highlight.Name = "ESPHighlight"
 		highlight.FillTransparency = 1
-		highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+		highlight.OutlineColor = ESPColor
 		highlight.OutlineTransparency = 0
 		highlight.Enabled = false
 		highlight.Parent = character
 		espData.Highlight = highlight
 	
-		-- clean up when player dies
+		createTracerLine(targetPlayer)
+	
 		humanoid.Died:Connect(function()
 			if espData.BillboardGui then espData.BillboardGui:Destroy() end
 			if espData.BoxAdornment then espData.BoxAdornment:Destroy() end
 			if espData.HealthBarGui then espData.HealthBarGui:Destroy() end
 			if espData.Highlight then espData.Highlight:Destroy() end
+			removeTracerLine(targetPlayer)
 			ESPGuis[targetPlayer] = nil
 		end)
 	
@@ -2739,6 +3218,8 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 				end
 			end
 		end
+	
+		updateTracers()
 	end
 	
 	local function setupPlayerESP(targetPlayer)
@@ -2767,7 +3248,6 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 		for _, targetPlayer in pairs(Players:GetPlayers()) do
 			setupPlayerESP(targetPlayer)
 		end
-	
 		table.insert(ESPConnections, RunService.RenderStepped:Connect(updateESP))
 	end
 	
@@ -2777,13 +3257,14 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 		ESPConnections = {}
 	
-		for _, espData in pairs(ESPGuis) do
+		for targetPlayer, espData in pairs(ESPGuis) do
 			if espData then
 				if espData.BillboardGui then espData.BillboardGui:Destroy() end
 				if espData.BoxAdornment then espData.BoxAdornment:Destroy() end
 				if espData.HealthBarGui then espData.HealthBarGui:Destroy() end
 				if espData.Highlight then espData.Highlight:Destroy() end
 			end
+			removeTracerLine(targetPlayer)
 		end
 		ESPGuis = {}
 	end
@@ -2804,6 +3285,7 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 			if espData.Highlight then espData.Highlight:Destroy() end
 			ESPGuis[targetPlayer] = nil
 		end
+		removeTracerLine(targetPlayer)
 	end)
 	
 	ESPToggle.MouseButton1Click:Connect(function()
@@ -2880,15 +3362,38 @@ local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript
 		updateVisibility()
 	end)
 	
+	ESPTracerToggle.MouseButton1Click:Connect(function()
+		ESPTracerEnabled = not ESPTracerEnabled
+		if ESPTracerEnabled then
+			ESPTracerToggle.Text = "ON"
+			ESPTracerToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+		else
+			ESPTracerToggle.Text = "OFF"
+			ESPTracerToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			for _, line in pairs(tracerLines) do
+				if line then line.Visible = false end
+			end
+		end
+	end)
+	
+	ESPColorBtn.MouseButton1Click:Connect(function()
+		createColorPicker()
+	end)
+	
+	ESPColorBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	ESPColorBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	
 	script.Parent.AncestryChanged:Connect(function()
 		if not script:IsDescendantOf(game) then
 			ESPEnabled = false
 			disableESP()
+			tracerGui:Destroy()
+			if colorPickerGui then colorPickerGui:Destroy() end
 		end
 	end)
 end
-coroutine.wrap(ROVZLQ_fake_script)()
-local function RYQBYR_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(QHZULDG_fake_script)()
+local function YLYJLU_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -3141,8 +3646,8 @@ local function RYQBYR_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(RYQBYR_fake_script)()
-local function VUEPT_fake_script() -- EXPLOIT.PageListButtonSetup 
+coroutine.wrap(YLYJLU_fake_script)()
+local function PUFPA_fake_script() -- EXPLOIT.PageListButtonSetup 
 	local script = Instance.new('LocalScript', EXPLOIT)
 
 	task.wait(1) -- Initial wait
@@ -3201,4 +3706,4 @@ local function VUEPT_fake_script() -- EXPLOIT.PageListButtonSetup
 	setupButton()
 	
 end
-coroutine.wrap(VUEPT_fake_script)()
+coroutine.wrap(PUFPA_fake_script)()

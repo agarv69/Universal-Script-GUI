@@ -55,6 +55,10 @@ local SaveLabel = Instance.new("TextLabel")
 local SaveToggle = Instance.new("TextButton")
 local RejoinRow = Instance.new("Frame")
 local RejoinBtn = Instance.new("TextButton")
+local GravityRow = Instance.new("Frame")
+local GravityLabel = Instance.new("TextLabel")
+local GravityBox = Instance.new("TextBox")
+local GravityToggle = Instance.new("TextButton")
 local Page3 = Instance.new("Frame")
 local UIListLayout_3 = Instance.new("UIListLayout")
 local ESPToggleRow = Instance.new("Frame")
@@ -380,7 +384,7 @@ FlyRow.Parent = Page2
 FlyRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 FlyRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 FlyRow.BorderSizePixel = 0
-FlyRow.LayoutOrder = 2
+FlyRow.LayoutOrder = 3
 FlyRow.Position = UDim2.new(0, 0, 0.231481478, 0)
 FlyRow.Size = UDim2.new(0, 200, 0, 25)
 
@@ -415,6 +419,7 @@ SpeedBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SpeedBox.BorderSizePixel = 0
 SpeedBox.Size = UDim2.new(0, 60, 0, 25)
 SpeedBox.Font = Enum.Font.SourceSans
+SpeedBox.PlaceholderText = "Default (50)"
 SpeedBox.Text = ""
 SpeedBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 SpeedBox.TextSize = 14.000
@@ -424,7 +429,7 @@ SpeedRow.Parent = Page2
 SpeedRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 SpeedRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SpeedRow.BorderSizePixel = 0
-SpeedRow.LayoutOrder = 3
+SpeedRow.LayoutOrder = 4
 SpeedRow.Position = UDim2.new(0, 0, 0.231481478, 0)
 SpeedRow.Size = UDim2.new(0, 200, 0, 25)
 
@@ -447,6 +452,7 @@ SpeedBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SpeedBox_2.BorderSizePixel = 0
 SpeedBox_2.Size = UDim2.new(0, 60, 0, 25)
 SpeedBox_2.Font = Enum.Font.SourceSans
+SpeedBox_2.PlaceholderText = "Default (16)"
 SpeedBox_2.Text = ""
 SpeedBox_2.TextColor3 = Color3.fromRGB(0, 0, 0)
 SpeedBox_2.TextSize = 14.000
@@ -468,7 +474,7 @@ JumpPowerRow.Parent = Page2
 JumpPowerRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 JumpPowerRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 JumpPowerRow.BorderSizePixel = 0
-JumpPowerRow.LayoutOrder = 4
+JumpPowerRow.LayoutOrder = 5
 JumpPowerRow.Position = UDim2.new(0, 0, 0.294985265, 0)
 JumpPowerRow.Size = UDim2.new(0, 200, 0, 25)
 
@@ -503,6 +509,7 @@ JumpPowerBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 JumpPowerBox.BorderSizePixel = 0
 JumpPowerBox.Size = UDim2.new(0, 60, 0, 25)
 JumpPowerBox.Font = Enum.Font.SourceSans
+JumpPowerBox.PlaceholderText = "Default (50)"
 JumpPowerBox.Text = ""
 JumpPowerBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 JumpPowerBox.TextSize = 14.000
@@ -512,7 +519,7 @@ AnimSpeedRow.Parent = Page2
 AnimSpeedRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 AnimSpeedRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AnimSpeedRow.BorderSizePixel = 0
-AnimSpeedRow.LayoutOrder = 5
+AnimSpeedRow.LayoutOrder = 6
 AnimSpeedRow.Position = UDim2.new(0, 0, 0.221238941, 0)
 AnimSpeedRow.Size = UDim2.new(0, 200, 0, 25)
 
@@ -547,6 +554,7 @@ AnimSpeedBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
 AnimSpeedBox.BorderSizePixel = 0
 AnimSpeedBox.Size = UDim2.new(0, 60, 0, 25)
 AnimSpeedBox.Font = Enum.Font.SourceSans
+AnimSpeedBox.PlaceholderText = "Default (1)"
 AnimSpeedBox.Text = ""
 AnimSpeedBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 AnimSpeedBox.TextSize = 14.000
@@ -556,7 +564,7 @@ SaveRow.Parent = Page2
 SaveRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 SaveRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SaveRow.BorderSizePixel = 0
-SaveRow.LayoutOrder = 6
+SaveRow.LayoutOrder = 2
 SaveRow.Position = UDim2.new(0, 0, 0.368731558, 0)
 SaveRow.Size = UDim2.new(0, 200, 0, 25)
 
@@ -602,6 +610,50 @@ RejoinBtn.Text = "REJOIN SERVER"
 RejoinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 RejoinBtn.TextSize = 14.000
 RejoinBtn.TextWrapped = true
+
+GravityRow.Name = "GravityRow"
+GravityRow.Parent = Page2
+GravityRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityRow.BorderSizePixel = 0
+GravityRow.LayoutOrder = 7
+GravityRow.Position = UDim2.new(0, 0, 0.200000003, 0)
+GravityRow.Size = UDim2.new(0, 200, 0, 25)
+
+GravityLabel.Name = "GravityLabel"
+GravityLabel.Parent = GravityRow
+GravityLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GravityLabel.BorderSizePixel = 0
+GravityLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
+GravityLabel.Size = UDim2.new(0, 65, 0, 25)
+GravityLabel.Font = Enum.Font.SourceSans
+GravityLabel.Text = "GRAVITY"
+GravityLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityLabel.TextSize = 14.000
+
+GravityBox.Name = "GravityBox"
+GravityBox.Parent = GravityRow
+GravityBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
+GravityBox.BorderSizePixel = 0
+GravityBox.Size = UDim2.new(0, 60, 0, 25)
+GravityBox.Font = Enum.Font.SourceSans
+GravityBox.PlaceholderColor3 = Color3.fromRGB(179, 179, 179)
+GravityBox.PlaceholderText = "Default (196.2)"
+GravityBox.Text = ""
+GravityBox.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityBox.TextScaled = true
+GravityBox.TextSize = 14.000
+GravityBox.TextWrapped = true
+
+GravityToggle.Name = "GravityToggle"
+GravityToggle.Parent = GravityRow
+GravityToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+GravityToggle.BorderSizePixel = 0
+GravityToggle.Position = UDim2.new(0.625, 0, 0, 0)
+GravityToggle.Size = UDim2.new(0, 75, 0, 25)
+GravityToggle.Font = Enum.Font.SourceSans
+GravityToggle.Text = "OFF"
+GravityToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+GravityToggle.TextSize = 14.000
 
 Page3.Name = "Page3"
 Page3.Parent = ContentFrame
@@ -839,7 +891,7 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function LRDG_fake_script() -- TopBar.DragScript 
+local function UYOLA_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -847,8 +899,8 @@ local function LRDG_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(LRDG_fake_script)()
-local function WXPMA_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(UYOLA_fake_script)()
+local function CJGYQ_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -869,8 +921,8 @@ local function WXPMA_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(WXPMA_fake_script)()
-local function GOKPGI_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(CJGYQ_fake_script)()
+local function DAHC_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -936,8 +988,8 @@ local function GOKPGI_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(GOKPGI_fake_script)()
-local function YNFBO_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(DAHC_fake_script)()
+local function PSIITXX_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1020,8 +1072,8 @@ local function YNFBO_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(YNFBO_fake_script)()
-local function QGPX_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(PSIITXX_fake_script)()
+local function DVHJK_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1131,8 +1183,8 @@ local function QGPX_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(QGPX_fake_script)()
-local function ABSYLFZ_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(DVHJK_fake_script)()
+local function CKFRUY_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1173,8 +1225,8 @@ local function ABSYLFZ_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(ABSYLFZ_fake_script)()
-local function WYYBWBG_fake_script() -- TouchFlingRow.TouchFlingScript 
+coroutine.wrap(CKFRUY_fake_script)()
+local function CZBMS_fake_script() -- TouchFlingRow.TouchFlingScript 
 	local script = Instance.new('LocalScript', TouchFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1218,8 +1270,8 @@ local function WYYBWBG_fake_script() -- TouchFlingRow.TouchFlingScript
 		end
 	end)
 end
-coroutine.wrap(WYYBWBG_fake_script)()
-local function DUEXOU_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(CZBMS_fake_script)()
+local function VJQKJYQ_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1504,8 +1556,8 @@ local function DUEXOU_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(DUEXOU_fake_script)()
-local function PUPWJ_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(VJQKJYQ_fake_script)()
+local function SKFQZ_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -1562,8 +1614,8 @@ local function PUPWJ_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(PUPWJ_fake_script)()
-local function BQQG_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(SKFQZ_fake_script)()
+local function JISAWB_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -1576,7 +1628,6 @@ local function BQQG_fake_script() -- FlyRow.FlyScript
 	local SpeedBox = script.Parent.SpeedBox
 	
 	local DEFAULT_SPEED = 50
-	SpeedBox.PlaceholderText = "Default (" .. DEFAULT_SPEED .. ")"
 	SpeedBox.Text = ""
 	
 	local nowe = false
@@ -1714,8 +1765,20 @@ local function BQQG_fake_script() -- FlyRow.FlyScript
 	end)
 	
 	SpeedBox:GetPropertyChangedSignal("Text"):Connect(function()
+		-- Placeholder text is now set via textbox properties
+	end)
+	
+	SpeedBox.FocusLost:Connect(function()
+		-- Validate input - only allow numbers
 		if SpeedBox.Text == "" then
-			SpeedBox.PlaceholderText = "Default (" .. DEFAULT_SPEED .. ")"
+			return
+		end
+		
+		-- Check if it's a valid number
+		local num = tonumber(SpeedBox.Text)
+		if num == nil then
+			-- Not a valid number, revert to empty
+			SpeedBox.Text = ""
 		end
 	end)
 	
@@ -1734,8 +1797,8 @@ local function BQQG_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(BQQG_fake_script)()
-local function RBLPW_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(JISAWB_fake_script)()
+local function ZMHKAB_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -1747,7 +1810,6 @@ local function RBLPW_fake_script() -- SpeedRow.SpeedScript
 	
 	local DEFAULT_SPEED = 16
 	
-	SpeedBox.PlaceholderText = "Default (" .. DEFAULT_SPEED .. ")"
 	SpeedBox.Text = ""
 	
 	local function getSpeed()
@@ -1780,11 +1842,22 @@ local function RBLPW_fake_script() -- SpeedRow.SpeedScript
 	end)
 	
 	SpeedBox:GetPropertyChangedSignal("Text"):Connect(function()
-		if SpeedBox.Text == "" then
-			SpeedBox.PlaceholderText = "Default (" .. DEFAULT_SPEED .. ")"
-		end
 		if SpeedEnabled then
 			applySpeed()
+		end
+	end)
+	
+	SpeedBox.FocusLost:Connect(function()
+		-- Validate input - only allow numbers
+		if SpeedBox.Text == "" then
+			return
+		end
+		
+		-- Check if it's a valid number
+		local num = tonumber(SpeedBox.Text)
+		if num == nil then
+			-- Not a valid number, revert to empty
+			SpeedBox.Text = ""
 		end
 	end)
 	
@@ -1805,8 +1878,8 @@ local function RBLPW_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(RBLPW_fake_script)()
-local function YMTO_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(ZMHKAB_fake_script)()
+local function WWBL_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -1817,7 +1890,6 @@ local function YMTO_fake_script() -- JumpPowerRow.JumpPowerScript
 	
 	local DEFAULT_JUMP = 50
 	
-	JumpPowerBox.PlaceholderText = "Default (" .. DEFAULT_JUMP .. ")"
 	JumpPowerBox.Text = ""
 	
 	local function getJump()
@@ -1854,11 +1926,22 @@ local function YMTO_fake_script() -- JumpPowerRow.JumpPowerScript
 	end)
 	
 	JumpPowerBox:GetPropertyChangedSignal("Text"):Connect(function()
-		if JumpPowerBox.Text == "" then
-			JumpPowerBox.PlaceholderText = "Default (" .. DEFAULT_JUMP .. ")"
-		end
 		if JumpPowerEnabled then
 			applyJump()
+		end
+	end)
+	
+	JumpPowerBox.FocusLost:Connect(function()
+		-- Validate input - only allow numbers
+		if JumpPowerBox.Text == "" then
+			return
+		end
+		
+		-- Check if it's a valid number
+		local num = tonumber(JumpPowerBox.Text)
+		if num == nil then
+			-- Not a valid number, revert to empty
+			JumpPowerBox.Text = ""
 		end
 	end)
 	
@@ -1880,8 +1963,8 @@ local function YMTO_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(YMTO_fake_script)()
-local function LGKPXM_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(WWBL_fake_script)()
+local function XWBDMA_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -1894,7 +1977,6 @@ local function LGKPXM_fake_script() -- AnimSpeedRow.AnimSpeedScript
 	
 	local DEFAULT_SPEED = 1
 	
-	AnimSpeedBox.PlaceholderText = "Default (" .. DEFAULT_SPEED .. ")"
 	AnimSpeedBox.Text = ""
 	
 	local speedConnection
@@ -1944,8 +2026,20 @@ local function LGKPXM_fake_script() -- AnimSpeedRow.AnimSpeedScript
 	end)
 	
 	AnimSpeedBox:GetPropertyChangedSignal("Text"):Connect(function()
+		-- Placeholder text is now set via textbox properties
+	end)
+	
+	AnimSpeedBox.FocusLost:Connect(function()
+		-- Validate input - only allow numbers
 		if AnimSpeedBox.Text == "" then
-			AnimSpeedBox.PlaceholderText = "Default (" .. DEFAULT_SPEED .. ")"
+			return
+		end
+		
+		-- Check if it's a valid number
+		local num = tonumber(AnimSpeedBox.Text)
+		if num == nil then
+			-- Not a valid number, revert to empty
+			AnimSpeedBox.Text = ""
 		end
 	end)
 	
@@ -1956,8 +2050,8 @@ local function LGKPXM_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(LGKPXM_fake_script)()
-local function JYCUQOJ_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(XWBDMA_fake_script)()
+local function UOQUE_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2290,8 +2384,8 @@ local function JYCUQOJ_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(JYCUQOJ_fake_script)()
-local function INZFEA_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(UOQUE_fake_script)()
+local function QPSCYJB_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2353,8 +2447,95 @@ local function INZFEA_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(INZFEA_fake_script)()
-local function NGTIFB_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(QPSCYJB_fake_script)()
+local function MEXPMO_fake_script() -- GravityRow.GravityScript 
+	local script = Instance.new('LocalScript', GravityRow)
+
+	local Players = game:GetService("Players")
+	
+	local localPlayer = Players.LocalPlayer
+	local GravityEnabled = false
+	local GravityToggle = script.Parent.GravityToggle
+	local GravityBox = script.Parent.GravityBox
+	
+	local DEFAULT_GRAVITY = 196.2
+	
+	GravityBox.Text = ""
+	
+	local function getGravity()
+		local text = string.lower(GravityBox.Text)
+		
+		-- Check for "inf" or "infinity"
+		if text == "inf" or text == "infinity" then
+			return math.huge
+		end
+		
+		-- Check for 0 (zero gravity)
+		local num = tonumber(GravityBox.Text)
+		if num == 0 then
+			return 0
+		end
+		
+		-- Return the number if valid and positive, otherwise default
+		return num and num > 0 and num or DEFAULT_GRAVITY
+	end
+	
+	local function applyGravity()
+		local character = localPlayer.Character
+		if not character then return end
+		if GravityEnabled then
+			workspace.Gravity = getGravity()
+		else
+			workspace.Gravity = DEFAULT_GRAVITY
+		end
+	end
+	
+	GravityToggle.MouseButton1Click:Connect(function()
+		GravityEnabled = not GravityEnabled
+		if GravityEnabled then
+			GravityToggle.Text = "ON"
+			GravityToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+		else
+			GravityToggle.Text = "OFF"
+			GravityToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+		applyGravity()
+	end)
+	
+	GravityBox:GetPropertyChangedSignal("Text"):Connect(function()
+		if GravityEnabled then
+			applyGravity()
+		end
+	end)
+	
+	GravityBox.FocusLost:Connect(function()
+		-- Validate input - only allow numbers, decimal, minus, or "inf"/"infinity"
+		local text = string.lower(GravityBox.Text)
+		if text == "inf" or text == "infinity" or text == "" then
+			return
+		end
+		
+		-- Check if it's a valid number
+		local num = tonumber(GravityBox.Text)
+		if num == nil then
+			-- Not a valid number, revert to empty
+			GravityBox.Text = ""
+		end
+	end)
+	
+	localPlayer.CharacterAdded:Connect(function(character)
+		character:WaitForChild("Humanoid")
+		applyGravity()
+	end)
+	
+	script.Parent.AncestryChanged:Connect(function()
+		if not script:IsDescendantOf(game) then
+			workspace.Gravity = DEFAULT_GRAVITY
+		end
+	end)
+end
+coroutine.wrap(MEXPMO_fake_script)()
+local function ROVZLQ_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -2706,8 +2887,8 @@ local function NGTIFB_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end)
 end
-coroutine.wrap(NGTIFB_fake_script)()
-local function WLAESY_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(ROVZLQ_fake_script)()
+local function RYQBYR_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -2960,8 +3141,8 @@ local function WLAESY_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(WLAESY_fake_script)()
-local function TEWZGVE_fake_script() -- EXPLOIT.PageListButtonSetup 
+coroutine.wrap(RYQBYR_fake_script)()
+local function VUEPT_fake_script() -- EXPLOIT.PageListButtonSetup 
 	local script = Instance.new('LocalScript', EXPLOIT)
 
 	task.wait(1) -- Initial wait
@@ -3020,4 +3201,4 @@ local function TEWZGVE_fake_script() -- EXPLOIT.PageListButtonSetup
 	setupButton()
 	
 end
-coroutine.wrap(TEWZGVE_fake_script)()
+coroutine.wrap(VUEPT_fake_script)()

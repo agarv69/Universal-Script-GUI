@@ -11,6 +11,7 @@ local MinimizeBtn = Instance.new("TextButton")
 local TitleLabel = Instance.new("TextLabel")
 local ContentFrame = Instance.new("ScrollingFrame")
 local Page1 = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
 local AntiFlingRow = Instance.new("Frame")
 local AntiFlingLabel = Instance.new("TextLabel")
 local AntiFlingToggle = Instance.new("TextButton")
@@ -29,8 +30,8 @@ local TouchFlingToggle = Instance.new("TextButton")
 local TeleportRow = Instance.new("Frame")
 local TeleportLabel = Instance.new("TextLabel")
 local TeleportButton = Instance.new("TextButton")
-local UIListLayout = Instance.new("UIListLayout")
 local Page2 = Instance.new("Frame")
+local UIListLayout_2 = Instance.new("UIListLayout")
 local RespawnRow = Instance.new("Frame")
 local RespawnBtn = Instance.new("TextButton")
 local FlyRow = Instance.new("Frame")
@@ -54,8 +55,8 @@ local SaveLabel = Instance.new("TextLabel")
 local SaveToggle = Instance.new("TextButton")
 local RejoinRow = Instance.new("Frame")
 local RejoinBtn = Instance.new("TextButton")
-local UIListLayout_2 = Instance.new("UIListLayout")
 local Page3 = Instance.new("Frame")
+local UIListLayout_3 = Instance.new("UIListLayout")
 local ESPToggleRow = Instance.new("Frame")
 local ESPToggleLabel = Instance.new("TextLabel")
 local ESPToggleToggle = Instance.new("TextButton")
@@ -74,7 +75,6 @@ local ESPHighlightToggle = Instance.new("TextButton")
 local ESPDistanceRow = Instance.new("Frame")
 local ESPDistanceToggle = Instance.new("TextButton")
 local ESPDistanceLabel = Instance.new("TextLabel")
-local UIListLayout_3 = Instance.new("UIListLayout")
 local BottomBar = Instance.new("Frame")
 local PageLabel = Instance.new("TextLabel")
 local NextBtn = Instance.new("TextButton")
@@ -155,6 +155,9 @@ Page1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page1.BorderSizePixel = 0
 Page1.Size = UDim2.new(0, 200, 0, 354)
 Page1.Visible = false
+
+UIListLayout.Parent = Page1
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 AntiFlingRow.Name = "AntiFlingRow"
 AntiFlingRow.Parent = Page1
@@ -341,9 +344,6 @@ TeleportButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TeleportButton.TextSize = 14.000
 TeleportButton.TextWrapped = true
 
-UIListLayout.Parent = Page1
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
 Page2.Name = "Page2"
 Page2.Parent = ContentFrame
 Page2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -351,6 +351,9 @@ Page2.BackgroundTransparency = 1.000
 Page2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page2.BorderSizePixel = 0
 Page2.Size = UDim2.new(0, 200, 0, 339)
+
+UIListLayout_2.Parent = Page2
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 
 RespawnRow.Name = "RespawnRow"
 RespawnRow.Parent = Page2
@@ -600,9 +603,6 @@ RejoinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 RejoinBtn.TextSize = 14.000
 RejoinBtn.TextWrapped = true
 
-UIListLayout_2.Parent = Page2
-UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-
 Page3.Name = "Page3"
 Page3.Parent = ContentFrame
 Page3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -611,6 +611,8 @@ Page3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page3.BorderSizePixel = 0
 Page3.Size = UDim2.new(0, 200, 0, 372)
 Page3.Visible = false
+
+UIListLayout_3.Parent = Page3
 
 ESPToggleRow.Name = "ESPToggleRow"
 ESPToggleRow.Parent = Page3
@@ -783,8 +785,6 @@ ESPDistanceLabel.Text = "ESP Distance"
 ESPDistanceLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 ESPDistanceLabel.TextSize = 14.000
 
-UIListLayout_3.Parent = Page3
-
 BottomBar.Name = "BottomBar"
 BottomBar.Parent = MainFrame
 BottomBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
@@ -839,67 +839,7 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function RJPRYBE_fake_script() -- EXPLOIT.PageListButtonSetup 
-	local script = Instance.new('LocalScript', EXPLOIT)
-
-	task.wait(1) -- Initial wait
-	
-	local Players = game:GetService("Players")
-	local player = Players.LocalPlayer
-	
-	local function setupButton()
-	    if player then
-	        local playerGui = player:FindFirstChild("PlayerGui")
-	        if playerGui then
-	            local exploitGui = playerGui:FindFirstChild("ExploitGui")
-	            if exploitGui then
-	                local mainFrame = exploitGui.MainFrame
-	                local pageListBtn = mainFrame:FindFirstChild("PageListBtn")
-	                
-	                if pageListBtn then
-	                    -- Position it right above the BottomBar with no gap
-	                    pageListBtn.Position = UDim2.new(1, -95, 1, -50)
-	                    
-	                    -- Black background, white border 1 pixel (matching theme)
-	                    pageListBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	                    pageListBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	                    pageListBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
-	                    pageListBtn.BorderSizePixel = 1
-	                    
-	                    -- Make sure it's visible (only when not minimized)
-	                    local isMinimized = mainFrame.Size.Y.Offset == 25
-	                    pageListBtn.Visible = not isMinimized
-	                    pageListBtn.Active = not isMinimized
-	                    pageListBtn.BackgroundTransparency = 0
-	                    pageListBtn.TextTransparency = 0
-	                    pageListBtn.ZIndex = 1000
-	                    
-	                    print("✓ Page List Button set up successfully!")
-	                    print("  Position:", pageListBtn.Position)
-	                    print("  Visible:", pageListBtn.Visible)
-	                    print("  Parent:", pageListBtn.Parent.Name)
-	                else
-	                    print("✗ Page List Button not found!")
-	                end
-	            end
-	        end
-	    end
-	end
-	
-	-- Run immediately
-	setupButton()
-	
-	-- Run again after 2 seconds to catch any late-loading
-	task.wait(2)
-	setupButton()
-	
-	-- Run again after 5 seconds to be sure
-	task.wait(3)
-	setupButton()
-	
-end
-coroutine.wrap(RJPRYBE_fake_script)()
-local function RJSAI_fake_script() -- TopBar.DragScript 
+local function LRDG_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -907,8 +847,8 @@ local function RJSAI_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(RJSAI_fake_script)()
-local function XUDK_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(LRDG_fake_script)()
+local function WXPMA_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -929,8 +869,8 @@ local function XUDK_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(XUDK_fake_script)()
-local function FVZTGU_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(WXPMA_fake_script)()
+local function GOKPGI_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -996,8 +936,8 @@ local function FVZTGU_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(FVZTGU_fake_script)()
-local function CTLY_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(GOKPGI_fake_script)()
+local function YNFBO_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1080,8 +1020,8 @@ local function CTLY_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(CTLY_fake_script)()
-local function VRHMJ_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(YNFBO_fake_script)()
+local function QGPX_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1191,8 +1131,8 @@ local function VRHMJ_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(VRHMJ_fake_script)()
-local function HGEF_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(QGPX_fake_script)()
+local function ABSYLFZ_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1233,8 +1173,8 @@ local function HGEF_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(HGEF_fake_script)()
-local function AUZZGX_fake_script() -- TouchFlingRow.TouchFlingScript 
+coroutine.wrap(ABSYLFZ_fake_script)()
+local function WYYBWBG_fake_script() -- TouchFlingRow.TouchFlingScript 
 	local script = Instance.new('LocalScript', TouchFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1278,8 +1218,8 @@ local function AUZZGX_fake_script() -- TouchFlingRow.TouchFlingScript
 		end
 	end)
 end
-coroutine.wrap(AUZZGX_fake_script)()
-local function FRCAYX_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(WYYBWBG_fake_script)()
+local function DUEXOU_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1564,8 +1504,8 @@ local function FRCAYX_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(FRCAYX_fake_script)()
-local function ZYZSX_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(DUEXOU_fake_script)()
+local function PUPWJ_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -1622,8 +1562,8 @@ local function ZYZSX_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(ZYZSX_fake_script)()
-local function LVEJJE_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(PUPWJ_fake_script)()
+local function BQQG_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -1794,8 +1734,8 @@ local function LVEJJE_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(LVEJJE_fake_script)()
-local function AJMOAS_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(BQQG_fake_script)()
+local function RBLPW_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -1865,8 +1805,8 @@ local function AJMOAS_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(AJMOAS_fake_script)()
-local function GTNXEF_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(RBLPW_fake_script)()
+local function YMTO_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -1940,8 +1880,8 @@ local function GTNXEF_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(GTNXEF_fake_script)()
-local function AUTPJQY_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(YMTO_fake_script)()
+local function LGKPXM_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2016,8 +1956,8 @@ local function AUTPJQY_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(AUTPJQY_fake_script)()
-local function NQDF_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(LGKPXM_fake_script)()
+local function JYCUQOJ_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2350,8 +2290,8 @@ local function NQDF_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(NQDF_fake_script)()
-local function GMRFPDY_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(JYCUQOJ_fake_script)()
+local function INZFEA_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2397,7 +2337,7 @@ local function GMRFPDY_fake_script() -- RejoinRow.RejoinScript
 			-- queue the gui to autoload on rejoin
 			if queueteleport then
 				pcall(function()
-					queueteleport([[loadstring(game:HttpGet("https://pastebin.com/raw/sLjp6RPD"))()]])
+					queueteleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/agarv69/Universal-Script-GUI/refs/heads/main/Universal%20Script"))()]])
 				end)
 			end
 	
@@ -2413,8 +2353,8 @@ local function GMRFPDY_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(GMRFPDY_fake_script)()
-local function JXELOS_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(INZFEA_fake_script)()
+local function NGTIFB_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -2766,8 +2706,8 @@ local function JXELOS_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end)
 end
-coroutine.wrap(JXELOS_fake_script)()
-local function IGGNC_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(NGTIFB_fake_script)()
+local function WLAESY_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -3020,4 +2960,64 @@ local function IGGNC_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(IGGNC_fake_script)()
+coroutine.wrap(WLAESY_fake_script)()
+local function TEWZGVE_fake_script() -- EXPLOIT.PageListButtonSetup 
+	local script = Instance.new('LocalScript', EXPLOIT)
+
+	task.wait(1) -- Initial wait
+	
+	local Players = game:GetService("Players")
+	local player = Players.LocalPlayer
+	
+	local function setupButton()
+	    if player then
+	        local playerGui = player:FindFirstChild("PlayerGui")
+	        if playerGui then
+	            local exploitGui = playerGui:FindFirstChild("ExploitGui")
+	            if exploitGui then
+	                local mainFrame = exploitGui.MainFrame
+	                local pageListBtn = mainFrame:FindFirstChild("PageListBtn")
+	                
+	                if pageListBtn then
+	                    -- Position it right above the BottomBar with no gap
+	                    pageListBtn.Position = UDim2.new(1, -95, 1, -50)
+	                    
+	                    -- Black background, white border 1 pixel (matching theme)
+	                    pageListBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	                    pageListBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	                    pageListBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	                    pageListBtn.BorderSizePixel = 1
+	                    
+	                    -- Make sure it's visible (only when not minimized)
+	                    local isMinimized = mainFrame.Size.Y.Offset == 25
+	                    pageListBtn.Visible = not isMinimized
+	                    pageListBtn.Active = not isMinimized
+	                    pageListBtn.BackgroundTransparency = 0
+	                    pageListBtn.TextTransparency = 0
+	                    pageListBtn.ZIndex = 1000
+	                    
+	                    print("✓ Page List Button set up successfully!")
+	                    print("  Position:", pageListBtn.Position)
+	                    print("  Visible:", pageListBtn.Visible)
+	                    print("  Parent:", pageListBtn.Parent.Name)
+	                else
+	                    print("✗ Page List Button not found!")
+	                end
+	            end
+	        end
+	    end
+	end
+	
+	-- Run immediately
+	setupButton()
+	
+	-- Run again after 2 seconds to catch any late-loading
+	task.wait(2)
+	setupButton()
+	
+	-- Run again after 5 seconds to be sure
+	task.wait(3)
+	setupButton()
+	
+end
+coroutine.wrap(TEWZGVE_fake_script)()

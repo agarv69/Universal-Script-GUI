@@ -30,6 +30,9 @@ local TeleportRow = Instance.new("Frame")
 local TeleportLabel = Instance.new("TextLabel")
 local TeleportButton = Instance.new("TextButton")
 local UIListLayout = Instance.new("UIListLayout")
+local InvisRow = Instance.new("Frame")
+local InvisLabel = Instance.new("TextLabel")
+local InvisToggle = Instance.new("TextButton")
 local Page2 = Instance.new("Frame")
 local RespawnRow = Instance.new("Frame")
 local RespawnBtn = Instance.new("TextButton")
@@ -159,7 +162,7 @@ ContentFrame.Parent = MainFrame
 ContentFrame.Active = true
 ContentFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ContentFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-ContentFrame.Position = UDim2.new(0, 0, 0.0925925896, 0)
+ContentFrame.Position = UDim2.new(0, 0, 0.088888891, 0)
 ContentFrame.Size = UDim2.new(0, 200, 0, 220)
 
 Page1.Name = "Page1"
@@ -169,7 +172,6 @@ Page1.BackgroundTransparency = 1.000
 Page1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page1.BorderSizePixel = 0
 Page1.Size = UDim2.new(0, 200, 0, 354)
-Page1.Visible = false
 
 AntiFlingRow.Name = "AntiFlingRow"
 AntiFlingRow.Parent = Page1
@@ -358,6 +360,37 @@ TeleportButton.TextWrapped = true
 
 UIListLayout.Parent = Page1
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+
+InvisRow.Name = "InvisRow"
+InvisRow.Parent = Page1
+InvisRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InvisRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InvisRow.BorderSizePixel = 0
+InvisRow.Position = UDim2.new(0, 0, 0.353107333, 0)
+InvisRow.Size = UDim2.new(0, 200, 0, 25)
+
+InvisLabel.Name = "InvisLabel"
+InvisLabel.Parent = InvisRow
+InvisLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+InvisLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InvisLabel.BorderSizePixel = 0
+InvisLabel.Size = UDim2.new(0, 125, 0, 25)
+InvisLabel.Font = Enum.Font.SourceSans
+InvisLabel.Text = "INVISIBLE"
+InvisLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+InvisLabel.TextSize = 14.000
+
+InvisToggle.Name = "InvisToggle"
+InvisToggle.Parent = InvisRow
+InvisToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+InvisToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+InvisToggle.BorderSizePixel = 0
+InvisToggle.Position = UDim2.new(0.625, 0, 0, 0)
+InvisToggle.Size = UDim2.new(0, 75, 0, 25)
+InvisToggle.Font = Enum.Font.SourceSans
+InvisToggle.Text = "OFF"
+InvisToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+InvisToggle.TextSize = 14.000
 
 Page2.Name = "Page2"
 Page2.Parent = ContentFrame
@@ -923,6 +956,7 @@ Page4.BackgroundTransparency = 1.000
 Page4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page4.BorderSizePixel = 0
 Page4.Size = UDim2.new(0, 200, 0, 406)
+Page4.Visible = false
 
 BangRow.Name = "BangRow"
 BangRow.Parent = Page4
@@ -1023,7 +1057,7 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function TDBVD_fake_script() -- ExploitGui.PageListButtonSetup 
+local function SXMZM_fake_script() -- ExploitGui.PageListButtonSetup 
 	local script = Instance.new('LocalScript', ExploitGui)
 
 	task.wait(1) -- Initial wait
@@ -1082,8 +1116,8 @@ local function TDBVD_fake_script() -- ExploitGui.PageListButtonSetup
 	setupButton()
 	
 end
-coroutine.wrap(TDBVD_fake_script)()
-local function JKCEW_fake_script() -- TopBar.DragScript 
+coroutine.wrap(SXMZM_fake_script)()
+local function UZGY_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -1091,8 +1125,8 @@ local function JKCEW_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(JKCEW_fake_script)()
-local function NJPHLOJ_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(UZGY_fake_script)()
+local function KODXWP_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -1113,8 +1147,8 @@ local function NJPHLOJ_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(NJPHLOJ_fake_script)()
-local function OKTWGYO_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(KODXWP_fake_script)()
+local function ETWQ_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1180,8 +1214,8 @@ local function OKTWGYO_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(OKTWGYO_fake_script)()
-local function AEDAGUN_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(ETWQ_fake_script)()
+local function UIFOTN_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1264,8 +1298,8 @@ local function AEDAGUN_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(AEDAGUN_fake_script)()
-local function AXES_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(UIFOTN_fake_script)()
+local function PGOMQV_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1375,8 +1409,8 @@ local function AXES_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(AXES_fake_script)()
-local function GCIANHJ_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(PGOMQV_fake_script)()
+local function VVXF_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1417,8 +1451,8 @@ local function GCIANHJ_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(GCIANHJ_fake_script)()
-local function MJVRDZQ_fake_script() -- TouchFlingRow.TouchFlingScript 
+coroutine.wrap(VVXF_fake_script)()
+local function EXDXS_fake_script() -- TouchFlingRow.TouchFlingScript 
 	local script = Instance.new('LocalScript', TouchFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1462,8 +1496,8 @@ local function MJVRDZQ_fake_script() -- TouchFlingRow.TouchFlingScript
 		end
 	end)
 end
-coroutine.wrap(MJVRDZQ_fake_script)()
-local function YXQK_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(EXDXS_fake_script)()
+local function UQOEC_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1748,8 +1782,142 @@ local function YXQK_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(YXQK_fake_script)()
-local function OFZF_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(UQOEC_fake_script)()
+local function LNYPRD_fake_script() -- InvisRow.InvisScript 
+	local script = Instance.new('LocalScript', InvisRow)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local Lighting = game:GetService("Lighting")
+	
+	local Player = Players.LocalPlayer
+	local InvisToggle = script.Parent.InvisToggle
+	
+	local invisRunning = false
+	local IsInvis = false
+	local invisFix = nil
+	local invisDied = nil
+	local InvisibleCharacter = nil
+	local Character = nil
+	
+	local function TurnVisible()
+		if IsInvis == false then return end
+		if invisFix then invisFix:Disconnect() end
+		if invisDied then invisDied:Disconnect() end
+		local CF_1 = Player.Character.Humanoid.RootPart.CFrame
+		Character.Humanoid.RootPart.CFrame = CF_1
+		if InvisibleCharacter then InvisibleCharacter:Destroy() end
+		Player.Character = Character
+		Character.Parent = workspace
+		IsInvis = false
+		invisRunning = false
+		Player.Character.Animate.Disabled = true
+		Player.Character.Animate.Disabled = false
+		invisDied = Character:FindFirstChildOfClass("Humanoid").Died:Connect(function()
+			TurnVisible()
+			invisDied:Disconnect()
+		end)
+		InvisToggle.Text = "OFF"
+		InvisToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	end
+	
+	local function Respawn()
+		if IsInvis == true then
+			pcall(function()
+				Player.Character = Character
+				wait()
+				Character.Parent = workspace
+				Character:FindFirstChildWhichIsA("Humanoid"):Destroy()
+				IsInvis = false
+				if InvisibleCharacter then InvisibleCharacter.Parent = nil end
+				invisRunning = false
+			end)
+		elseif IsInvis == false then
+			pcall(function()
+				Player.Character = Character
+				wait()
+				Character.Parent = workspace
+				Character:FindFirstChildWhichIsA("Humanoid"):Destroy()
+				TurnVisible()
+			end)
+		end
+		InvisToggle.Text = "OFF"
+		InvisToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	end
+	
+	local function TurnInvisible()
+		if invisRunning then return end
+		invisRunning = true
+	
+		repeat wait(.1) until Player.Character
+		Character = Player.Character
+		Character.Archivable = true
+		IsInvis = false
+	
+		InvisibleCharacter = Character:Clone()
+		InvisibleCharacter.Parent = Lighting
+		InvisibleCharacter.Name = ""
+	
+		local Void = workspace.FallenPartsDestroyHeight
+	
+		invisFix = RunService.Stepped:Connect(function()
+			pcall(function()
+				local IsInteger = tostring(Void):find("-") ~= nil
+				local Y = Player.Character.Humanoid.RootPart.Position.Y
+				if IsInteger and Y <= Void then Respawn()
+				elseif not IsInteger and Y >= Void then Respawn() end
+			end)
+		end)
+	
+		for _, v in pairs(InvisibleCharacter:GetDescendants()) do
+			if v:IsA("BasePart") then
+				v.Transparency = v.Name == "HumanoidRootPart" and 1 or 0.5
+			end
+		end
+	
+		invisDied = InvisibleCharacter:FindFirstChildOfClass("Humanoid").Died:Connect(function()
+			Respawn()
+			invisDied:Disconnect()
+		end)
+	
+		if IsInvis == true then return end
+		IsInvis = true
+	
+		local CF_1 = Player.Character.Humanoid.RootPart.CFrame
+		Character:MoveTo(Vector3.new(0, math.pi * 1000000, 0))
+		workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
+		wait(.2)
+		workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+		Character.Parent = Lighting
+		InvisibleCharacter.Parent = workspace
+		InvisibleCharacter.Humanoid.RootPart.CFrame = CF_1
+		Player.Character = InvisibleCharacter
+		Player.Character.Animate.Disabled = true
+		Player.Character.Animate.Disabled = false
+	end
+	
+	InvisToggle.MouseButton1Click:Connect(function()
+		if not invisRunning and not IsInvis then
+			InvisToggle.Text = "ON"
+			InvisToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+			TurnInvisible()
+		else
+			TurnVisible()
+		end
+	end)
+	
+	script.Parent.AncestryChanged:Connect(function()
+		if not script:IsDescendantOf(game) then
+			if IsInvis then
+				pcall(TurnVisible)
+			end
+			if invisFix then invisFix:Disconnect() end
+			if invisDied then invisDied:Disconnect() end
+		end
+	end)
+end
+coroutine.wrap(LNYPRD_fake_script)()
+local function ABAGVSS_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -1806,8 +1974,8 @@ local function OFZF_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(OFZF_fake_script)()
-local function DAVCWLH_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(ABAGVSS_fake_script)()
+local function OHHHNG_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -1989,8 +2157,8 @@ local function DAVCWLH_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(DAVCWLH_fake_script)()
-local function VJDRW_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(OHHHNG_fake_script)()
+local function YAZQGV_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2070,8 +2238,8 @@ local function VJDRW_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(VJDRW_fake_script)()
-local function WBRIYQJ_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(YAZQGV_fake_script)()
+local function JYDO_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -2155,8 +2323,8 @@ local function WBRIYQJ_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(WBRIYQJ_fake_script)()
-local function HEBPQV_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(JYDO_fake_script)()
+local function TZBC_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2242,8 +2410,8 @@ local function HEBPQV_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(HEBPQV_fake_script)()
-local function DFRMJZX_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(TZBC_fake_script)()
+local function LXIHLG_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2576,8 +2744,8 @@ local function DFRMJZX_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(DFRMJZX_fake_script)()
-local function RJOUPR_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(LXIHLG_fake_script)()
+local function MAOIFH_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2639,8 +2807,8 @@ local function RJOUPR_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(RJOUPR_fake_script)()
-local function CQUBP_fake_script() -- GravityRow.GravityScript 
+coroutine.wrap(MAOIFH_fake_script)()
+local function TPLLU_fake_script() -- GravityRow.GravityScript 
 	local script = Instance.new('LocalScript', GravityRow)
 
 	local Players = game:GetService("Players")
@@ -2726,8 +2894,8 @@ local function CQUBP_fake_script() -- GravityRow.GravityScript
 		end
 	end)
 end
-coroutine.wrap(CQUBP_fake_script)()
-local function TFKBES_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(TPLLU_fake_script)()
+local function BTVJPJR_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -3513,8 +3681,8 @@ local function TFKBES_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end)
 end
-coroutine.wrap(TFKBES_fake_script)()
-local function JFAB_fake_script() -- BangRow.BangScript 
+coroutine.wrap(BTVJPJR_fake_script)()
+local function LHCEQ_fake_script() -- BangRow.BangScript 
 	local script = Instance.new('LocalScript', BangRow)
 
 	local Players = game:GetService("Players")
@@ -3628,8 +3796,8 @@ local function JFAB_fake_script() -- BangRow.BangScript
 		end
 	end)
 end
-coroutine.wrap(JFAB_fake_script)()
-local function ZGFC_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(LHCEQ_fake_script)()
+local function XCVWPN_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -3852,4 +4020,4 @@ local function ZGFC_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(ZGFC_fake_script)()
+coroutine.wrap(XCVWPN_fake_script)()

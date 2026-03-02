@@ -3,7 +3,7 @@
 
 -- Instances:
 
-local ExploitGui = Instance.new("ScreenGui")
+local backup = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local TopBar = Instance.new("Frame")
 local CloseBtn = Instance.new("TextButton")
@@ -86,13 +86,13 @@ local ESPColorLabel = Instance.new("TextLabel")
 local ESPColorBtn = Instance.new("TextButton")
 local UIListLayout_3 = Instance.new("UIListLayout")
 local Page4 = Instance.new("Frame")
-local TouchFlingRow = Instance.new("Frame")
-local TouchFlingLabel = Instance.new("TextLabel")
-local TouchFlingToggle = Instance.new("TextButton")
 local BangRow = Instance.new("Frame")
 local BangUser = Instance.new("TextBox")
 local BangLabel = Instance.new("TextLabel")
 local BangToggle = Instance.new("TextButton")
+local TouchFlingRow = Instance.new("Frame")
+local TouchFlingLabel = Instance.new("TextLabel")
+local TouchFlingToggle = Instance.new("TextButton")
 local UIListLayout_4 = Instance.new("UIListLayout")
 local OrbitRow = Instance.new("Frame")
 local OrbitUserBox = Instance.new("TextBox")
@@ -112,18 +112,18 @@ local PageListBtn = Instance.new("TextButton")
 
 --Properties:
 
-ExploitGui.Name = "ExploitGui"
-ExploitGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ExploitGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ExploitGui.DisplayOrder = 10000
-ExploitGui.ResetOnSpawn = false
+backup.Name = "backup"
+backup.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+backup.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+backup.DisplayOrder = 10000
+backup.ResetOnSpawn = false
 
 MainFrame.Name = "MainFrame"
-MainFrame.Parent = ExploitGui
+MainFrame.Parent = backup
 MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 MainFrame.BorderSizePixel = 0
-MainFrame.Position = UDim2.new(0, 115, 0, 208)
+MainFrame.Position = UDim2.new(0, 925, 0, 37)
 MainFrame.Size = UDim2.new(0, 200, 0, 270)
 
 TopBar.Name = "TopBar"
@@ -173,7 +173,7 @@ ContentFrame.Parent = MainFrame
 ContentFrame.Active = true
 ContentFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ContentFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-ContentFrame.Position = UDim2.new(0, 0, 0.088888891, 0)
+ContentFrame.Position = UDim2.new(0, 0, 0.0925925896, 0)
 ContentFrame.Size = UDim2.new(0, 200, 0, 220)
 
 Page1.Name = "Page1"
@@ -940,38 +940,6 @@ Page4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page4.BorderSizePixel = 0
 Page4.Size = UDim2.new(0, 200, 0, 406)
 
-TouchFlingRow.Name = "TouchFlingRow"
-TouchFlingRow.Parent = Page4
-TouchFlingRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TouchFlingRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingRow.BorderSizePixel = 0
-TouchFlingRow.LayoutOrder = 1
-TouchFlingRow.Position = UDim2.new(0, 0, 0.138888896, 0)
-TouchFlingRow.Size = UDim2.new(0, 200, 0, 25)
-
-TouchFlingLabel.Name = "TouchFlingLabel"
-TouchFlingLabel.Parent = TouchFlingRow
-TouchFlingLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TouchFlingLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingLabel.BorderSizePixel = 0
-TouchFlingLabel.Size = UDim2.new(0, 125, 0, 25)
-TouchFlingLabel.Font = Enum.Font.SourceSans
-TouchFlingLabel.Text = "TOUCH FLING"
-TouchFlingLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingLabel.TextSize = 14.000
-
-TouchFlingToggle.Name = "TouchFlingToggle"
-TouchFlingToggle.Parent = TouchFlingRow
-TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-TouchFlingToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingToggle.BorderSizePixel = 0
-TouchFlingToggle.Position = UDim2.new(0.625, 0, 0, 0)
-TouchFlingToggle.Size = UDim2.new(0, 75, 0, 25)
-TouchFlingToggle.Font = Enum.Font.SourceSans
-TouchFlingToggle.Text = "OFF"
-TouchFlingToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingToggle.TextSize = 14.000
-
 BangRow.Name = "BangRow"
 BangRow.Parent = Page4
 BangRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -1017,6 +985,38 @@ BangToggle.Font = Enum.Font.SourceSans
 BangToggle.Text = "OFF"
 BangToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
 BangToggle.TextSize = 14.000
+
+TouchFlingRow.Name = "TouchFlingRow"
+TouchFlingRow.Parent = Page4
+TouchFlingRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TouchFlingRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingRow.BorderSizePixel = 0
+TouchFlingRow.LayoutOrder = 1
+TouchFlingRow.Position = UDim2.new(0, 0, 0.138888896, 0)
+TouchFlingRow.Size = UDim2.new(0, 200, 0, 25)
+
+TouchFlingLabel.Name = "TouchFlingLabel"
+TouchFlingLabel.Parent = TouchFlingRow
+TouchFlingLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TouchFlingLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingLabel.BorderSizePixel = 0
+TouchFlingLabel.Size = UDim2.new(0, 125, 0, 25)
+TouchFlingLabel.Font = Enum.Font.SourceSans
+TouchFlingLabel.Text = "TOUCH FLING"
+TouchFlingLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingLabel.TextSize = 14.000
+
+TouchFlingToggle.Name = "TouchFlingToggle"
+TouchFlingToggle.Parent = TouchFlingRow
+TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TouchFlingToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingToggle.BorderSizePixel = 0
+TouchFlingToggle.Position = UDim2.new(0.625, 0, 0, 0)
+TouchFlingToggle.Size = UDim2.new(0, 75, 0, 25)
+TouchFlingToggle.Font = Enum.Font.SourceSans
+TouchFlingToggle.Text = "OFF"
+TouchFlingToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingToggle.TextSize = 14.000
 
 UIListLayout_4.Parent = Page4
 UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
@@ -1197,8 +1197,8 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function EMPZIJ_fake_script() -- ExploitGui.PageListButtonSetup 
-	local script = Instance.new('LocalScript', ExploitGui)
+local function RIKKEY_fake_script() -- backup.PageListButtonSetup 
+	local script = Instance.new('LocalScript', backup)
 
 	task.wait(1) -- Initial wait
 	
@@ -1256,8 +1256,8 @@ local function EMPZIJ_fake_script() -- ExploitGui.PageListButtonSetup
 	setupButton()
 	
 end
-coroutine.wrap(EMPZIJ_fake_script)()
-local function KPORPMP_fake_script() -- TopBar.DragScript 
+coroutine.wrap(RIKKEY_fake_script)()
+local function KOGA_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -1265,8 +1265,8 @@ local function KPORPMP_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(KPORPMP_fake_script)()
-local function IYYDUVC_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(KOGA_fake_script)()
+local function MQWE_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -1287,8 +1287,8 @@ local function IYYDUVC_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(IYYDUVC_fake_script)()
-local function QDKM_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(MQWE_fake_script)()
+local function YODKNXW_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1354,8 +1354,8 @@ local function QDKM_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(QDKM_fake_script)()
-local function XPDY_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(YODKNXW_fake_script)()
+local function KGQIZO_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1438,8 +1438,8 @@ local function XPDY_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(XPDY_fake_script)()
-local function QOXG_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(KGQIZO_fake_script)()
+local function HYBDOU_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1549,8 +1549,8 @@ local function QOXG_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(QOXG_fake_script)()
-local function JMEC_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(HYBDOU_fake_script)()
+local function IODLAT_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1591,8 +1591,8 @@ local function JMEC_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(JMEC_fake_script)()
-local function VKSTGI_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(IODLAT_fake_script)()
+local function TQKWJ_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1877,8 +1877,8 @@ local function VKSTGI_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(VKSTGI_fake_script)()
-local function EYWGKA_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(TQKWJ_fake_script)()
+local function EFYAHM_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -1935,8 +1935,8 @@ local function EYWGKA_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(EYWGKA_fake_script)()
-local function WSDJ_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(EFYAHM_fake_script)()
+local function HFMPEC_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -2118,8 +2118,8 @@ local function WSDJ_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(WSDJ_fake_script)()
-local function CLXGEA_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(HFMPEC_fake_script)()
+local function SOLW_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2199,8 +2199,8 @@ local function CLXGEA_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(CLXGEA_fake_script)()
-local function MJAE_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(SOLW_fake_script)()
+local function VNNSBUR_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -2284,8 +2284,8 @@ local function MJAE_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(MJAE_fake_script)()
-local function VJZGFI_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(VNNSBUR_fake_script)()
+local function GFTCPM_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2371,8 +2371,8 @@ local function VJZGFI_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(VJZGFI_fake_script)()
-local function EBYO_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(GFTCPM_fake_script)()
+local function KUMBQWI_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2705,8 +2705,8 @@ local function EBYO_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(EBYO_fake_script)()
-local function KREYJ_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(KUMBQWI_fake_script)()
+local function GQAKK_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2768,8 +2768,8 @@ local function KREYJ_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(KREYJ_fake_script)()
-local function ADRSXY_fake_script() -- GravityRow.GravityScript 
+coroutine.wrap(GQAKK_fake_script)()
+local function RZCLNT_fake_script() -- GravityRow.GravityScript 
 	local script = Instance.new('LocalScript', GravityRow)
 
 	local Players = game:GetService("Players")
@@ -2855,8 +2855,8 @@ local function ADRSXY_fake_script() -- GravityRow.GravityScript
 		end
 	end)
 end
-coroutine.wrap(ADRSXY_fake_script)()
-local function JRYZE_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(RZCLNT_fake_script)()
+local function IJEICBG_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -3642,53 +3642,8 @@ local function JRYZE_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end)
 end
-coroutine.wrap(JRYZE_fake_script)()
-local function SDWZNF_fake_script() -- TouchFlingRow.TouchFlingScript 
-	local script = Instance.new('LocalScript', TouchFlingRow)
-
-	local Players = game:GetService("Players")
-	local RunService = game:GetService("RunService")
-	
-	local localPlayer = Players.LocalPlayer
-	local touchFlingEnabled = false
-	local TouchFlingToggle = script.Parent.TouchFlingToggle
-	
-	local function flingLoop()
-		while touchFlingEnabled do
-			RunService.Heartbeat:Wait()
-			local character = localPlayer.Character
-			local hrp = character and character:FindFirstChild("HumanoidRootPart")
-			if hrp then
-				local vel = hrp.Velocity
-				hrp.Velocity = vel * 999999999999 + Vector3.new(0, 999999999999, 0)
-				RunService.RenderStepped:Wait()
-				hrp.Velocity = vel
-				RunService.Stepped:Wait()
-				hrp.Velocity = vel + Vector3.new(0, 0.1, 0)
-			end
-		end
-	end
-	
-	TouchFlingToggle.MouseButton1Click:Connect(function()
-		touchFlingEnabled = not touchFlingEnabled
-		if touchFlingEnabled then
-			TouchFlingToggle.Text = "ON"
-			TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
-			coroutine.wrap(flingLoop)()
-		else
-			TouchFlingToggle.Text = "OFF"
-			TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-		end
-	end)
-	
-	script.Parent.AncestryChanged:Connect(function()
-		if not script:IsDescendantOf(game) then
-			touchFlingEnabled = false
-		end
-	end)
-end
-coroutine.wrap(SDWZNF_fake_script)()
-local function IRHGEPI_fake_script() -- BangRow.BangScript 
+coroutine.wrap(IJEICBG_fake_script)()
+local function YUUFXTX_fake_script() -- BangRow.BangScript 
 	local script = Instance.new('LocalScript', BangRow)
 
 	local Players = game:GetService("Players")
@@ -3802,8 +3757,53 @@ local function IRHGEPI_fake_script() -- BangRow.BangScript
 		end
 	end)
 end
-coroutine.wrap(IRHGEPI_fake_script)()
-local function GWLUN_fake_script() -- OrbitRow.OrbitScript 
+coroutine.wrap(YUUFXTX_fake_script)()
+local function IWWDK_fake_script() -- TouchFlingRow.TouchFlingScript 
+	local script = Instance.new('LocalScript', TouchFlingRow)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	
+	local localPlayer = Players.LocalPlayer
+	local touchFlingEnabled = false
+	local TouchFlingToggle = script.Parent.TouchFlingToggle
+	
+	local function flingLoop()
+		while touchFlingEnabled do
+			RunService.Heartbeat:Wait()
+			local character = localPlayer.Character
+			local hrp = character and character:FindFirstChild("HumanoidRootPart")
+			if hrp then
+				local vel = hrp.Velocity
+				hrp.Velocity = vel * 999999999999 + Vector3.new(0, 999999999999, 0)
+				RunService.RenderStepped:Wait()
+				hrp.Velocity = vel
+				RunService.Stepped:Wait()
+				hrp.Velocity = vel + Vector3.new(0, 0.1, 0)
+			end
+		end
+	end
+	
+	TouchFlingToggle.MouseButton1Click:Connect(function()
+		touchFlingEnabled = not touchFlingEnabled
+		if touchFlingEnabled then
+			TouchFlingToggle.Text = "ON"
+			TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+			coroutine.wrap(flingLoop)()
+		else
+			TouchFlingToggle.Text = "OFF"
+			TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end)
+	
+	script.Parent.AncestryChanged:Connect(function()
+		if not script:IsDescendantOf(game) then
+			touchFlingEnabled = false
+		end
+	end)
+end
+coroutine.wrap(IWWDK_fake_script)()
+local function SMVODL_fake_script() -- OrbitRow.OrbitScript 
 	local script = Instance.new('LocalScript', OrbitRow)
 
 	local Players = game:GetService("Players")
@@ -3893,8 +3893,8 @@ local function GWLUN_fake_script() -- OrbitRow.OrbitScript
 		end
 	end)
 end
-coroutine.wrap(GWLUN_fake_script)()
-local function KWLU_fake_script() -- HeadSitRow.HeadSitScript 
+coroutine.wrap(SMVODL_fake_script)()
+local function NRYF_fake_script() -- HeadSitRow.HeadSitScript 
 	local script = Instance.new('LocalScript', HeadSitRow)
 
 	local Players = game:GetService("Players")
@@ -3965,7 +3965,7 @@ local function KWLU_fake_script() -- HeadSitRow.HeadSitScript
 		weld.Part1 = targetHead
 		weld.Parent = myRoot
 	
-		myRoot.CFrame = targetHead.CFrame * CFrame.new(0, 0.5, 0)
+		myRoot.CFrame = targetHead.CFrame * CFrame.new(0, 2, 0)
 	
 		sitAnim = Instance.new("Animation")
 		sitAnim.AnimationId = "rbxassetid://2506281703"
@@ -4006,8 +4006,8 @@ local function KWLU_fake_script() -- HeadSitRow.HeadSitScript
 		end
 	end)
 end
-coroutine.wrap(KWLU_fake_script)()
-local function MKTM_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(NRYF_fake_script)()
+local function UDMIM_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -4230,4 +4230,4 @@ local function MKTM_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(MKTM_fake_script)()
+coroutine.wrap(UDMIM_fake_script)()

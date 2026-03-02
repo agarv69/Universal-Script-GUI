@@ -1057,7 +1057,7 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function OCASD_fake_script() -- ExploitGui.PageListButtonSetup 
+local function FVNCZKD_fake_script() -- ExploitGui.PageListButtonSetup 
 	local script = Instance.new('LocalScript', ExploitGui)
 
 	task.wait(1) -- Initial wait
@@ -1116,8 +1116,8 @@ local function OCASD_fake_script() -- ExploitGui.PageListButtonSetup
 	setupButton()
 	
 end
-coroutine.wrap(OCASD_fake_script)()
-local function TWCVR_fake_script() -- TopBar.DragScript 
+coroutine.wrap(FVNCZKD_fake_script)()
+local function UETXHG_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -1125,8 +1125,8 @@ local function TWCVR_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(TWCVR_fake_script)()
-local function QHGGVZ_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(UETXHG_fake_script)()
+local function OXLR_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -1147,8 +1147,8 @@ local function QHGGVZ_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(QHGGVZ_fake_script)()
-local function MSKWONT_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(OXLR_fake_script)()
+local function RJQZ_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1214,8 +1214,8 @@ local function MSKWONT_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(MSKWONT_fake_script)()
-local function SQELG_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(RJQZ_fake_script)()
+local function WJREP_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1298,8 +1298,8 @@ local function SQELG_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(SQELG_fake_script)()
-local function NKBD_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(WJREP_fake_script)()
+local function FTIFYU_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1409,8 +1409,8 @@ local function NKBD_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(NKBD_fake_script)()
-local function HKBP_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(FTIFYU_fake_script)()
+local function QEEZP_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1451,8 +1451,8 @@ local function HKBP_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(HKBP_fake_script)()
-local function MOJEH_fake_script() -- TouchFlingRow.TouchFlingScript 
+coroutine.wrap(QEEZP_fake_script)()
+local function CLISD_fake_script() -- TouchFlingRow.TouchFlingScript 
 	local script = Instance.new('LocalScript', TouchFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1496,8 +1496,8 @@ local function MOJEH_fake_script() -- TouchFlingRow.TouchFlingScript
 		end
 	end)
 end
-coroutine.wrap(MOJEH_fake_script)()
-local function CIIPARU_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(CLISD_fake_script)()
+local function MJHO_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1782,13 +1782,14 @@ local function CIIPARU_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(CIIPARU_fake_script)()
-local function OIXI_fake_script() -- InvisRow.InvisScript 
+coroutine.wrap(MJHO_fake_script)()
+local function QDMU_fake_script() -- InvisRow.InvisScript 
 	local script = Instance.new('LocalScript', InvisRow)
 
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	local Lighting = game:GetService("Lighting")
+	local StarterGui = game:GetService("StarterGui")
 	
 	local Player = Players.LocalPlayer
 	local InvisToggle = script.Parent.InvisToggle
@@ -1800,6 +1801,21 @@ local function OIXI_fake_script() -- InvisRow.InvisScript
 	local InvisibleCharacter = nil
 	local Character = nil
 	
+	local function fixMobileControls()
+		pcall(function()
+			StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
+			wait(.1)
+			StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
+		end)
+	end
+	
+	local function fixCamera(subject)
+		pcall(function()
+			workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+			workspace.CurrentCamera.CameraSubject = subject:FindFirstChildWhichIsA("Humanoid")
+		end)
+	end
+	
 	local function TurnVisible()
 		if not IsInvis then return end
 		if invisFix then invisFix:Disconnect() invisFix = nil end
@@ -1808,14 +1824,16 @@ local function OIXI_fake_script() -- InvisRow.InvisScript
 		pcall(function()
 			local CF_1 = Player.Character.Humanoid.RootPart.CFrame
 			Character.Humanoid.RootPart.CFrame = CF_1
-			if InvisibleCharacter then InvisibleCharacter:Destroy() end
 			Character.Parent = workspace
 			Player.Character = Character
-			workspace.CurrentCamera.CameraSubject = Character:FindFirstChildWhichIsA("Humanoid")
-			workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+			if InvisibleCharacter then InvisibleCharacter:Destroy() end
+			fixCamera(Character)
 			Character.Animate.Disabled = true
 			Character.Animate.Disabled = false
 		end)
+	
+		wait(.1)
+		fixMobileControls()
 	
 		IsInvis = false
 		invisRunning = false
@@ -1824,12 +1842,16 @@ local function OIXI_fake_script() -- InvisRow.InvisScript
 	end
 	
 	local function Respawn()
+		if invisFix then invisFix:Disconnect() invisFix = nil end
+		if invisDied then invisDied:Disconnect() invisDied = nil end
 		pcall(function()
 			Player.Character = Character
 			wait()
 			Character.Parent = workspace
 			Character:FindFirstChildWhichIsA("Humanoid"):Destroy()
 		end)
+		wait(.1)
+		fixMobileControls()
 		IsInvis = false
 		invisRunning = false
 		InvisToggle.Text = "OFF"
@@ -1876,14 +1898,14 @@ local function OIXI_fake_script() -- InvisRow.InvisScript
 		InvisibleCharacter.Parent = workspace
 		InvisibleCharacter.Humanoid.RootPart.CFrame = CF_1
 		Player.Character = InvisibleCharacter
-	
-		-- fix camera and mobile controls
-		workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
-		workspace.CurrentCamera.CameraSubject = InvisibleCharacter:FindFirstChildWhichIsA("Humanoid")
 		Character.Parent = Lighting
 	
+		fixCamera(InvisibleCharacter)
 		InvisibleCharacter.Animate.Disabled = true
 		InvisibleCharacter.Animate.Disabled = false
+	
+		wait(.1)
+		fixMobileControls()
 	
 		IsInvis = true
 		InvisToggle.Text = "ON"
@@ -1906,8 +1928,8 @@ local function OIXI_fake_script() -- InvisRow.InvisScript
 		end
 	end)
 end
-coroutine.wrap(OIXI_fake_script)()
-local function GYUMBP_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(QDMU_fake_script)()
+local function OUYKTT_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -1964,8 +1986,8 @@ local function GYUMBP_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(GYUMBP_fake_script)()
-local function IEMN_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(OUYKTT_fake_script)()
+local function XMHEUOC_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -2147,8 +2169,8 @@ local function IEMN_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(IEMN_fake_script)()
-local function XKNP_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(XMHEUOC_fake_script)()
+local function VHGVH_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2228,8 +2250,8 @@ local function XKNP_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(XKNP_fake_script)()
-local function QVBW_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(VHGVH_fake_script)()
+local function JAFMB_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -2313,8 +2335,8 @@ local function QVBW_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(QVBW_fake_script)()
-local function CSCLS_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(JAFMB_fake_script)()
+local function SKXAZB_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2400,8 +2422,8 @@ local function CSCLS_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(CSCLS_fake_script)()
-local function OMAZIIR_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(SKXAZB_fake_script)()
+local function ITMX_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2734,8 +2756,8 @@ local function OMAZIIR_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(OMAZIIR_fake_script)()
-local function FSYKITS_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(ITMX_fake_script)()
+local function SXBSKA_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2797,8 +2819,8 @@ local function FSYKITS_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(FSYKITS_fake_script)()
-local function SZCJ_fake_script() -- GravityRow.GravityScript 
+coroutine.wrap(SXBSKA_fake_script)()
+local function PJTYI_fake_script() -- GravityRow.GravityScript 
 	local script = Instance.new('LocalScript', GravityRow)
 
 	local Players = game:GetService("Players")
@@ -2884,8 +2906,8 @@ local function SZCJ_fake_script() -- GravityRow.GravityScript
 		end
 	end)
 end
-coroutine.wrap(SZCJ_fake_script)()
-local function TLNUY_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(PJTYI_fake_script)()
+local function ZPPZ_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -3671,8 +3693,8 @@ local function TLNUY_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end)
 end
-coroutine.wrap(TLNUY_fake_script)()
-local function EAVIHHG_fake_script() -- BangRow.BangScript 
+coroutine.wrap(ZPPZ_fake_script)()
+local function EJNOG_fake_script() -- BangRow.BangScript 
 	local script = Instance.new('LocalScript', BangRow)
 
 	local Players = game:GetService("Players")
@@ -3786,8 +3808,8 @@ local function EAVIHHG_fake_script() -- BangRow.BangScript
 		end
 	end)
 end
-coroutine.wrap(EAVIHHG_fake_script)()
-local function NUPWNDV_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(EJNOG_fake_script)()
+local function KWJZKC_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -4010,4 +4032,4 @@ local function NUPWNDV_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(NUPWNDV_fake_script)()
+coroutine.wrap(KWJZKC_fake_script)()

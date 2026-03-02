@@ -534,10 +534,11 @@ G2L["2b"]:SetAttribute([[_lemonadeUniqueId]], [[XZeGm5moXZeG]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.FlyRow.SpeedBox
 G2L["2c"] = Instance.new("TextBox", G2L["28"]);
+G2L["2c"]["CursorPosition"] = -1;
 G2L["2c"]["Name"] = [[SpeedBox]];
 G2L["2c"]["BorderSizePixel"] = 0;
 G2L["2c"]["TextSize"] = 14;
-G2L["2c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
 G2L["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["2c"]["PlaceholderText"] = [[Default (50)]];
@@ -586,10 +587,11 @@ G2L["2f"]:SetAttribute([[_lemonadeUniqueId]], [[PlfvloaOPlfv]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SpeedRow.SpeedBox
 G2L["30"] = Instance.new("TextBox", G2L["2d"]);
+G2L["30"]["CursorPosition"] = -1;
 G2L["30"]["Name"] = [[SpeedBox]];
 G2L["30"]["BorderSizePixel"] = 0;
 G2L["30"]["TextSize"] = 14;
-G2L["30"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["30"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
 G2L["30"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["30"]["PlaceholderText"] = [[Default (16)]];
@@ -670,10 +672,11 @@ G2L["35"]:SetAttribute([[_lemonadeUniqueId]], [[PcTLwhpNPcTL]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.JumpPowerRow.JumpPowerBox
 G2L["36"] = Instance.new("TextBox", G2L["32"]);
+G2L["36"]["CursorPosition"] = -1;
 G2L["36"]["Name"] = [[JumpPowerBox]];
 G2L["36"]["BorderSizePixel"] = 0;
 G2L["36"]["TextSize"] = 14;
-G2L["36"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["36"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
 G2L["36"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["36"]["PlaceholderText"] = [[Default (50)]];
@@ -738,10 +741,11 @@ G2L["3a"]:SetAttribute([[_lemonadeUniqueId]], [[laMyZaiwlaMy]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.AnimSpeedRow.AnimSpeedBox
 G2L["3b"] = Instance.new("TextBox", G2L["37"]);
+G2L["3b"]["CursorPosition"] = -1;
 G2L["3b"]["Name"] = [[AnimSpeedBox]];
 G2L["3b"]["BorderSizePixel"] = 0;
 G2L["3b"]["TextSize"] = 14;
-G2L["3b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
 G2L["3b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["3b"]["PlaceholderText"] = [[Default (1)]];
@@ -874,12 +878,13 @@ G2L["45"]:SetAttribute([[_lemonadeUniqueId]], [[50IIjkmU50II]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.GravityRow.GravityBox
 G2L["46"] = Instance.new("TextBox", G2L["43"]);
+G2L["46"]["CursorPosition"] = -1;
 G2L["46"]["Name"] = [[GravityBox]];
 G2L["46"]["PlaceholderColor3"] = Color3.fromRGB(180, 180, 180);
 G2L["46"]["BorderSizePixel"] = 0;
 G2L["46"]["TextWrapped"] = true;
 G2L["46"]["TextSize"] = 14;
-G2L["46"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["46"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["46"]["TextScaled"] = true;
 G2L["46"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
 G2L["46"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
@@ -914,7 +919,6 @@ G2L["48"]:SetAttribute([[_lemonadeUniqueId]], [[GIfeXbgIGIfe]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3
 G2L["49"] = Instance.new("Frame", G2L["a"]);
-G2L["49"]["Visible"] = false;
 G2L["49"]["BorderSizePixel"] = 0;
 G2L["49"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["49"]["Size"] = UDim2.new(0, 200, 0, 372);
@@ -1139,7 +1143,6 @@ G2L["59"]["BorderSizePixel"] = 0;
 G2L["59"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["59"]["Size"] = UDim2.new(0, 200, 0, 25);
 G2L["59"]["Name"] = [[ESPToggleRow]];
-G2L["59"]["LayoutOrder"] = 1;
 -- Attributes
 G2L["59"]:SetAttribute([[_lemonadeUniqueId]], [[Hey63Z35Hey6]]);
 
@@ -1245,22 +1248,23 @@ G2L["61"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["61"]["Size"] = UDim2.new(0, 125, 0, 25);
 G2L["61"]["Text"] = [[ESP Color]];
 G2L["61"]["Name"] = [[ESPColorLabel]];
-G2L["61"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
 -- Attributes
 G2L["61"]:SetAttribute([[_lemonadeUniqueId]], [[HuwYFlOwHuwY]]);
 
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPColorRow.ESPColorBtn
 G2L["62"] = Instance.new("TextButton", G2L["60"]);
+G2L["62"]["TextWrapped"] = true;
 G2L["62"]["BorderSizePixel"] = 0;
 G2L["62"]["TextSize"] = 14;
-G2L["62"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["62"]["BackgroundColor3"] = Color3.fromRGB(128, 128, 128);
+G2L["62"]["TextScaled"] = true;
+G2L["62"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["62"]["BackgroundColor3"] = Color3.fromRGB(129, 129, 129);
 G2L["62"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
 G2L["62"]["Size"] = UDim2.new(0, 75, 0, 25);
-G2L["62"]["Text"] = [[SELECT]];
+G2L["62"]["Text"] = [[SELECT COLOR]];
 G2L["62"]["Name"] = [[ESPColorBtn]];
-G2L["62"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+G2L["62"]["Position"] = UDim2.new(0.625, 0, 0, 0);
 -- Attributes
 G2L["62"]:SetAttribute([[_lemonadeUniqueId]], [[MqPm9KBJMqPm]]);
 
@@ -1274,6 +1278,7 @@ G2L["63"]:SetAttribute([[_lemonadeUniqueId]], [[FUJ0yGPJFUJ0]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4
 G2L["64"] = Instance.new("Frame", G2L["a"]);
+G2L["64"]["Visible"] = false;
 G2L["64"]["BorderSizePixel"] = 0;
 G2L["64"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["64"]["Size"] = UDim2.new(0, 200, 0, 406);
@@ -3307,6 +3312,7 @@ local script = G2L["5a"];
 	local ESPGuis = {}
 	
 	local ESPColor = Color3.fromRGB(255, 255, 255)
+	local ESPHealthColorMode = false
 	
 	local ESPToggle = script.Parent.ESPToggleToggle
 	local ESPNameToggle = script.Parent.Parent.ESPNameRow.ESPNameToggle
@@ -3337,11 +3343,22 @@ local script = G2L["5a"];
 	
 	local function updateESPColor(newColor)
 		ESPColor = newColor
-		ESPColorBtn.BackgroundColor3 = newColor
-		if newColor.R + newColor.G + newColor.B > 1.5 then
-			ESPColorBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-		else
-			ESPColorBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+		-- Only update button color if not in health color mode and not default white
+		if not ESPHealthColorMode then
+			-- Check if color is default white
+			if newColor.R >= 0.99 and newColor.G >= 0.99 and newColor.B >= 0.99 then
+				-- Default white - show grey button
+				ESPColorBtn.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
+				ESPColorBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+			else
+				-- Custom color - show that color
+				ESPColorBtn.BackgroundColor3 = newColor
+				if newColor.R + newColor.G + newColor.B > 1.5 then
+					ESPColorBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+				else
+					ESPColorBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+				end
+			end
 		end
 	
 		for _, espData in pairs(ESPGuis) do
@@ -3537,9 +3554,7 @@ local script = G2L["5a"];
 			Color3.fromRGB(0, 255, 0),
 			Color3.fromRGB(0, 0, 255),
 			Color3.fromRGB(255, 255, 0),
-			Color3.fromRGB(255, 0, 255),
 			Color3.fromRGB(0, 255, 255),
-			Color3.fromRGB(255, 165, 0),
 		}
 	
 		local presetFrame = Instance.new("Frame")
@@ -3561,10 +3576,61 @@ local script = G2L["5a"];
 			presetBtn.Parent = presetFrame
 	
 			presetBtn.MouseButton1Click:Connect(function()
+				ESPHealthColorMode = false
 				updateESPColor(color)
 				previewFrame.BackgroundColor3 = color
 			end)
 		end
+	
+		-- Health-based color button (takes 2 button spaces)
+		local healthColorBtn = Instance.new("TextButton")
+		healthColorBtn.Size = UDim2.new(0, 43, 0, 20)
+		healthColorBtn.Position = UDim2.new(0, #presetColors * 23, 0, 0)
+		healthColorBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+		healthColorBtn.BorderSizePixel = 1
+		healthColorBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
+		healthColorBtn.Text = "HP"
+		healthColorBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
+		healthColorBtn.TextScaled = true
+		healthColorBtn.Font = Enum.Font.SourceSansBold
+		healthColorBtn.ZIndex = 20
+		healthColorBtn.Parent = presetFrame
+	
+		healthColorBtn.MouseButton1Click:Connect(function()
+			ESPHealthColorMode = true
+			previewFrame.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+			-- Set button to grey when in health color mode
+			ESPColorBtn.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
+			ESPColorBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+			-- Update all ESP elements to use health colors
+			for targetPlayer, espData in pairs(ESPGuis) do
+				if espData then
+					local targetCharacter = targetPlayer.Character
+					local humanoid = targetCharacter and targetCharacter:FindFirstChildOfClass("Humanoid")
+					if humanoid then
+						local healthColor = getHealthColor(humanoid.Health, humanoid.MaxHealth)
+						if espData.NameLabel then
+							espData.NameLabel.TextColor3 = healthColor
+						end
+						if espData.BoxAdornment then
+							espData.BoxAdornment.Color3 = healthColor
+						end
+						if espData.Highlight then
+							espData.Highlight.OutlineColor = healthColor
+						end
+					end
+				end
+			end
+			for targetPlayer, line in pairs(tracerLines) do
+				if line then
+					local targetCharacter = targetPlayer.Character
+					local humanoid = targetCharacter and targetCharacter:FindFirstChildOfClass("Humanoid")
+					if humanoid then
+						line.BackgroundColor3 = getHealthColor(humanoid.Health, humanoid.MaxHealth)
+					end
+				end
+			end
+		end)
 	
 		local closeBtn = Instance.new("TextButton")
 		closeBtn.Size = UDim2.new(1, 0, 0, 20)
@@ -3729,6 +3795,14 @@ local script = G2L["5a"];
 			if not onScreen then
 				line.Visible = false
 				continue
+			end
+	
+			-- Update tracer color based on health if health color mode is enabled
+			if ESPHealthColorMode then
+				local humanoid = character:FindFirstChildOfClass("Humanoid")
+				if humanoid then
+					line.BackgroundColor3 = getHealthColor(humanoid.Health, humanoid.MaxHealth)
+				end
 			end
 	
 			local endPos = Vector2.new(screenPos.X, screenPos.Y)
@@ -3897,6 +3971,20 @@ local script = G2L["5a"];
 					espData.HealthFill.Position = UDim2.new(0, 0, 1 - healthPercent, 0)
 					espData.HealthFill.BackgroundColor3 = getHealthColor(humanoid.Health, humanoid.MaxHealth)
 				end
+	
+				-- Update ESP colors based on health if health color mode is enabled
+				if ESPHealthColorMode and humanoid then
+					local healthColor = getHealthColor(humanoid.Health, humanoid.MaxHealth)
+					if espData.NameLabel then
+						espData.NameLabel.TextColor3 = healthColor
+					end
+					if espData.BoxAdornment then
+						espData.BoxAdornment.Color3 = healthColor
+					end
+					if espData.Highlight then
+						espData.Highlight.OutlineColor = healthColor
+					end
+				end
 			end
 		end
 	
@@ -4061,8 +4149,8 @@ local script = G2L["5a"];
 		createColorPicker()
 	end)
 	
-	ESPColorBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	ESPColorBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+	-- Initialize button color based on default white
+	updateESPColor(ESPColor)
 	
 	script.Parent.AncestryChanged:Connect(function()
 		if not script:IsDescendantOf(game) then

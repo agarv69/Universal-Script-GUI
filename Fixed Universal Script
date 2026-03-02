@@ -59,9 +59,6 @@ local GravityLabel = Instance.new("TextLabel")
 local GravityBox = Instance.new("TextBox")
 local GravityToggle = Instance.new("TextButton")
 local UIListLayout_2 = Instance.new("UIListLayout")
-local EmoteWalkRow = Instance.new("Frame")
-local EmoteWalkLabel = Instance.new("TextLabel")
-local EmoteWalkToggle = Instance.new("TextButton")
 local Page3 = Instance.new("Frame")
 local ESPNameRow = Instance.new("Frame")
 local ESPNameLabel = Instance.new("TextLabel")
@@ -686,34 +683,6 @@ GravityToggle.TextSize = 14.000
 UIListLayout_2.Parent = Page2
 UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
 
-EmoteWalkRow.Name = "EmoteWalkRow"
-EmoteWalkRow.Parent = Page2
-EmoteWalkRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-EmoteWalkRow.BorderSizePixel = 0
-EmoteWalkRow.Position = UDim2.new(0, 0, 0.899999976, 0)
-EmoteWalkRow.Size = UDim2.new(0, 200, 0, 25)
-
-EmoteWalkLabel.Name = "EmoteWalkLabel"
-EmoteWalkLabel.Parent = EmoteWalkRow
-EmoteWalkLabel.BackgroundTransparency = 1.000
-EmoteWalkLabel.Position = UDim2.new(0.150000006, 0, 0, 0)
-EmoteWalkLabel.Size = UDim2.new(0, 85, 0, 25)
-EmoteWalkLabel.Font = Enum.Font.SourceSans
-EmoteWalkLabel.Text = "EMOTE WALK"
-EmoteWalkLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-EmoteWalkLabel.TextSize = 14.000
-
-EmoteWalkToggle.Name = "EmoteWalkToggle"
-EmoteWalkToggle.Parent = EmoteWalkRow
-EmoteWalkToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-EmoteWalkToggle.BorderSizePixel = 0
-EmoteWalkToggle.Position = UDim2.new(0.625, 0, 0, 0)
-EmoteWalkToggle.Size = UDim2.new(0, 75, 0, 25)
-EmoteWalkToggle.Font = Enum.Font.SourceSans
-EmoteWalkToggle.Text = "OFF"
-EmoteWalkToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-EmoteWalkToggle.TextSize = 14.000
-
 Page3.Name = "Page3"
 Page3.Parent = ContentFrame
 Page3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -1228,7 +1197,7 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function OKPY_fake_script() -- ExploitGui.PageListButtonSetup 
+local function XRTDLU_fake_script() -- ExploitGui.PageListButtonSetup 
 	local script = Instance.new('LocalScript', ExploitGui)
 
 	task.wait(1) -- Initial wait
@@ -1287,8 +1256,8 @@ local function OKPY_fake_script() -- ExploitGui.PageListButtonSetup
 	setupButton()
 	
 end
-coroutine.wrap(OKPY_fake_script)()
-local function SSFM_fake_script() -- TopBar.DragScript 
+coroutine.wrap(XRTDLU_fake_script)()
+local function TSEM_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -1296,8 +1265,8 @@ local function SSFM_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(SSFM_fake_script)()
-local function SSCZXC_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(TSEM_fake_script)()
+local function KHZZ_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -1318,8 +1287,8 @@ local function SSCZXC_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(SSCZXC_fake_script)()
-local function HOGSWCZ_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(KHZZ_fake_script)()
+local function BMFTEU_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1385,8 +1354,8 @@ local function HOGSWCZ_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(HOGSWCZ_fake_script)()
-local function CMDBOHC_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(BMFTEU_fake_script)()
+local function KKVKWYR_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1469,8 +1438,8 @@ local function CMDBOHC_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(CMDBOHC_fake_script)()
-local function MJTJKL_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(KKVKWYR_fake_script)()
+local function DMVBW_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1580,8 +1549,8 @@ local function MJTJKL_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(MJTJKL_fake_script)()
-local function SQSO_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(DMVBW_fake_script)()
+local function UHDJCBG_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1622,8 +1591,8 @@ local function SQSO_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(SQSO_fake_script)()
-local function GZXPFCU_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(UHDJCBG_fake_script)()
+local function EKRD_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1908,8 +1877,8 @@ local function GZXPFCU_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(GZXPFCU_fake_script)()
-local function FLETCB_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(EKRD_fake_script)()
+local function SHGI_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -1966,8 +1935,8 @@ local function FLETCB_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(FLETCB_fake_script)()
-local function AVPXSZ_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(SHGI_fake_script)()
+local function GOCGFEB_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -2149,8 +2118,8 @@ local function AVPXSZ_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(AVPXSZ_fake_script)()
-local function FVDXQVB_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(GOCGFEB_fake_script)()
+local function FBYCJO_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2230,8 +2199,8 @@ local function FVDXQVB_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(FVDXQVB_fake_script)()
-local function LZMRP_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(FBYCJO_fake_script)()
+local function ZMKM_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -2315,8 +2284,8 @@ local function LZMRP_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(LZMRP_fake_script)()
-local function SBNGGQ_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(ZMKM_fake_script)()
+local function ZWKZF_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2402,8 +2371,8 @@ local function SBNGGQ_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(SBNGGQ_fake_script)()
-local function GORE_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(ZWKZF_fake_script)()
+local function IQHW_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2736,8 +2705,8 @@ local function GORE_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(GORE_fake_script)()
-local function EKYBWTG_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(IQHW_fake_script)()
+local function AYWXQM_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2799,8 +2768,8 @@ local function EKYBWTG_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(EKYBWTG_fake_script)()
-local function TTTJSKK_fake_script() -- GravityRow.GravityScript 
+coroutine.wrap(AYWXQM_fake_script)()
+local function CLLF_fake_script() -- GravityRow.GravityScript 
 	local script = Instance.new('LocalScript', GravityRow)
 
 	local Players = game:GetService("Players")
@@ -2886,152 +2855,8 @@ local function TTTJSKK_fake_script() -- GravityRow.GravityScript
 		end
 	end)
 end
-coroutine.wrap(TTTJSKK_fake_script)()
-local function RBZJTS_fake_script() -- EmoteWalkRow.EmoteWalkScript 
-	local script = Instance.new('LocalScript', EmoteWalkRow)
-
-	local Players = game:GetService("Players")
-	local RunService = game:GetService("RunService")
-	local localPlayer = Players.LocalPlayer
-	
-	local EmoteWalkToggle = script.Parent.EmoteWalkToggle
-	
-	local emoteWalkEnabled = false
-	local currentEmoteTrack = nil
-	local lastEmoteAnim = nil
-	local animator = nil
-	
-	-- Find the currently playing emote animation
-	local function findCurrentEmote()
-		if not animator then return nil end
-	
-		for _, track in animator:GetPlayingAnimationTracks() do
-			if track.Priority == Enum.AnimationPriority.Movement then
-				return track.Animation
-			end
-		end
-		return nil
-	end
-	
-	-- Hook into the emote system
-	local function onCharacterAdded(character)
-		local humanoid = character:WaitForChild("Humanoid")
-		animator = humanoid:FindFirstChildOfClass("Animator")
-		if not animator then
-			animator = humanoid:WaitForChild("Animator")
-		end
-	
-		-- Store original PlayEmote function
-		local originalPlayEmote = humanoid.PlayEmote
-	
-		-- Override PlayEmote to track emotes (always track, even when disabled)
-		humanoid.PlayEmote = function(emoteName, emoteAsset)
-			local success = originalPlayEmote(humanoid, emoteName, emoteAsset)
-			if success then
-				-- Find the playing emote track
-				task.wait(0.1)
-				local emoteAnim = findCurrentEmote()
-				if emoteAnim then
-					lastEmoteAnim = emoteAnim
-				end
-			end
-			return success
-		end
-	end
-	
-	-- Keep emote playing while moving
-	local function keepEmotePlaying()
-		if not emoteWalkEnabled or not lastEmoteAnim then return end
-	
-		local character = localPlayer.Character
-		if not character then return end
-	
-		local humanoid = character:FindFirstChildWhichIsA("Humanoid")
-		if not animator then
-			animator = humanoid and humanoid:FindFirstChildOfClass("Animator")
-		end
-	
-		if not humanoid or not animator then return end
-	
-		-- Check if emote is still playing
-		local emotePlaying = false
-		for _, track in animator:GetPlayingAnimationTracks() do
-			if track.Animation == lastEmoteAnim then
-				emotePlaying = true
-				break
-			end
-		end
-	
-		-- If emote stopped but we're still enabled, replay it
-		if not emotePlaying then
-			if currentEmoteTrack then
-				currentEmoteTrack:Stop()
-			end
-			currentEmoteTrack = animator:LoadAnimation(lastEmoteAnim)
-			currentEmoteTrack:Play()
-		end
-	end
-	
-	-- Main loop to maintain emote
-	local emoteLoop = nil
-	
-	local function startEmoteWalk()
-		if emoteLoop then return end
-	
-		-- Check if there's already an emote playing when we enable
-		if not lastEmoteAnim then
-			lastEmoteAnim = findCurrentEmote()
-		end
-	
-		emoteLoop = RunService.Heartbeat:Connect(function()
-			keepEmotePlaying()
-		end)
-	end
-	
-	local function stopEmoteWalk()
-		if emoteLoop then
-			emoteLoop:Disconnect()
-			emoteLoop = nil
-		end
-	
-		if currentEmoteTrack then
-			currentEmoteTrack:Stop()
-			currentEmoteTrack = nil
-		end
-	
-		-- Don't clear lastEmoteAnim when disabling, so we can re-enable
-	end
-	
-	-- Toggle button
-	EmoteWalkToggle.MouseButton1Click:Connect(function()
-		emoteWalkEnabled = not emoteWalkEnabled
-	
-		if emoteWalkEnabled then
-			EmoteWalkToggle.Text = "ON"
-			EmoteWalkToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
-			startEmoteWalk()
-		else
-			EmoteWalkToggle.Text = "OFF"
-			EmoteWalkToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-			stopEmoteWalk()
-		end
-	end)
-	
-	-- Handle character spawns
-	if localPlayer.Character then
-		onCharacterAdded(localPlayer.Character)
-	end
-	localPlayer.CharacterAdded:Connect(onCharacterAdded)
-	
-	-- Cleanup when script is removed
-	script.Parent.AncestryChanged:Connect(function()
-		if not script:IsDescendantOf(game) then
-			stopEmoteWalk()
-		end
-	end)
-end
-coroutine.wrap(RBZJTS_fake_script)()
-local function AQPW_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(CLLF_fake_script)()
+local function QXTIJ_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -3817,8 +3642,8 @@ local function AQPW_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end)
 end
-coroutine.wrap(AQPW_fake_script)()
-local function LSSXKOY_fake_script() -- TouchFlingRow.TouchFlingScript 
+coroutine.wrap(QXTIJ_fake_script)()
+local function BIQRDQ_fake_script() -- TouchFlingRow.TouchFlingScript 
 	local script = Instance.new('LocalScript', TouchFlingRow)
 
 	local Players = game:GetService("Players")
@@ -3862,8 +3687,8 @@ local function LSSXKOY_fake_script() -- TouchFlingRow.TouchFlingScript
 		end
 	end)
 end
-coroutine.wrap(LSSXKOY_fake_script)()
-local function GYRLBJ_fake_script() -- BangRow.BangScript 
+coroutine.wrap(BIQRDQ_fake_script)()
+local function HYQFCTN_fake_script() -- BangRow.BangScript 
 	local script = Instance.new('LocalScript', BangRow)
 
 	local Players = game:GetService("Players")
@@ -3977,8 +3802,8 @@ local function GYRLBJ_fake_script() -- BangRow.BangScript
 		end
 	end)
 end
-coroutine.wrap(GYRLBJ_fake_script)()
-local function RHIZABZ_fake_script() -- OrbitRow.OrbitScript 
+coroutine.wrap(HYQFCTN_fake_script)()
+local function NUCPGLQ_fake_script() -- OrbitRow.OrbitScript 
 	local script = Instance.new('LocalScript', OrbitRow)
 
 	local Players = game:GetService("Players")
@@ -4068,8 +3893,8 @@ local function RHIZABZ_fake_script() -- OrbitRow.OrbitScript
 		end
 	end)
 end
-coroutine.wrap(RHIZABZ_fake_script)()
-local function YBPPOH_fake_script() -- HeadSitRow.HeadSitScript 
+coroutine.wrap(NUCPGLQ_fake_script)()
+local function SSTKM_fake_script() -- HeadSitRow.HeadSitScript 
 	local script = Instance.new('LocalScript', HeadSitRow)
 
 	local Players = game:GetService("Players")
@@ -4191,8 +4016,8 @@ local function YBPPOH_fake_script() -- HeadSitRow.HeadSitScript
 		end
 	end)
 end
-coroutine.wrap(YBPPOH_fake_script)()
-local function YBHSA_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(SSTKM_fake_script)()
+local function QTDDN_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -4415,4 +4240,4 @@ local function YBHSA_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(YBHSA_fake_script)()
+coroutine.wrap(QTDDN_fake_script)()

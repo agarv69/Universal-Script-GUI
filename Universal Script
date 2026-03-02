@@ -23,9 +23,6 @@ local GodModeToggle = Instance.new("TextButton")
 local InfJumpRow = Instance.new("Frame")
 local InfJumpLabel = Instance.new("TextLabel")
 local InfJumpToggle = Instance.new("TextButton")
-local TouchFlingRow = Instance.new("Frame")
-local TouchFlingLabel = Instance.new("TextLabel")
-local TouchFlingToggle = Instance.new("TextButton")
 local TeleportRow = Instance.new("Frame")
 local TeleportLabel = Instance.new("TextLabel")
 local TeleportButton = Instance.new("TextButton")
@@ -89,10 +86,24 @@ local ESPColorLabel = Instance.new("TextLabel")
 local ESPColorBtn = Instance.new("TextButton")
 local UIListLayout_3 = Instance.new("UIListLayout")
 local Page4 = Instance.new("Frame")
+local TouchFlingRow = Instance.new("Frame")
+local TouchFlingLabel = Instance.new("TextLabel")
+local TouchFlingToggle = Instance.new("TextButton")
 local BangRow = Instance.new("Frame")
 local BangUser = Instance.new("TextBox")
 local BangLabel = Instance.new("TextLabel")
 local BangToggle = Instance.new("TextButton")
+local UIListLayout_4 = Instance.new("UIListLayout")
+local OrbitRow = Instance.new("Frame")
+local OrbitUserBox = Instance.new("TextBox")
+local OrbitLabel = Instance.new("TextLabel")
+local OrbitToggle = Instance.new("TextButton")
+local OrbitSpeedBox = Instance.new("TextBox")
+local OrbitDistBox = Instance.new("TextBox")
+local HeadSitRow = Instance.new("Frame")
+local HeadSitUser = Instance.new("TextBox")
+local HeadSitLabel = Instance.new("TextLabel")
+local HeadSitToggle = Instance.new("TextButton")
 local BottomBar = Instance.new("Frame")
 local PageLabel = Instance.new("TextLabel")
 local NextBtn = Instance.new("TextButton")
@@ -172,6 +183,7 @@ Page1.BackgroundTransparency = 1.000
 Page1.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page1.BorderSizePixel = 0
 Page1.Size = UDim2.new(0, 200, 0, 354)
+Page1.Visible = false
 
 AntiFlingRow.Name = "AntiFlingRow"
 AntiFlingRow.Parent = Page1
@@ -298,37 +310,6 @@ InfJumpToggle.Text = "OFF"
 InfJumpToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
 InfJumpToggle.TextSize = 14.000
 
-TouchFlingRow.Name = "TouchFlingRow"
-TouchFlingRow.Parent = Page1
-TouchFlingRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TouchFlingRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingRow.BorderSizePixel = 0
-TouchFlingRow.Position = UDim2.new(0, 0, 0.138888896, 0)
-TouchFlingRow.Size = UDim2.new(0, 200, 0, 25)
-
-TouchFlingLabel.Name = "TouchFlingLabel"
-TouchFlingLabel.Parent = TouchFlingRow
-TouchFlingLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TouchFlingLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingLabel.BorderSizePixel = 0
-TouchFlingLabel.Size = UDim2.new(0, 125, 0, 25)
-TouchFlingLabel.Font = Enum.Font.SourceSans
-TouchFlingLabel.Text = "TOUCH FLING"
-TouchFlingLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingLabel.TextSize = 14.000
-
-TouchFlingToggle.Name = "TouchFlingToggle"
-TouchFlingToggle.Parent = TouchFlingRow
-TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-TouchFlingToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingToggle.BorderSizePixel = 0
-TouchFlingToggle.Position = UDim2.new(0.625, 0, 0, 0)
-TouchFlingToggle.Size = UDim2.new(0, 75, 0, 25)
-TouchFlingToggle.Font = Enum.Font.SourceSans
-TouchFlingToggle.Text = "OFF"
-TouchFlingToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingToggle.TextSize = 14.000
-
 TeleportRow.Name = "TeleportRow"
 TeleportRow.Parent = Page1
 TeleportRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -376,9 +357,11 @@ InvisLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
 InvisLabel.BorderSizePixel = 0
 InvisLabel.Size = UDim2.new(0, 125, 0, 25)
 InvisLabel.Font = Enum.Font.SourceSans
-InvisLabel.Text = "INVISIBLE"
+InvisLabel.Text = "INVISIBLE (adding it back soon)"
 InvisLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+InvisLabel.TextScaled = true
 InvisLabel.TextSize = 14.000
+InvisLabel.TextWrapped = true
 
 InvisToggle.Name = "InvisToggle"
 InvisToggle.Parent = InvisRow
@@ -956,13 +939,45 @@ Page4.BackgroundTransparency = 1.000
 Page4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Page4.BorderSizePixel = 0
 Page4.Size = UDim2.new(0, 200, 0, 406)
-Page4.Visible = false
+
+TouchFlingRow.Name = "TouchFlingRow"
+TouchFlingRow.Parent = Page4
+TouchFlingRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TouchFlingRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingRow.BorderSizePixel = 0
+TouchFlingRow.LayoutOrder = 1
+TouchFlingRow.Position = UDim2.new(0, 0, 0.138888896, 0)
+TouchFlingRow.Size = UDim2.new(0, 200, 0, 25)
+
+TouchFlingLabel.Name = "TouchFlingLabel"
+TouchFlingLabel.Parent = TouchFlingRow
+TouchFlingLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TouchFlingLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingLabel.BorderSizePixel = 0
+TouchFlingLabel.Size = UDim2.new(0, 125, 0, 25)
+TouchFlingLabel.Font = Enum.Font.SourceSans
+TouchFlingLabel.Text = "TOUCH FLING"
+TouchFlingLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingLabel.TextSize = 14.000
+
+TouchFlingToggle.Name = "TouchFlingToggle"
+TouchFlingToggle.Parent = TouchFlingRow
+TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+TouchFlingToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingToggle.BorderSizePixel = 0
+TouchFlingToggle.Position = UDim2.new(0.625, 0, 0, 0)
+TouchFlingToggle.Size = UDim2.new(0, 75, 0, 25)
+TouchFlingToggle.Font = Enum.Font.SourceSans
+TouchFlingToggle.Text = "OFF"
+TouchFlingToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+TouchFlingToggle.TextSize = 14.000
 
 BangRow.Name = "BangRow"
 BangRow.Parent = Page4
 BangRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 BangRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
 BangRow.BorderSizePixel = 0
+BangRow.LayoutOrder = 2
 BangRow.Size = UDim2.new(0, 200, 0, 25)
 
 BangUser.Name = "BangUser"
@@ -972,9 +987,9 @@ BangUser.BorderColor3 = Color3.fromRGB(0, 0, 0)
 BangUser.BorderSizePixel = 0
 BangUser.Size = UDim2.new(0, 60, 0, 25)
 BangUser.Font = Enum.Font.SourceSans
-BangUser.PlaceholderText = "Enter username..."
+BangUser.PlaceholderText = "Username"
 BangUser.Text = ""
-BangUser.TextColor3 = Color3.fromRGB(0, 0, 0)
+BangUser.TextColor3 = Color3.fromRGB(255, 255, 255)
 BangUser.TextScaled = true
 BangUser.TextSize = 14.000
 BangUser.TextWrapped = true
@@ -1002,6 +1017,131 @@ BangToggle.Font = Enum.Font.SourceSans
 BangToggle.Text = "OFF"
 BangToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
 BangToggle.TextSize = 14.000
+
+UIListLayout_4.Parent = Page4
+UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+
+OrbitRow.Name = "OrbitRow"
+OrbitRow.Parent = Page4
+OrbitRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OrbitRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OrbitRow.BorderSizePixel = 0
+OrbitRow.LayoutOrder = 10
+OrbitRow.Size = UDim2.new(0, 200, 0, 25)
+
+OrbitUserBox.Name = "OrbitUserBox"
+OrbitUserBox.Parent = OrbitRow
+OrbitUserBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
+OrbitUserBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OrbitUserBox.BorderSizePixel = 0
+OrbitUserBox.Size = UDim2.new(0, 40, 0, 25)
+OrbitUserBox.Font = Enum.Font.SourceSans
+OrbitUserBox.PlaceholderText = "Username"
+OrbitUserBox.Text = ""
+OrbitUserBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+OrbitUserBox.TextScaled = true
+OrbitUserBox.TextSize = 14.000
+OrbitUserBox.TextWrapped = true
+
+OrbitLabel.Name = "OrbitLabel"
+OrbitLabel.Parent = OrbitRow
+OrbitLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+OrbitLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OrbitLabel.BorderSizePixel = 0
+OrbitLabel.Position = UDim2.new(0.5, 0, 0, 0)
+OrbitLabel.Size = UDim2.new(0, 40, 0, 25)
+OrbitLabel.Font = Enum.Font.SourceSans
+OrbitLabel.Text = "ORBIT"
+OrbitLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+OrbitLabel.TextSize = 14.000
+
+OrbitToggle.Name = "OrbitToggle"
+OrbitToggle.Parent = OrbitRow
+OrbitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+OrbitToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OrbitToggle.BorderSizePixel = 0
+OrbitToggle.Position = UDim2.new(0.699999988, 0, 0, 0)
+OrbitToggle.Size = UDim2.new(0, 60, 0, 25)
+OrbitToggle.Font = Enum.Font.SourceSans
+OrbitToggle.Text = "OFF"
+OrbitToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+OrbitToggle.TextSize = 14.000
+
+OrbitSpeedBox.Name = "OrbitSpeedBox"
+OrbitSpeedBox.Parent = OrbitRow
+OrbitSpeedBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
+OrbitSpeedBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OrbitSpeedBox.BorderSizePixel = 0
+OrbitSpeedBox.Position = UDim2.new(0.200000003, 0, 0, 0)
+OrbitSpeedBox.Size = UDim2.new(0, 30, 0, 25)
+OrbitSpeedBox.Font = Enum.Font.SourceSans
+OrbitSpeedBox.PlaceholderText = "SPEED (1)"
+OrbitSpeedBox.Text = ""
+OrbitSpeedBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+OrbitSpeedBox.TextScaled = true
+OrbitSpeedBox.TextSize = 14.000
+OrbitSpeedBox.TextWrapped = true
+
+OrbitDistBox.Name = "OrbitDistBox"
+OrbitDistBox.Parent = OrbitRow
+OrbitDistBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
+OrbitDistBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OrbitDistBox.BorderSizePixel = 0
+OrbitDistBox.Position = UDim2.new(0.349999994, 0, 0, 0)
+OrbitDistBox.Size = UDim2.new(0, 30, 0, 25)
+OrbitDistBox.Font = Enum.Font.SourceSans
+OrbitDistBox.PlaceholderText = "DIST (5)"
+OrbitDistBox.Text = ""
+OrbitDistBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+OrbitDistBox.TextScaled = true
+OrbitDistBox.TextSize = 14.000
+OrbitDistBox.TextWrapped = true
+
+HeadSitRow.Name = "HeadSitRow"
+HeadSitRow.Parent = Page4
+HeadSitRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HeadSitRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HeadSitRow.BorderSizePixel = 0
+HeadSitRow.LayoutOrder = 3
+HeadSitRow.Size = UDim2.new(0, 200, 0, 25)
+
+HeadSitUser.Name = "HeadSitUser"
+HeadSitUser.Parent = HeadSitRow
+HeadSitUser.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
+HeadSitUser.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HeadSitUser.BorderSizePixel = 0
+HeadSitUser.Size = UDim2.new(0, 60, 0, 25)
+HeadSitUser.Font = Enum.Font.SourceSans
+HeadSitUser.PlaceholderText = "Username"
+HeadSitUser.Text = ""
+HeadSitUser.TextColor3 = Color3.fromRGB(255, 255, 255)
+HeadSitUser.TextScaled = true
+HeadSitUser.TextSize = 14.000
+HeadSitUser.TextWrapped = true
+
+HeadSitLabel.Name = "HeadSitLabel"
+HeadSitLabel.Parent = HeadSitRow
+HeadSitLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HeadSitLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HeadSitLabel.BorderSizePixel = 0
+HeadSitLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
+HeadSitLabel.Size = UDim2.new(0, 65, 0, 25)
+HeadSitLabel.Font = Enum.Font.SourceSans
+HeadSitLabel.Text = "HEAD SIT"
+HeadSitLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+HeadSitLabel.TextSize = 14.000
+
+HeadSitToggle.Name = "HeadSitToggle"
+HeadSitToggle.Parent = HeadSitRow
+HeadSitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+HeadSitToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+HeadSitToggle.BorderSizePixel = 0
+HeadSitToggle.Position = UDim2.new(0.625, 0, 0, 0)
+HeadSitToggle.Size = UDim2.new(0, 75, 0, 25)
+HeadSitToggle.Font = Enum.Font.SourceSans
+HeadSitToggle.Text = "OFF"
+HeadSitToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+HeadSitToggle.TextSize = 14.000
 
 BottomBar.Name = "BottomBar"
 BottomBar.Parent = MainFrame
@@ -1057,7 +1197,7 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function QRJAB_fake_script() -- ExploitGui.PageListButtonSetup 
+local function SYPXK_fake_script() -- ExploitGui.PageListButtonSetup 
 	local script = Instance.new('LocalScript', ExploitGui)
 
 	task.wait(1) -- Initial wait
@@ -1116,8 +1256,8 @@ local function QRJAB_fake_script() -- ExploitGui.PageListButtonSetup
 	setupButton()
 	
 end
-coroutine.wrap(QRJAB_fake_script)()
-local function YFVN_fake_script() -- TopBar.DragScript 
+coroutine.wrap(SYPXK_fake_script)()
+local function ZSTI_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -1125,8 +1265,8 @@ local function YFVN_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(YFVN_fake_script)()
-local function OVHCLY_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(ZSTI_fake_script)()
+local function QRUWJN_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -1147,8 +1287,8 @@ local function OVHCLY_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(OVHCLY_fake_script)()
-local function BILRW_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(QRUWJN_fake_script)()
+local function YBTQDKC_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1214,8 +1354,8 @@ local function BILRW_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(BILRW_fake_script)()
-local function ISPXWW_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(YBTQDKC_fake_script)()
+local function LDLN_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1298,8 +1438,8 @@ local function ISPXWW_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(ISPXWW_fake_script)()
-local function KMRPP_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(LDLN_fake_script)()
+local function JODP_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1409,8 +1549,8 @@ local function KMRPP_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(KMRPP_fake_script)()
-local function WBQZNU_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(JODP_fake_script)()
+local function YRPSHV_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1451,53 +1591,8 @@ local function WBQZNU_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(WBQZNU_fake_script)()
-local function IDVSV_fake_script() -- TouchFlingRow.TouchFlingScript 
-	local script = Instance.new('LocalScript', TouchFlingRow)
-
-	local Players = game:GetService("Players")
-	local RunService = game:GetService("RunService")
-	
-	local localPlayer = Players.LocalPlayer
-	local touchFlingEnabled = false
-	local TouchFlingToggle = script.Parent.TouchFlingToggle
-	
-	local function flingLoop()
-		while touchFlingEnabled do
-			RunService.Heartbeat:Wait()
-			local character = localPlayer.Character
-			local hrp = character and character:FindFirstChild("HumanoidRootPart")
-			if hrp then
-				local vel = hrp.Velocity
-				hrp.Velocity = vel * 999999999999 + Vector3.new(0, 999999999999, 0)
-				RunService.RenderStepped:Wait()
-				hrp.Velocity = vel
-				RunService.Stepped:Wait()
-				hrp.Velocity = vel + Vector3.new(0, 0.1, 0)
-			end
-		end
-	end
-	
-	TouchFlingToggle.MouseButton1Click:Connect(function()
-		touchFlingEnabled = not touchFlingEnabled
-		if touchFlingEnabled then
-			TouchFlingToggle.Text = "ON"
-			TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
-			coroutine.wrap(flingLoop)()
-		else
-			TouchFlingToggle.Text = "OFF"
-			TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-		end
-	end)
-	
-	script.Parent.AncestryChanged:Connect(function()
-		if not script:IsDescendantOf(game) then
-			touchFlingEnabled = false
-		end
-	end)
-end
-coroutine.wrap(IDVSV_fake_script)()
-local function QLSUZUM_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(YRPSHV_fake_script)()
+local function DSQFHEZ_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1782,172 +1877,8 @@ local function QLSUZUM_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(QLSUZUM_fake_script)()
-local function JYJUKIF_fake_script() -- InvisRow.InvisScript 
-	local script = Instance.new('LocalScript', InvisRow)
-
-	local Players = game:GetService("Players")
-	local RunService = game:GetService("RunService")
-	local Lighting = game:GetService("Lighting")
-	local StarterGui = game:GetService("StarterGui")
-	
-	local Player = Players.LocalPlayer
-	local InvisToggle = script.Parent.InvisToggle
-	
-	local invisRunning = false
-	local IsInvis = false
-	local invisFix = nil
-	local invisDied = nil
-	local InvisibleCharacter = nil
-	local Character = nil
-	
-	local function fixMobileControls()
-		pcall(function()
-			StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, false)
-		end)
-		task.wait(0.15)
-		pcall(function()
-			StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.All, true)
-		end)
-	end
-	
-	local function fixCam()
-		pcall(function()
-			workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
-			task.wait(0.1)
-			workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
-			workspace.CurrentCamera.CameraSubject = Player.Character:FindFirstChildWhichIsA("Humanoid")
-		end)
-	end
-	
-	local function TurnVisible()
-		if not IsInvis then return end
-		if invisFix then invisFix:Disconnect() invisFix = nil end
-		if invisDied then invisDied:Disconnect() invisDied = nil end
-	
-		pcall(function()
-			local CF_1 = Player.Character.Humanoid.RootPart.CFrame
-			Character.Humanoid.RootPart.CFrame = CF_1
-			InvisibleCharacter:Destroy()
-			InvisibleCharacter = nil
-			Player.Character = Character
-			Character.Parent = workspace
-			IsInvis = false
-			Player.Character.Animate.Disabled = true
-			Player.Character.Animate.Disabled = false
-		end)
-	
-		task.wait(0.1)
-		fixCam()
-		task.wait(0.1)
-		fixMobileControls()
-	
-		invisRunning = false
-		IsInvis = false
-		InvisToggle.Text = "OFF"
-		InvisToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	end
-	
-	local function Respawn()
-		if invisFix then invisFix:Disconnect() invisFix = nil end
-		if invisDied then invisDied:Disconnect() invisDied = nil end
-		pcall(function()
-			Player.Character = Character
-			task.wait(0.1)
-			Character.Parent = workspace
-			Character:FindFirstChildWhichIsA("Humanoid"):Destroy()
-			if InvisibleCharacter then
-				InvisibleCharacter.Parent = nil
-				InvisibleCharacter = nil
-			end
-		end)
-		task.wait(0.2)
-		fixMobileControls()
-		IsInvis = false
-		invisRunning = false
-		InvisToggle.Text = "OFF"
-		InvisToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	end
-	
-	local function TurnInvisible()
-		if invisRunning then return end
-		invisRunning = true
-	
-		repeat task.wait(0.1) until Player.Character
-		Character = Player.Character
-		Character.Archivable = true
-	
-		InvisibleCharacter = Character:Clone()
-		InvisibleCharacter.Name = ""
-		InvisibleCharacter.Parent = Lighting
-	
-		for _, v in pairs(InvisibleCharacter:GetDescendants()) do
-			if v:IsA("BasePart") then
-				v.Transparency = v.Name == "HumanoidRootPart" and 1 or 0.5
-			end
-		end
-	
-		local Void = workspace.FallenPartsDestroyHeight
-		invisFix = RunService.Stepped:Connect(function()
-			pcall(function()
-				local IsInteger = tostring(Void):find("-") ~= nil
-				local Y = Player.Character.Humanoid.RootPart.Position.Y
-				if (IsInteger and Y <= Void) or (not IsInteger and Y >= Void) then
-					Respawn()
-				end
-			end)
-		end)
-	
-		invisDied = InvisibleCharacter:FindFirstChildOfClass("Humanoid").Died:Connect(function()
-			Respawn()
-			invisDied:Disconnect()
-		end)
-	
-		local CF_1 = Character.Humanoid.RootPart.CFrame
-		Character:MoveTo(Vector3.new(0, math.pi * 1000000, 0))
-	
-		-- exactly like original: scriptable then custom
-		workspace.CurrentCamera.CameraType = Enum.CameraType.Scriptable
-		task.wait(0.2)
-		workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
-	
-		Character.Parent = Lighting
-		InvisibleCharacter.Parent = workspace
-		InvisibleCharacter.Humanoid.RootPart.CFrame = CF_1
-		Player.Character = InvisibleCharacter
-	
-		-- fix cam like original execCmd('fixcam')
-		fixCam()
-	
-		Player.Character.Animate.Disabled = true
-		Player.Character.Animate.Disabled = false
-	
-		task.wait(0.2)
-		fixMobileControls()
-	
-		IsInvis = true
-		InvisToggle.Text = "ON"
-		InvisToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
-	end
-	
-	InvisToggle.MouseButton1Click:Connect(function()
-		if IsInvis then
-			TurnVisible()
-		else
-			TurnInvisible()
-		end
-	end)
-	
-	script.Parent.AncestryChanged:Connect(function()
-		if not script:IsDescendantOf(game) then
-			pcall(TurnVisible)
-			if invisFix then invisFix:Disconnect() end
-			if invisDied then invisDied:Disconnect() end
-		end
-	end)
-end
-coroutine.wrap(JYJUKIF_fake_script)()
-local function EZOUD_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(DSQFHEZ_fake_script)()
+local function GWIAVWQ_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -2004,8 +1935,8 @@ local function EZOUD_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(EZOUD_fake_script)()
-local function CUDW_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(GWIAVWQ_fake_script)()
+local function NYLBJF_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -2187,8 +2118,8 @@ local function CUDW_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(CUDW_fake_script)()
-local function XAFFME_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(NYLBJF_fake_script)()
+local function KLIRN_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2268,8 +2199,8 @@ local function XAFFME_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(XAFFME_fake_script)()
-local function CYKEDCK_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(KLIRN_fake_script)()
+local function ZSOY_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -2353,8 +2284,8 @@ local function CYKEDCK_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(CYKEDCK_fake_script)()
-local function NBLF_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(ZSOY_fake_script)()
+local function WGLIY_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2440,8 +2371,8 @@ local function NBLF_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(NBLF_fake_script)()
-local function AZDAAZF_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(WGLIY_fake_script)()
+local function WBQBXQR_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2774,8 +2705,8 @@ local function AZDAAZF_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(AZDAAZF_fake_script)()
-local function JDYI_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(WBQBXQR_fake_script)()
+local function SDTPP_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2837,8 +2768,8 @@ local function JDYI_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(JDYI_fake_script)()
-local function TYAOPXJ_fake_script() -- GravityRow.GravityScript 
+coroutine.wrap(SDTPP_fake_script)()
+local function TKUTGAW_fake_script() -- GravityRow.GravityScript 
 	local script = Instance.new('LocalScript', GravityRow)
 
 	local Players = game:GetService("Players")
@@ -2924,8 +2855,8 @@ local function TYAOPXJ_fake_script() -- GravityRow.GravityScript
 		end
 	end)
 end
-coroutine.wrap(TYAOPXJ_fake_script)()
-local function JARFQSQ_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(TKUTGAW_fake_script)()
+local function XPOOHGI_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -3711,8 +3642,53 @@ local function JARFQSQ_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end)
 end
-coroutine.wrap(JARFQSQ_fake_script)()
-local function FGKKYRO_fake_script() -- BangRow.BangScript 
+coroutine.wrap(XPOOHGI_fake_script)()
+local function TLCOUGS_fake_script() -- TouchFlingRow.TouchFlingScript 
+	local script = Instance.new('LocalScript', TouchFlingRow)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	
+	local localPlayer = Players.LocalPlayer
+	local touchFlingEnabled = false
+	local TouchFlingToggle = script.Parent.TouchFlingToggle
+	
+	local function flingLoop()
+		while touchFlingEnabled do
+			RunService.Heartbeat:Wait()
+			local character = localPlayer.Character
+			local hrp = character and character:FindFirstChild("HumanoidRootPart")
+			if hrp then
+				local vel = hrp.Velocity
+				hrp.Velocity = vel * 999999999999 + Vector3.new(0, 999999999999, 0)
+				RunService.RenderStepped:Wait()
+				hrp.Velocity = vel
+				RunService.Stepped:Wait()
+				hrp.Velocity = vel + Vector3.new(0, 0.1, 0)
+			end
+		end
+	end
+	
+	TouchFlingToggle.MouseButton1Click:Connect(function()
+		touchFlingEnabled = not touchFlingEnabled
+		if touchFlingEnabled then
+			TouchFlingToggle.Text = "ON"
+			TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+			coroutine.wrap(flingLoop)()
+		else
+			TouchFlingToggle.Text = "OFF"
+			TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		end
+	end)
+	
+	script.Parent.AncestryChanged:Connect(function()
+		if not script:IsDescendantOf(game) then
+			touchFlingEnabled = false
+		end
+	end)
+end
+coroutine.wrap(TLCOUGS_fake_script)()
+local function YAXE_fake_script() -- BangRow.BangScript 
 	local script = Instance.new('LocalScript', BangRow)
 
 	local Players = game:GetService("Players")
@@ -3826,8 +3802,212 @@ local function FGKKYRO_fake_script() -- BangRow.BangScript
 		end
 	end)
 end
-coroutine.wrap(FGKKYRO_fake_script)()
-local function GQTTG_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(YAXE_fake_script)()
+local function OKNRFZR_fake_script() -- OrbitRow.OrbitScript 
+	local script = Instance.new('LocalScript', OrbitRow)
+
+	local Players = game:GetService("Players")
+	local RunService = game:GetService("RunService")
+	local localPlayer = Players.LocalPlayer
+	
+	local OrbitToggle = script.Parent.OrbitToggle
+	local OrbitUserBox = script.Parent.OrbitUserBox
+	local OrbitSpeedBox = script.Parent.OrbitSpeedBox
+	local OrbitDistBox = script.Parent.OrbitDistBox
+	
+	local orbitEnabled = false
+	local orbitLoop = nil
+	local angle = 0
+	
+	local function findPlayer(input)
+		input = input:lower()
+		for _, player in pairs(Players:GetPlayers()) do
+			if player ~= localPlayer then
+				if player.Name:lower():find(input) or player.DisplayName:lower():find(input) then
+					return player
+				end
+			end
+		end
+		return nil
+	end
+	
+	local function stopOrbit()
+		if orbitLoop then
+			orbitLoop:Disconnect()
+			orbitLoop = nil
+		end
+		angle = 0
+	end
+	
+	local function startOrbit(target, speed, distance)
+		stopOrbit()
+		orbitLoop = RunService.Stepped:Connect(function(_, dt)
+			pcall(function()
+				local myRoot = localPlayer.Character and localPlayer.Character:FindFirstChild("HumanoidRootPart")
+				local targetRoot = target.Character and target.Character:FindFirstChild("HumanoidRootPart")
+				if not myRoot or not targetRoot then return end
+	
+				angle = angle + (speed * dt)
+				local x = targetRoot.Position.X + distance * math.cos(angle)
+				local z = targetRoot.Position.Z + distance * math.sin(angle)
+				local y = targetRoot.Position.Y
+	
+				myRoot.CFrame = CFrame.new(Vector3.new(x, y, z), targetRoot.Position)
+			end)
+		end)
+	end
+	
+	OrbitToggle.MouseButton1Click:Connect(function()
+		orbitEnabled = not orbitEnabled
+		if orbitEnabled then
+			local input = OrbitUserBox.Text
+			local speed = tonumber(OrbitSpeedBox.Text) or 1
+			local distance = tonumber(OrbitDistBox.Text) or 5
+	
+			if input and input ~= "" then
+				local target = findPlayer(input)
+				if target then
+					OrbitToggle.Text = "ON"
+					OrbitToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+					startOrbit(target, speed, distance)
+				else
+					orbitEnabled = false
+					OrbitToggle.Text = "OFF"
+					OrbitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+				end
+			else
+				orbitEnabled = false
+				OrbitToggle.Text = "OFF"
+				OrbitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			end
+		else
+			OrbitToggle.Text = "OFF"
+			OrbitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			stopOrbit()
+		end
+	end)
+	
+	script.Parent.AncestryChanged:Connect(function()
+		if not script:IsDescendantOf(game) then
+			stopOrbit()
+		end
+	end)
+end
+coroutine.wrap(OKNRFZR_fake_script)()
+local function CMYAUL_fake_script() -- HeadSitRow.HeadSitScript 
+	local script = Instance.new('LocalScript', HeadSitRow)
+
+	local Players = game:GetService("Players")
+	local localPlayer = Players.LocalPlayer
+	
+	local HeadSitToggle = script.Parent.HeadSitToggle
+	local HeadSitUser = script.Parent.HeadSitUser
+	
+	local sitEnabled = false
+	local weld = nil
+	local sitAnim = nil
+	local sitTrack = nil
+	
+	local function findPlayer(input)
+		input = input:lower()
+		for _, player in pairs(Players:GetPlayers()) do
+			if player ~= localPlayer then
+				if player.Name:lower():find(input) or player.DisplayName:lower():find(input) then
+					return player
+				end
+			end
+		end
+		return nil
+	end
+	
+	local function stopSit()
+		if sitTrack then
+			sitTrack:Stop()
+			sitTrack = nil
+		end
+		if sitAnim then
+			sitAnim:Destroy()
+			sitAnim = nil
+		end
+		if weld then
+			weld:Destroy()
+			weld = nil
+		end
+		pcall(function()
+			local root = localPlayer.Character and localPlayer.Character:FindFirstChild("HumanoidRootPart")
+			if root then
+				root.Anchored = false
+			end
+			local hum = localPlayer.Character and localPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+			if hum then
+				hum.PlatformStand = false
+			end
+		end)
+	end
+	
+	local function startSit(target)
+		stopSit()
+	
+		local myChar = localPlayer.Character
+		local targetChar = target.Character
+		if not myChar or not targetChar then return end
+	
+		local myRoot = myChar:FindFirstChild("HumanoidRootPart")
+		local targetHead = targetChar:FindFirstChild("Head")
+		local myHum = myChar:FindFirstChildWhichIsA("Humanoid")
+	
+		if not myRoot or not targetHead or not myHum then return end
+	
+		myHum.PlatformStand = true
+	
+		weld = Instance.new("WeldConstraint")
+		weld.Part0 = myRoot
+		weld.Part1 = targetHead
+		weld.Parent = myRoot
+	
+		myRoot.CFrame = targetHead.CFrame * CFrame.new(0, 2, 0)
+	
+		sitAnim = Instance.new("Animation")
+		sitAnim.AnimationId = "rbxassetid://2506281703"
+		sitTrack = myHum:LoadAnimation(sitAnim)
+		sitTrack:Play()
+	end
+	
+	HeadSitToggle.MouseButton1Click:Connect(function()
+		sitEnabled = not sitEnabled
+		if sitEnabled then
+			local input = HeadSitUser.Text
+			if input and input ~= "" then
+				local target = findPlayer(input)
+				if target then
+					HeadSitToggle.Text = "ON"
+					HeadSitToggle.BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+					startSit(target)
+				else
+					sitEnabled = false
+					HeadSitToggle.Text = "OFF"
+					HeadSitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+				end
+			else
+				sitEnabled = false
+				HeadSitToggle.Text = "OFF"
+				HeadSitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			end
+		else
+			HeadSitToggle.Text = "OFF"
+			HeadSitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+			stopSit()
+		end
+	end)
+	
+	script.Parent.AncestryChanged:Connect(function()
+		if not script:IsDescendantOf(game) then
+			stopSit()
+		end
+	end)
+end
+coroutine.wrap(CMYAUL_fake_script)()
+local function FYJFL_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -4050,4 +4230,4 @@ local function GQTTG_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(GQTTG_fake_script)()
+coroutine.wrap(FYJFL_fake_script)()

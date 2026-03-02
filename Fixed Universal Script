@@ -1,1205 +1,1636 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local ExploitGui = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local TopBar = Instance.new("Frame")
-local CloseBtn = Instance.new("TextButton")
-local MinimizeBtn = Instance.new("TextButton")
-local TitleLabel = Instance.new("TextLabel")
-local ContentFrame = Instance.new("ScrollingFrame")
-local Page1 = Instance.new("Frame")
-local AntiFlingRow = Instance.new("Frame")
-local AntiFlingLabel = Instance.new("TextLabel")
-local AntiFlingToggle = Instance.new("TextButton")
-local NoclipRow = Instance.new("Frame")
-local NoclipToggle = Instance.new("TextButton")
-local NoclipLabel = Instance.new("TextLabel")
-local GodModeRow = Instance.new("Frame")
-local GodModeBtn = Instance.new("TextLabel")
-local GodModeToggle = Instance.new("TextButton")
-local InfJumpRow = Instance.new("Frame")
-local InfJumpLabel = Instance.new("TextLabel")
-local InfJumpToggle = Instance.new("TextButton")
-local TeleportRow = Instance.new("Frame")
-local TeleportLabel = Instance.new("TextLabel")
-local TeleportButton = Instance.new("TextButton")
-local UIListLayout = Instance.new("UIListLayout")
-local InvisRow = Instance.new("Frame")
-local InvisLabel = Instance.new("TextLabel")
-local InvisToggle = Instance.new("TextButton")
-local Page2 = Instance.new("Frame")
-local RespawnRow = Instance.new("Frame")
-local RespawnBtn = Instance.new("TextButton")
-local FlyRow = Instance.new("Frame")
-local FlyLabel = Instance.new("TextLabel")
-local FlyToggle = Instance.new("TextButton")
-local SpeedBox = Instance.new("TextBox")
-local SpeedRow = Instance.new("Frame")
-local SpeedLabel = Instance.new("TextLabel")
-local SpeedBox_2 = Instance.new("TextBox")
-local SpeedToggle = Instance.new("TextButton")
-local JumpPowerRow = Instance.new("Frame")
-local JumpPowerToggle = Instance.new("TextButton")
-local JumpPowerLabel = Instance.new("TextLabel")
-local JumpPowerBox = Instance.new("TextBox")
-local AnimSpeedRow = Instance.new("Frame")
-local AnimSpeedLabel = Instance.new("TextLabel")
-local AnimSpeedToggle = Instance.new("TextButton")
-local AnimSpeedBox = Instance.new("TextBox")
-local SaveRow = Instance.new("Frame")
-local SaveLabel = Instance.new("TextLabel")
-local SaveToggle = Instance.new("TextButton")
-local RejoinRow = Instance.new("Frame")
-local RejoinBtn = Instance.new("TextButton")
-local GravityRow = Instance.new("Frame")
-local GravityLabel = Instance.new("TextLabel")
-local GravityBox = Instance.new("TextBox")
-local GravityToggle = Instance.new("TextButton")
-local UIListLayout_2 = Instance.new("UIListLayout")
-local Page3 = Instance.new("Frame")
-local ESPNameRow = Instance.new("Frame")
-local ESPNameLabel = Instance.new("TextLabel")
-local ESPNameToggle = Instance.new("TextButton")
-local ESPHealthRow = Instance.new("Frame")
-local ESPHealthLabel = Instance.new("TextLabel")
-local ESPHealthToggle = Instance.new("TextButton")
-local ESPHighlightRow = Instance.new("Frame")
-local ESPHighlightLabel = Instance.new("TextLabel")
-local ESPHighlightToggle = Instance.new("TextButton")
-local ESPDistanceRow = Instance.new("Frame")
-local ESPDistanceToggle = Instance.new("TextButton")
-local ESPDistanceLabel = Instance.new("TextLabel")
-local ESPBoxesRow = Instance.new("Frame")
-local ESPBoxesLabel = Instance.new("TextLabel")
-local ESPBoxesToggle = Instance.new("TextButton")
-local ESPToggleRow = Instance.new("Frame")
-local ESPToggleLabel = Instance.new("TextLabel")
-local ESPToggleToggle = Instance.new("TextButton")
-local ESPTracerRow = Instance.new("Frame")
-local ESPTracerLabel = Instance.new("TextLabel")
-local ESPTracerToggle = Instance.new("TextButton")
-local ESPColorRow = Instance.new("Frame")
-local ESPColorLabel = Instance.new("TextLabel")
-local ESPColorBtn = Instance.new("TextButton")
-local UIListLayout_3 = Instance.new("UIListLayout")
-local Page4 = Instance.new("Frame")
-local TouchFlingRow = Instance.new("Frame")
-local TouchFlingLabel = Instance.new("TextLabel")
-local TouchFlingToggle = Instance.new("TextButton")
-local BangRow = Instance.new("Frame")
-local BangUser = Instance.new("TextBox")
-local BangLabel = Instance.new("TextLabel")
-local BangToggle = Instance.new("TextButton")
-local UIListLayout_4 = Instance.new("UIListLayout")
-local OrbitRow = Instance.new("Frame")
-local OrbitUserBox = Instance.new("TextBox")
-local OrbitLabel = Instance.new("TextLabel")
-local OrbitToggle = Instance.new("TextButton")
-local OrbitSpeedBox = Instance.new("TextBox")
-local OrbitDistBox = Instance.new("TextBox")
-local HeadSitRow = Instance.new("Frame")
-local HeadSitUser = Instance.new("TextBox")
-local HeadSitLabel = Instance.new("TextLabel")
-local HeadSitToggle = Instance.new("TextButton")
-local BottomBar = Instance.new("Frame")
-local PageLabel = Instance.new("TextLabel")
-local NextBtn = Instance.new("TextButton")
-local PrevBtn = Instance.new("TextButton")
-local PageListBtn = Instance.new("TextButton")
-
---Properties:
-
-ExploitGui.Name = "ExploitGui"
-ExploitGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ExploitGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ExploitGui.DisplayOrder = 10000
-ExploitGui.ResetOnSpawn = false
-
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = ExploitGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MainFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MainFrame.BorderSizePixel = 0
-MainFrame.Position = UDim2.new(0, 115, 0, 208)
-MainFrame.Size = UDim2.new(0, 200, 0, 270)
-
-TopBar.Name = "TopBar"
-TopBar.Parent = MainFrame
-TopBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-TopBar.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TopBar.Size = UDim2.new(0, 200, 0, 25)
-
-CloseBtn.Name = "CloseBtn"
-CloseBtn.Parent = TopBar
-CloseBtn.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-CloseBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-CloseBtn.BorderSizePixel = 0
-CloseBtn.Size = UDim2.new(0, 25, 0, 25)
-CloseBtn.Font = Enum.Font.SourceSans
-CloseBtn.Text = "X"
-CloseBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-CloseBtn.TextSize = 20.000
-
-MinimizeBtn.Name = "MinimizeBtn"
-MinimizeBtn.Parent = TopBar
-MinimizeBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-MinimizeBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-MinimizeBtn.BorderSizePixel = 0
-MinimizeBtn.Position = UDim2.new(0.875, 0, 0, 0)
-MinimizeBtn.Size = UDim2.new(0, 25, 0, 25)
-MinimizeBtn.Font = Enum.Font.SourceSans
-MinimizeBtn.Text = "-"
-MinimizeBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-MinimizeBtn.TextSize = 23.000
-
-TitleLabel.Name = "TitleLabel"
-TitleLabel.Parent = TopBar
-TitleLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TitleLabel.BackgroundTransparency = 1.000
-TitleLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TitleLabel.BorderSizePixel = 0
-TitleLabel.Position = UDim2.new(0.125, 0, 0, 0)
-TitleLabel.Size = UDim2.new(0, 150, 0, 25)
-TitleLabel.Font = Enum.Font.SourceSans
-TitleLabel.Text = "UNIVERSIAL SCRIPT GUI"
-TitleLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TitleLabel.TextSize = 14.000
-
-ContentFrame.Name = "ContentFrame"
-ContentFrame.Parent = MainFrame
-ContentFrame.Active = true
-ContentFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-ContentFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-ContentFrame.Position = UDim2.new(0, 0, 0.088888891, 0)
-ContentFrame.Size = UDim2.new(0, 200, 0, 220)
-
-Page1.Name = "Page1"
-Page1.Parent = ContentFrame
-Page1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Page1.BackgroundTransparency = 1.000
-Page1.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Page1.BorderSizePixel = 0
-Page1.Size = UDim2.new(0, 200, 0, 354)
-Page1.Visible = false
-
-AntiFlingRow.Name = "AntiFlingRow"
-AntiFlingRow.Parent = Page1
-AntiFlingRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-AntiFlingRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AntiFlingRow.BorderSizePixel = 0
-AntiFlingRow.Position = UDim2.new(0, 0, 0.185185179, 0)
-AntiFlingRow.Size = UDim2.new(0, 200, 0, 25)
-
-AntiFlingLabel.Name = "AntiFlingLabel"
-AntiFlingLabel.Parent = AntiFlingRow
-AntiFlingLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-AntiFlingLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AntiFlingLabel.BorderSizePixel = 0
-AntiFlingLabel.Size = UDim2.new(0, 125, 0, 25)
-AntiFlingLabel.Font = Enum.Font.SourceSans
-AntiFlingLabel.Text = "ANTI FLING"
-AntiFlingLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-AntiFlingLabel.TextSize = 14.000
-
-AntiFlingToggle.Name = "AntiFlingToggle"
-AntiFlingToggle.Parent = AntiFlingRow
-AntiFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-AntiFlingToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AntiFlingToggle.BorderSizePixel = 0
-AntiFlingToggle.Position = UDim2.new(0.625, 0, 0, 0)
-AntiFlingToggle.Size = UDim2.new(0, 75, 0, 25)
-AntiFlingToggle.Font = Enum.Font.SourceSans
-AntiFlingToggle.Text = "OFF"
-AntiFlingToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-AntiFlingToggle.TextSize = 14.000
-
-NoclipRow.Name = "NoclipRow"
-NoclipRow.Parent = Page1
-NoclipRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-NoclipRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NoclipRow.BorderSizePixel = 0
-NoclipRow.Position = UDim2.new(0, 0, 0.185185179, 0)
-NoclipRow.Size = UDim2.new(0, 200, 0, 25)
-
-NoclipToggle.Name = "NoclipToggle"
-NoclipToggle.Parent = NoclipRow
-NoclipToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-NoclipToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NoclipToggle.BorderSizePixel = 0
-NoclipToggle.Position = UDim2.new(0.625, 0, 0, 0)
-NoclipToggle.Size = UDim2.new(0, 75, 0, 25)
-NoclipToggle.Font = Enum.Font.SourceSans
-NoclipToggle.Text = "OFF"
-NoclipToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-NoclipToggle.TextSize = 14.000
-
-NoclipLabel.Name = "NoclipLabel"
-NoclipLabel.Parent = NoclipRow
-NoclipLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-NoclipLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-NoclipLabel.BorderSizePixel = 0
-NoclipLabel.Size = UDim2.new(0, 125, 0, 25)
-NoclipLabel.Font = Enum.Font.SourceSans
-NoclipLabel.Text = "NOCLIP"
-NoclipLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-NoclipLabel.TextSize = 14.000
-
-GodModeRow.Name = "GodModeRow"
-GodModeRow.Parent = Page1
-GodModeRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GodModeRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GodModeRow.BorderSizePixel = 0
-GodModeRow.Size = UDim2.new(0, 200, 0, 25)
-
-GodModeBtn.Name = "GodModeBtn"
-GodModeBtn.Parent = GodModeRow
-GodModeBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GodModeBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GodModeBtn.BorderSizePixel = 0
-GodModeBtn.Position = UDim2.new(0, 0, -0.00571044907, 0)
-GodModeBtn.Size = UDim2.new(0, 125, 0, 25)
-GodModeBtn.Font = Enum.Font.SourceSans
-GodModeBtn.Text = "GOD MODE"
-GodModeBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-GodModeBtn.TextSize = 14.000
-
-GodModeToggle.Name = "GodModeToggle"
-GodModeToggle.Parent = GodModeRow
-GodModeToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GodModeToggle.BorderColor3 = Color3.fromRGB(255, 255, 255)
-GodModeToggle.BorderSizePixel = 0
-GodModeToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-GodModeToggle.Size = UDim2.new(0, 75, 0, 25)
-GodModeToggle.Font = Enum.Font.SourceSans
-GodModeToggle.Text = "OFF"
-GodModeToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-GodModeToggle.TextSize = 14.000
-
-InfJumpRow.Name = "InfJumpRow"
-InfJumpRow.Parent = Page1
-InfJumpRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-InfJumpRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InfJumpRow.BorderSizePixel = 0
-InfJumpRow.Position = UDim2.new(0, 0, 0.115993246, 0)
-InfJumpRow.Size = UDim2.new(0, 200, 0, 25)
-
-InfJumpLabel.Name = "InfJumpLabel"
-InfJumpLabel.Parent = InfJumpRow
-InfJumpLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-InfJumpLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InfJumpLabel.BorderSizePixel = 0
-InfJumpLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-InfJumpLabel.Size = UDim2.new(0, 125, 0, 25)
-InfJumpLabel.Font = Enum.Font.SourceSans
-InfJumpLabel.Text = "INF JUMP"
-InfJumpLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-InfJumpLabel.TextSize = 14.000
-
-InfJumpToggle.Name = "InfJumpToggle"
-InfJumpToggle.Parent = InfJumpRow
-InfJumpToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-InfJumpToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InfJumpToggle.BorderSizePixel = 0
-InfJumpToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-InfJumpToggle.Size = UDim2.new(0, 75, 0, 25)
-InfJumpToggle.Font = Enum.Font.SourceSans
-InfJumpToggle.Text = "OFF"
-InfJumpToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-InfJumpToggle.TextSize = 14.000
-
-TeleportRow.Name = "TeleportRow"
-TeleportRow.Parent = Page1
-TeleportRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TeleportRow.BorderSizePixel = 0
-TeleportRow.LayoutOrder = 6
-TeleportRow.Size = UDim2.new(0, 200, 0, 25)
-
-TeleportLabel.Name = "TeleportLabel"
-TeleportLabel.Parent = TeleportRow
-TeleportLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TeleportLabel.BorderSizePixel = 0
-TeleportLabel.Size = UDim2.new(0, 125, 0, 25)
-TeleportLabel.Font = Enum.Font.SourceSans
-TeleportLabel.Text = "TELEPORT TO PLAYER"
-TeleportLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TeleportLabel.TextSize = 14.000
-
-TeleportButton.Name = "TeleportButton"
-TeleportButton.Parent = TeleportRow
-TeleportButton.BackgroundColor3 = Color3.fromRGB(127, 127, 127)
-TeleportButton.BorderSizePixel = 0
-TeleportButton.Position = UDim2.new(0.625, 0, 0, 0)
-TeleportButton.Size = UDim2.new(0, 75, 0, 25)
-TeleportButton.Font = Enum.Font.SourceSans
-TeleportButton.Text = "SELECT PLAYER"
-TeleportButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TeleportButton.TextSize = 14.000
-TeleportButton.TextWrapped = true
-
-UIListLayout.Parent = Page1
-UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
-InvisRow.Name = "InvisRow"
-InvisRow.Parent = Page1
-InvisRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-InvisRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InvisRow.BorderSizePixel = 0
-InvisRow.Position = UDim2.new(0, 0, 0.353107333, 0)
-InvisRow.Size = UDim2.new(0, 200, 0, 25)
-
-InvisLabel.Name = "InvisLabel"
-InvisLabel.Parent = InvisRow
-InvisLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-InvisLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InvisLabel.BorderSizePixel = 0
-InvisLabel.Size = UDim2.new(0, 125, 0, 25)
-InvisLabel.Font = Enum.Font.SourceSans
-InvisLabel.Text = "INVISIBLE (adding it back soon)"
-InvisLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-InvisLabel.TextScaled = true
-InvisLabel.TextSize = 14.000
-InvisLabel.TextWrapped = true
-
-InvisToggle.Name = "InvisToggle"
-InvisToggle.Parent = InvisRow
-InvisToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-InvisToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-InvisToggle.BorderSizePixel = 0
-InvisToggle.Position = UDim2.new(0.625, 0, 0, 0)
-InvisToggle.Size = UDim2.new(0, 75, 0, 25)
-InvisToggle.Font = Enum.Font.SourceSans
-InvisToggle.Text = "OFF"
-InvisToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-InvisToggle.TextSize = 14.000
-
-Page2.Name = "Page2"
-Page2.Parent = ContentFrame
-Page2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Page2.BackgroundTransparency = 1.000
-Page2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Page2.BorderSizePixel = 0
-Page2.Size = UDim2.new(0, 200, 0, 339)
-Page2.Visible = false
-
-RespawnRow.Name = "RespawnRow"
-RespawnRow.Parent = Page2
-RespawnRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-RespawnRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-RespawnRow.BorderSizePixel = 0
-RespawnRow.Position = UDim2.new(0, 0, 0.147492632, 0)
-RespawnRow.Size = UDim2.new(0, 200, 0, 25)
-
-RespawnBtn.Name = "RespawnBtn"
-RespawnBtn.Parent = RespawnRow
-RespawnBtn.BackgroundColor3 = Color3.fromRGB(134, 0, 0)
-RespawnBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
-RespawnBtn.BorderSizePixel = 0
-RespawnBtn.Size = UDim2.new(0, 200, 0, 25)
-RespawnBtn.Font = Enum.Font.SourceSans
-RespawnBtn.Text = "RESPAWN CHARACTER"
-RespawnBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-RespawnBtn.TextSize = 14.000
-RespawnBtn.TextWrapped = true
-
-FlyRow.Name = "FlyRow"
-FlyRow.Parent = Page2
-FlyRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-FlyRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-FlyRow.BorderSizePixel = 0
-FlyRow.LayoutOrder = 3
-FlyRow.Position = UDim2.new(0, 0, 0.231481478, 0)
-FlyRow.Size = UDim2.new(0, 200, 0, 25)
-
-FlyLabel.Name = "FlyLabel"
-FlyLabel.Parent = FlyRow
-FlyLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-FlyLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-FlyLabel.BorderSizePixel = 0
-FlyLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
-FlyLabel.Size = UDim2.new(0, 65, 0, 25)
-FlyLabel.Font = Enum.Font.SourceSans
-FlyLabel.Text = "FLY"
-FlyLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-FlyLabel.TextSize = 14.000
-
-FlyToggle.Name = "FlyToggle"
-FlyToggle.Parent = FlyRow
-FlyToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-FlyToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-FlyToggle.BorderSizePixel = 0
-FlyToggle.Position = UDim2.new(0.625, 0, 0, 0)
-FlyToggle.Size = UDim2.new(0, 75, 0, 25)
-FlyToggle.Font = Enum.Font.SourceSans
-FlyToggle.Text = "OFF"
-FlyToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-FlyToggle.TextSize = 14.000
-
-SpeedBox.Name = "SpeedBox"
-SpeedBox.Parent = FlyRow
-SpeedBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-SpeedBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SpeedBox.BorderSizePixel = 0
-SpeedBox.Size = UDim2.new(0, 60, 0, 25)
-SpeedBox.Font = Enum.Font.SourceSans
-SpeedBox.PlaceholderText = "Default (50)"
-SpeedBox.Text = ""
-SpeedBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-SpeedBox.TextSize = 14.000
-
-SpeedRow.Name = "SpeedRow"
-SpeedRow.Parent = Page2
-SpeedRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SpeedRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SpeedRow.BorderSizePixel = 0
-SpeedRow.LayoutOrder = 4
-SpeedRow.Position = UDim2.new(0, 0, 0.231481478, 0)
-SpeedRow.Size = UDim2.new(0, 200, 0, 25)
-
-SpeedLabel.Name = "SpeedLabel"
-SpeedLabel.Parent = SpeedRow
-SpeedLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SpeedLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SpeedLabel.BorderSizePixel = 0
-SpeedLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
-SpeedLabel.Size = UDim2.new(0, 65, 0, 25)
-SpeedLabel.Font = Enum.Font.SourceSans
-SpeedLabel.Text = "SPEED"
-SpeedLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-SpeedLabel.TextSize = 14.000
-
-SpeedBox_2.Name = "SpeedBox"
-SpeedBox_2.Parent = SpeedRow
-SpeedBox_2.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-SpeedBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SpeedBox_2.BorderSizePixel = 0
-SpeedBox_2.Size = UDim2.new(0, 60, 0, 25)
-SpeedBox_2.Font = Enum.Font.SourceSans
-SpeedBox_2.PlaceholderText = "Default (16)"
-SpeedBox_2.Text = ""
-SpeedBox_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-SpeedBox_2.TextSize = 14.000
-
-SpeedToggle.Name = "SpeedToggle"
-SpeedToggle.Parent = SpeedRow
-SpeedToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-SpeedToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SpeedToggle.BorderSizePixel = 0
-SpeedToggle.Position = UDim2.new(0.625, 0, 0, 0)
-SpeedToggle.Size = UDim2.new(0, 75, 0, 25)
-SpeedToggle.Font = Enum.Font.SourceSans
-SpeedToggle.Text = "OFF"
-SpeedToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-SpeedToggle.TextSize = 14.000
-
-JumpPowerRow.Name = "JumpPowerRow"
-JumpPowerRow.Parent = Page2
-JumpPowerRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-JumpPowerRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-JumpPowerRow.BorderSizePixel = 0
-JumpPowerRow.LayoutOrder = 5
-JumpPowerRow.Position = UDim2.new(0, 0, 0.294985265, 0)
-JumpPowerRow.Size = UDim2.new(0, 200, 0, 25)
-
-JumpPowerToggle.Name = "JumpPowerToggle"
-JumpPowerToggle.Parent = JumpPowerRow
-JumpPowerToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-JumpPowerToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-JumpPowerToggle.BorderSizePixel = 0
-JumpPowerToggle.Position = UDim2.new(0.625, 0, 0, 0)
-JumpPowerToggle.Size = UDim2.new(0, 75, 0, 25)
-JumpPowerToggle.Font = Enum.Font.SourceSans
-JumpPowerToggle.Text = "OFF"
-JumpPowerToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-JumpPowerToggle.TextSize = 14.000
-
-JumpPowerLabel.Name = "JumpPowerLabel"
-JumpPowerLabel.Parent = JumpPowerRow
-JumpPowerLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-JumpPowerLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-JumpPowerLabel.BorderSizePixel = 0
-JumpPowerLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
-JumpPowerLabel.Size = UDim2.new(0, 65, 0, 25)
-JumpPowerLabel.Font = Enum.Font.SourceSans
-JumpPowerLabel.Text = "JUMPPOWER"
-JumpPowerLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-JumpPowerLabel.TextSize = 14.000
-
-JumpPowerBox.Name = "JumpPowerBox"
-JumpPowerBox.Parent = JumpPowerRow
-JumpPowerBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-JumpPowerBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-JumpPowerBox.BorderSizePixel = 0
-JumpPowerBox.Size = UDim2.new(0, 60, 0, 25)
-JumpPowerBox.Font = Enum.Font.SourceSans
-JumpPowerBox.PlaceholderText = "Default (50)"
-JumpPowerBox.Text = ""
-JumpPowerBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-JumpPowerBox.TextSize = 14.000
-
-AnimSpeedRow.Name = "AnimSpeedRow"
-AnimSpeedRow.Parent = Page2
-AnimSpeedRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-AnimSpeedRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AnimSpeedRow.BorderSizePixel = 0
-AnimSpeedRow.LayoutOrder = 6
-AnimSpeedRow.Position = UDim2.new(0, 0, 0.221238941, 0)
-AnimSpeedRow.Size = UDim2.new(0, 200, 0, 25)
-
-AnimSpeedLabel.Name = "AnimSpeedLabel"
-AnimSpeedLabel.Parent = AnimSpeedRow
-AnimSpeedLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-AnimSpeedLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AnimSpeedLabel.BorderSizePixel = 0
-AnimSpeedLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
-AnimSpeedLabel.Size = UDim2.new(0, 65, 0, 25)
-AnimSpeedLabel.Font = Enum.Font.SourceSans
-AnimSpeedLabel.Text = "ANIMATION SPEED"
-AnimSpeedLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-AnimSpeedLabel.TextSize = 10.000
-
-AnimSpeedToggle.Name = "AnimSpeedToggle"
-AnimSpeedToggle.Parent = AnimSpeedRow
-AnimSpeedToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-AnimSpeedToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AnimSpeedToggle.BorderSizePixel = 0
-AnimSpeedToggle.Position = UDim2.new(0.625, 0, 0, 0)
-AnimSpeedToggle.Size = UDim2.new(0, 75, 0, 25)
-AnimSpeedToggle.Font = Enum.Font.SourceSans
-AnimSpeedToggle.Text = "OFF"
-AnimSpeedToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-AnimSpeedToggle.TextSize = 14.000
-
-AnimSpeedBox.Name = "AnimSpeedBox"
-AnimSpeedBox.Parent = AnimSpeedRow
-AnimSpeedBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-AnimSpeedBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-AnimSpeedBox.BorderSizePixel = 0
-AnimSpeedBox.Size = UDim2.new(0, 60, 0, 25)
-AnimSpeedBox.Font = Enum.Font.SourceSans
-AnimSpeedBox.PlaceholderText = "Default (1)"
-AnimSpeedBox.Text = ""
-AnimSpeedBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-AnimSpeedBox.TextSize = 14.000
-
-SaveRow.Name = "SaveRow"
-SaveRow.Parent = Page2
-SaveRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-SaveRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SaveRow.BorderSizePixel = 0
-SaveRow.LayoutOrder = 2
-SaveRow.Position = UDim2.new(0, 0, 0.368731558, 0)
-SaveRow.Size = UDim2.new(0, 200, 0, 25)
-
-SaveLabel.Name = "SaveLabel"
-SaveLabel.Parent = SaveRow
-SaveLabel.BackgroundColor3 = Color3.fromRGB(255, 238, 0)
-SaveLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SaveLabel.BorderSizePixel = 0
-SaveLabel.Size = UDim2.new(0, 125, 0, 25)
-SaveLabel.Font = Enum.Font.SourceSans
-SaveLabel.Text = "SAVE SCRIPTS (apon re-executing, ur scripts and settings will load back)"
-SaveLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-SaveLabel.TextScaled = true
-SaveLabel.TextSize = 14.000
-SaveLabel.TextWrapped = true
-
-SaveToggle.Name = "SaveToggle"
-SaveToggle.Parent = SaveRow
-SaveToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-SaveToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-SaveToggle.BorderSizePixel = 0
-SaveToggle.Position = UDim2.new(0.62500006, 0, 0, 0)
-SaveToggle.Size = UDim2.new(0, 75, 0, 25)
-SaveToggle.Font = Enum.Font.SourceSans
-SaveToggle.Text = "OFF"
-SaveToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-SaveToggle.TextSize = 14.000
-
-RejoinRow.Name = "RejoinRow"
-RejoinRow.Parent = Page2
-RejoinRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-RejoinRow.BorderSizePixel = 0
-RejoinRow.LayoutOrder = 1
-RejoinRow.Size = UDim2.new(0, 200, 0, 25)
-
-RejoinBtn.Name = "RejoinBtn"
-RejoinBtn.Parent = RejoinRow
-RejoinBtn.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
-RejoinBtn.BorderSizePixel = 0
-RejoinBtn.Size = UDim2.new(1, 0, 1, 0)
-RejoinBtn.Font = Enum.Font.SourceSans
-RejoinBtn.Text = "REJOIN SERVER"
-RejoinBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-RejoinBtn.TextSize = 14.000
-RejoinBtn.TextWrapped = true
-
-GravityRow.Name = "GravityRow"
-GravityRow.Parent = Page2
-GravityRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GravityRow.BorderSizePixel = 0
-GravityRow.LayoutOrder = 7
-GravityRow.Position = UDim2.new(0, 0, 0.200000003, 0)
-GravityRow.Size = UDim2.new(0, 200, 0, 25)
-
-GravityLabel.Name = "GravityLabel"
-GravityLabel.Parent = GravityRow
-GravityLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GravityLabel.BorderSizePixel = 0
-GravityLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
-GravityLabel.Size = UDim2.new(0, 65, 0, 25)
-GravityLabel.Font = Enum.Font.SourceSans
-GravityLabel.Text = "GRAVITY"
-GravityLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-GravityLabel.TextSize = 14.000
-
-GravityBox.Name = "GravityBox"
-GravityBox.Parent = GravityRow
-GravityBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-GravityBox.BorderSizePixel = 0
-GravityBox.Size = UDim2.new(0, 60, 0, 25)
-GravityBox.Font = Enum.Font.SourceSans
-GravityBox.PlaceholderColor3 = Color3.fromRGB(179, 179, 179)
-GravityBox.PlaceholderText = "Default (196.2)"
-GravityBox.Text = ""
-GravityBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-GravityBox.TextScaled = true
-GravityBox.TextSize = 14.000
-GravityBox.TextWrapped = true
-
-GravityToggle.Name = "GravityToggle"
-GravityToggle.Parent = GravityRow
-GravityToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-GravityToggle.BorderSizePixel = 0
-GravityToggle.Position = UDim2.new(0.625, 0, 0, 0)
-GravityToggle.Size = UDim2.new(0, 75, 0, 25)
-GravityToggle.Font = Enum.Font.SourceSans
-GravityToggle.Text = "OFF"
-GravityToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-GravityToggle.TextSize = 14.000
-
-UIListLayout_2.Parent = Page2
-UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
-
-Page3.Name = "Page3"
-Page3.Parent = ContentFrame
-Page3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Page3.BackgroundTransparency = 1.000
-Page3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Page3.BorderSizePixel = 0
-Page3.Size = UDim2.new(0, 200, 0, 372)
-Page3.Visible = false
-
-ESPNameRow.Name = "ESPNameRow"
-ESPNameRow.Parent = Page3
-ESPNameRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPNameRow.BorderSizePixel = 0
-ESPNameRow.LayoutOrder = 2
-ESPNameRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPNameLabel.Name = "ESPNameLabel"
-ESPNameLabel.Parent = ESPNameRow
-ESPNameLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPNameLabel.BorderSizePixel = 0
-ESPNameLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPNameLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPNameLabel.Font = Enum.Font.SourceSans
-ESPNameLabel.Text = "ESP Name"
-ESPNameLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPNameLabel.TextSize = 14.000
-
-ESPNameToggle.Name = "ESPNameToggle"
-ESPNameToggle.Parent = ESPNameRow
-ESPNameToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPNameToggle.BorderSizePixel = 0
-ESPNameToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPNameToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPNameToggle.Font = Enum.Font.SourceSans
-ESPNameToggle.Text = "OFF"
-ESPNameToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPNameToggle.TextSize = 14.000
-
-ESPHealthRow.Name = "ESPHealthRow"
-ESPHealthRow.Parent = Page3
-ESPHealthRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPHealthRow.BorderSizePixel = 0
-ESPHealthRow.LayoutOrder = 5
-ESPHealthRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPHealthLabel.Name = "ESPHealthLabel"
-ESPHealthLabel.Parent = ESPHealthRow
-ESPHealthLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPHealthLabel.BorderSizePixel = 0
-ESPHealthLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPHealthLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPHealthLabel.Font = Enum.Font.SourceSans
-ESPHealthLabel.Text = "ESP Health Bar"
-ESPHealthLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPHealthLabel.TextSize = 14.000
-
-ESPHealthToggle.Name = "ESPHealthToggle"
-ESPHealthToggle.Parent = ESPHealthRow
-ESPHealthToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPHealthToggle.BorderSizePixel = 0
-ESPHealthToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPHealthToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPHealthToggle.Font = Enum.Font.SourceSans
-ESPHealthToggle.Text = "OFF"
-ESPHealthToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPHealthToggle.TextSize = 14.000
-
-ESPHighlightRow.Name = "ESPHighlightRow"
-ESPHighlightRow.Parent = Page3
-ESPHighlightRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPHighlightRow.BorderSizePixel = 0
-ESPHighlightRow.LayoutOrder = 3
-ESPHighlightRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPHighlightLabel.Name = "ESPHighlightLabel"
-ESPHighlightLabel.Parent = ESPHighlightRow
-ESPHighlightLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPHighlightLabel.BorderSizePixel = 0
-ESPHighlightLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPHighlightLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPHighlightLabel.Font = Enum.Font.SourceSans
-ESPHighlightLabel.Text = "ESP Highlight"
-ESPHighlightLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPHighlightLabel.TextSize = 14.000
-
-ESPHighlightToggle.Name = "ESPHighlightToggle"
-ESPHighlightToggle.Parent = ESPHighlightRow
-ESPHighlightToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPHighlightToggle.BorderSizePixel = 0
-ESPHighlightToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPHighlightToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPHighlightToggle.Font = Enum.Font.SourceSans
-ESPHighlightToggle.Text = "OFF"
-ESPHighlightToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPHighlightToggle.TextSize = 14.000
-
-ESPDistanceRow.Name = "ESPDistanceRow"
-ESPDistanceRow.Parent = Page3
-ESPDistanceRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPDistanceRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ESPDistanceRow.BorderSizePixel = 0
-ESPDistanceRow.LayoutOrder = 4
-ESPDistanceRow.Position = UDim2.new(0, 0, 0.336021513, 0)
-ESPDistanceRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPDistanceToggle.Name = "ESPDistanceToggle"
-ESPDistanceToggle.Parent = ESPDistanceRow
-ESPDistanceToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPDistanceToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ESPDistanceToggle.BorderSizePixel = 0
-ESPDistanceToggle.Position = UDim2.new(0.62500006, 0, 0, 0)
-ESPDistanceToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPDistanceToggle.Font = Enum.Font.SourceSans
-ESPDistanceToggle.Text = "OFF"
-ESPDistanceToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPDistanceToggle.TextSize = 14.000
-
-ESPDistanceLabel.Name = "ESPDistanceLabel"
-ESPDistanceLabel.Parent = ESPDistanceRow
-ESPDistanceLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPDistanceLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-ESPDistanceLabel.BorderSizePixel = 0
-ESPDistanceLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPDistanceLabel.Font = Enum.Font.SourceSans
-ESPDistanceLabel.Text = "ESP Distance"
-ESPDistanceLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPDistanceLabel.TextSize = 14.000
-
-ESPBoxesRow.Name = "ESPBoxesRow"
-ESPBoxesRow.Parent = Page3
-ESPBoxesRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPBoxesRow.BorderSizePixel = 0
-ESPBoxesRow.LayoutOrder = 6
-ESPBoxesRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPBoxesLabel.Name = "ESPBoxesLabel"
-ESPBoxesLabel.Parent = ESPBoxesRow
-ESPBoxesLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPBoxesLabel.BorderSizePixel = 0
-ESPBoxesLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPBoxesLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPBoxesLabel.Font = Enum.Font.SourceSans
-ESPBoxesLabel.Text = "ESP Boxes"
-ESPBoxesLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPBoxesLabel.TextSize = 14.000
-
-ESPBoxesToggle.Name = "ESPBoxesToggle"
-ESPBoxesToggle.Parent = ESPBoxesRow
-ESPBoxesToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPBoxesToggle.BorderSizePixel = 0
-ESPBoxesToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPBoxesToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPBoxesToggle.Font = Enum.Font.SourceSans
-ESPBoxesToggle.Text = "OFF"
-ESPBoxesToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPBoxesToggle.TextSize = 14.000
-
-ESPToggleRow.Name = "ESPToggleRow"
-ESPToggleRow.Parent = Page3
-ESPToggleRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPToggleRow.BorderSizePixel = 0
-ESPToggleRow.LayoutOrder = 1
-ESPToggleRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPToggleLabel.Name = "ESPToggleLabel"
-ESPToggleLabel.Parent = ESPToggleRow
-ESPToggleLabel.BackgroundColor3 = Color3.fromRGB(199, 199, 199)
-ESPToggleLabel.BorderSizePixel = 0
-ESPToggleLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPToggleLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPToggleLabel.Font = Enum.Font.SourceSans
-ESPToggleLabel.Text = "ENABLE ESP"
-ESPToggleLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPToggleLabel.TextSize = 14.000
-
-ESPToggleToggle.Name = "ESPToggleToggle"
-ESPToggleToggle.Parent = ESPToggleRow
-ESPToggleToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPToggleToggle.BorderSizePixel = 0
-ESPToggleToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPToggleToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPToggleToggle.Font = Enum.Font.SourceSans
-ESPToggleToggle.Text = "OFF"
-ESPToggleToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPToggleToggle.TextSize = 14.000
-
-ESPTracerRow.Name = "ESPTracerRow"
-ESPTracerRow.Parent = Page3
-ESPTracerRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPTracerRow.BorderSizePixel = 0
-ESPTracerRow.LayoutOrder = 7
-ESPTracerRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPTracerLabel.Name = "ESPTracerLabel"
-ESPTracerLabel.Parent = ESPTracerRow
-ESPTracerLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPTracerLabel.BorderSizePixel = 0
-ESPTracerLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPTracerLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPTracerLabel.Font = Enum.Font.SourceSans
-ESPTracerLabel.Text = "ESP Tracer (under maintence)"
-ESPTracerLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPTracerLabel.TextScaled = true
-ESPTracerLabel.TextSize = 14.000
-ESPTracerLabel.TextWrapped = true
-
-ESPTracerToggle.Name = "ESPTracerToggle"
-ESPTracerToggle.Parent = ESPTracerRow
-ESPTracerToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-ESPTracerToggle.BorderSizePixel = 0
-ESPTracerToggle.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPTracerToggle.Size = UDim2.new(0, 75, 0, 25)
-ESPTracerToggle.Font = Enum.Font.SourceSans
-ESPTracerToggle.Text = "OFF"
-ESPTracerToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPTracerToggle.TextSize = 14.000
-
-ESPColorRow.Name = "ESPColorRow"
-ESPColorRow.Parent = Page3
-ESPColorRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPColorRow.BorderSizePixel = 0
-ESPColorRow.LayoutOrder = 1
-ESPColorRow.Size = UDim2.new(0, 200, 0, 25)
-
-ESPColorLabel.Name = "ESPColorLabel"
-ESPColorLabel.Parent = ESPColorRow
-ESPColorLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ESPColorLabel.BorderSizePixel = 0
-ESPColorLabel.Position = UDim2.new(0, 0, -0.00571044907, 0)
-ESPColorLabel.Size = UDim2.new(0, 125, 0, 25)
-ESPColorLabel.Font = Enum.Font.SourceSans
-ESPColorLabel.Text = "ESP Color"
-ESPColorLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPColorLabel.TextSize = 14.000
-
-ESPColorBtn.Name = "ESPColorBtn"
-ESPColorBtn.Parent = ESPColorRow
-ESPColorBtn.BackgroundColor3 = Color3.fromRGB(127, 127, 127)
-ESPColorBtn.BorderSizePixel = 0
-ESPColorBtn.Position = UDim2.new(0.625, 0, -0.00571044907, 0)
-ESPColorBtn.Size = UDim2.new(0, 75, 0, 25)
-ESPColorBtn.Font = Enum.Font.SourceSans
-ESPColorBtn.Text = "SELECT"
-ESPColorBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-ESPColorBtn.TextSize = 14.000
-
-UIListLayout_3.Parent = Page3
-UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
-
-Page4.Name = "Page4"
-Page4.Parent = ContentFrame
-Page4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Page4.BackgroundTransparency = 1.000
-Page4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Page4.BorderSizePixel = 0
-Page4.Size = UDim2.new(0, 200, 0, 406)
-
-TouchFlingRow.Name = "TouchFlingRow"
-TouchFlingRow.Parent = Page4
-TouchFlingRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TouchFlingRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingRow.BorderSizePixel = 0
-TouchFlingRow.LayoutOrder = 1
-TouchFlingRow.Position = UDim2.new(0, 0, 0.138888896, 0)
-TouchFlingRow.Size = UDim2.new(0, 200, 0, 25)
-
-TouchFlingLabel.Name = "TouchFlingLabel"
-TouchFlingLabel.Parent = TouchFlingRow
-TouchFlingLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TouchFlingLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingLabel.BorderSizePixel = 0
-TouchFlingLabel.Size = UDim2.new(0, 125, 0, 25)
-TouchFlingLabel.Font = Enum.Font.SourceSans
-TouchFlingLabel.Text = "TOUCH FLING"
-TouchFlingLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingLabel.TextSize = 14.000
-
-TouchFlingToggle.Name = "TouchFlingToggle"
-TouchFlingToggle.Parent = TouchFlingRow
-TouchFlingToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-TouchFlingToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingToggle.BorderSizePixel = 0
-TouchFlingToggle.Position = UDim2.new(0.625, 0, 0, 0)
-TouchFlingToggle.Size = UDim2.new(0, 75, 0, 25)
-TouchFlingToggle.Font = Enum.Font.SourceSans
-TouchFlingToggle.Text = "OFF"
-TouchFlingToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-TouchFlingToggle.TextSize = 14.000
-
-BangRow.Name = "BangRow"
-BangRow.Parent = Page4
-BangRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-BangRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-BangRow.BorderSizePixel = 0
-BangRow.LayoutOrder = 2
-BangRow.Size = UDim2.new(0, 200, 0, 25)
-
-BangUser.Name = "BangUser"
-BangUser.Parent = BangRow
-BangUser.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-BangUser.BorderColor3 = Color3.fromRGB(0, 0, 0)
-BangUser.BorderSizePixel = 0
-BangUser.Size = UDim2.new(0, 60, 0, 25)
-BangUser.Font = Enum.Font.SourceSans
-BangUser.PlaceholderText = "Username"
-BangUser.Text = ""
-BangUser.TextColor3 = Color3.fromRGB(255, 255, 255)
-BangUser.TextScaled = true
-BangUser.TextSize = 14.000
-BangUser.TextWrapped = true
-
-BangLabel.Name = "BangLabel"
-BangLabel.Parent = BangRow
-BangLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-BangLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-BangLabel.BorderSizePixel = 0
-BangLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
-BangLabel.Size = UDim2.new(0, 65, 0, 25)
-BangLabel.Font = Enum.Font.SourceSans
-BangLabel.Text = "BANG"
-BangLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-BangLabel.TextSize = 14.000
-
-BangToggle.Name = "BangToggle"
-BangToggle.Parent = BangRow
-BangToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-BangToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-BangToggle.BorderSizePixel = 0
-BangToggle.Position = UDim2.new(0.625, 0, 0, 0)
-BangToggle.Size = UDim2.new(0, 75, 0, 25)
-BangToggle.Font = Enum.Font.SourceSans
-BangToggle.Text = "OFF"
-BangToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-BangToggle.TextSize = 14.000
-
-UIListLayout_4.Parent = Page4
-UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
-
-OrbitRow.Name = "OrbitRow"
-OrbitRow.Parent = Page4
-OrbitRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-OrbitRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OrbitRow.BorderSizePixel = 0
-OrbitRow.LayoutOrder = 10
-OrbitRow.Size = UDim2.new(0, 200, 0, 25)
-
-OrbitUserBox.Name = "OrbitUserBox"
-OrbitUserBox.Parent = OrbitRow
-OrbitUserBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-OrbitUserBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OrbitUserBox.BorderSizePixel = 0
-OrbitUserBox.Size = UDim2.new(0, 40, 0, 25)
-OrbitUserBox.Font = Enum.Font.SourceSans
-OrbitUserBox.PlaceholderText = "Username"
-OrbitUserBox.Text = ""
-OrbitUserBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-OrbitUserBox.TextScaled = true
-OrbitUserBox.TextSize = 14.000
-OrbitUserBox.TextWrapped = true
-
-OrbitLabel.Name = "OrbitLabel"
-OrbitLabel.Parent = OrbitRow
-OrbitLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-OrbitLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OrbitLabel.BorderSizePixel = 0
-OrbitLabel.Position = UDim2.new(0.5, 0, 0, 0)
-OrbitLabel.Size = UDim2.new(0, 40, 0, 25)
-OrbitLabel.Font = Enum.Font.SourceSans
-OrbitLabel.Text = "ORBIT"
-OrbitLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-OrbitLabel.TextSize = 14.000
-
-OrbitToggle.Name = "OrbitToggle"
-OrbitToggle.Parent = OrbitRow
-OrbitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-OrbitToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OrbitToggle.BorderSizePixel = 0
-OrbitToggle.Position = UDim2.new(0.699999988, 0, 0, 0)
-OrbitToggle.Size = UDim2.new(0, 60, 0, 25)
-OrbitToggle.Font = Enum.Font.SourceSans
-OrbitToggle.Text = "OFF"
-OrbitToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-OrbitToggle.TextSize = 14.000
-
-OrbitSpeedBox.Name = "OrbitSpeedBox"
-OrbitSpeedBox.Parent = OrbitRow
-OrbitSpeedBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-OrbitSpeedBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OrbitSpeedBox.BorderSizePixel = 0
-OrbitSpeedBox.Position = UDim2.new(0.200000003, 0, 0, 0)
-OrbitSpeedBox.Size = UDim2.new(0, 30, 0, 25)
-OrbitSpeedBox.Font = Enum.Font.SourceSans
-OrbitSpeedBox.PlaceholderText = "SPEED (1)"
-OrbitSpeedBox.Text = ""
-OrbitSpeedBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-OrbitSpeedBox.TextScaled = true
-OrbitSpeedBox.TextSize = 14.000
-OrbitSpeedBox.TextWrapped = true
-
-OrbitDistBox.Name = "OrbitDistBox"
-OrbitDistBox.Parent = OrbitRow
-OrbitDistBox.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-OrbitDistBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OrbitDistBox.BorderSizePixel = 0
-OrbitDistBox.Position = UDim2.new(0.349999994, 0, 0, 0)
-OrbitDistBox.Size = UDim2.new(0, 30, 0, 25)
-OrbitDistBox.Font = Enum.Font.SourceSans
-OrbitDistBox.PlaceholderText = "DIST (5)"
-OrbitDistBox.Text = ""
-OrbitDistBox.TextColor3 = Color3.fromRGB(255, 255, 255)
-OrbitDistBox.TextScaled = true
-OrbitDistBox.TextSize = 14.000
-OrbitDistBox.TextWrapped = true
-
-HeadSitRow.Name = "HeadSitRow"
-HeadSitRow.Parent = Page4
-HeadSitRow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-HeadSitRow.BorderColor3 = Color3.fromRGB(0, 0, 0)
-HeadSitRow.BorderSizePixel = 0
-HeadSitRow.LayoutOrder = 3
-HeadSitRow.Size = UDim2.new(0, 200, 0, 25)
-
-HeadSitUser.Name = "HeadSitUser"
-HeadSitUser.Parent = HeadSitRow
-HeadSitUser.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-HeadSitUser.BorderColor3 = Color3.fromRGB(0, 0, 0)
-HeadSitUser.BorderSizePixel = 0
-HeadSitUser.Size = UDim2.new(0, 60, 0, 25)
-HeadSitUser.Font = Enum.Font.SourceSans
-HeadSitUser.PlaceholderText = "Username"
-HeadSitUser.Text = ""
-HeadSitUser.TextColor3 = Color3.fromRGB(255, 255, 255)
-HeadSitUser.TextScaled = true
-HeadSitUser.TextSize = 14.000
-HeadSitUser.TextWrapped = true
-
-HeadSitLabel.Name = "HeadSitLabel"
-HeadSitLabel.Parent = HeadSitRow
-HeadSitLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-HeadSitLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-HeadSitLabel.BorderSizePixel = 0
-HeadSitLabel.Position = UDim2.new(0.300000012, 0, 0, 0)
-HeadSitLabel.Size = UDim2.new(0, 65, 0, 25)
-HeadSitLabel.Font = Enum.Font.SourceSans
-HeadSitLabel.Text = "HEAD SIT"
-HeadSitLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-HeadSitLabel.TextSize = 14.000
-
-HeadSitToggle.Name = "HeadSitToggle"
-HeadSitToggle.Parent = HeadSitRow
-HeadSitToggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-HeadSitToggle.BorderColor3 = Color3.fromRGB(0, 0, 0)
-HeadSitToggle.BorderSizePixel = 0
-HeadSitToggle.Position = UDim2.new(0.625, 0, 0, 0)
-HeadSitToggle.Size = UDim2.new(0, 75, 0, 25)
-HeadSitToggle.Font = Enum.Font.SourceSans
-HeadSitToggle.Text = "OFF"
-HeadSitToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
-HeadSitToggle.TextSize = 14.000
-
-BottomBar.Name = "BottomBar"
-BottomBar.Parent = MainFrame
-BottomBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-BottomBar.BorderColor3 = Color3.fromRGB(255, 255, 255)
-BottomBar.Position = UDim2.new(0, 0, 0.907407403, 0)
-BottomBar.Size = UDim2.new(0, 200, 0, 25)
-
-PageLabel.Name = "PageLabel"
-PageLabel.Parent = BottomBar
-PageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-PageLabel.BackgroundTransparency = 1.000
-PageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
-PageLabel.BorderSizePixel = 0
-PageLabel.Size = UDim2.new(0, 200, 0, 25)
-PageLabel.Font = Enum.Font.SourceSans
-PageLabel.Text = "Made by agarvv"
-PageLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-PageLabel.TextSize = 14.000
-
-NextBtn.Name = "NextBtn"
-NextBtn.Parent = BottomBar
-NextBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-NextBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
-NextBtn.Position = UDim2.new(0.875, 0, 0, 0)
-NextBtn.Size = UDim2.new(0, 25, 0, 25)
-NextBtn.Font = Enum.Font.SourceSans
-NextBtn.Text = ">"
-NextBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-NextBtn.TextSize = 20.000
-
-PrevBtn.Name = "PrevBtn"
-PrevBtn.Parent = BottomBar
-PrevBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-PrevBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
-PrevBtn.Size = UDim2.new(0, 25, 0, 25)
-PrevBtn.Font = Enum.Font.SourceSans
-PrevBtn.Text = "<"
-PrevBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-PrevBtn.TextSize = 20.000
-
-PageListBtn.Name = "PageListBtn"
-PageListBtn.Parent = BottomBar
-PageListBtn.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-PageListBtn.BorderColor3 = Color3.fromRGB(255, 255, 255)
-PageListBtn.Position = UDim2.new(1.17499995, -95, 1.15999997, -50)
-PageListBtn.Size = UDim2.new(0, 60, 0, 20)
-PageListBtn.ZIndex = 1000
-PageListBtn.Font = Enum.Font.SourceSans
-PageListBtn.Text = "PAGE LIST"
-PageListBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-PageListBtn.TextSize = 14.000
-
--- Scripts:
-
-local function XRTDLU_fake_script() -- ExploitGui.PageListButtonSetup 
-	local script = Instance.new('LocalScript', ExploitGui)
-
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 128 | Scripts: 22 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.ExploitGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["DisplayOrder"] = 10000;
+G2L["1"]["Name"] = [[ExploitGui]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
+-- Attributes
+G2L["1"]:SetAttribute([[_lemonadeUniqueId]], [[A6VOYrS8A6VO]]);
+
+
+-- StarterGui.ExploitGui.PageListButtonSetup
+G2L["2"] = Instance.new("LocalScript", G2L["1"]);
+G2L["2"]["Name"] = [[PageListButtonSetup]];
+-- Attributes
+G2L["2"]:SetAttribute([[_lemonadeUniqueId]], [[Tg7ENCqWTg7E]]);
+
+
+-- StarterGui.ExploitGui.MainFrame
+G2L["3"] = Instance.new("Frame", G2L["1"]);
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Size"] = UDim2.new(0, 200, 0, 270);
+G2L["3"]["Position"] = UDim2.new(0, 115, 0, 208);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Name"] = [[MainFrame]];
+-- Attributes
+G2L["3"]:SetAttribute([[_lemonadeUniqueId]], [[y0atIv4yy0at]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.TopBar
+G2L["4"] = Instance.new("Frame", G2L["3"]);
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["Name"] = [[TopBar]];
+-- Attributes
+G2L["4"]:SetAttribute([[_lemonadeUniqueId]], [[Zwl90yNtZwl9]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.TopBar.DragScript
+G2L["5"] = Instance.new("LocalScript", G2L["4"]);
+G2L["5"]["Name"] = [[DragScript]];
+-- Attributes
+G2L["5"]:SetAttribute([[_lemonadeUniqueId]], [[PPxwrXuWPPxw]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.TopBar.DuplicateCheck
+G2L["6"] = Instance.new("LocalScript", G2L["4"]);
+G2L["6"]["Name"] = [[DuplicateCheck]];
+-- Attributes
+G2L["6"]:SetAttribute([[_lemonadeUniqueId]], [[NT1ma722NT1m]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.TopBar.CloseBtn
+G2L["7"] = Instance.new("TextButton", G2L["4"]);
+G2L["7"]["BorderSizePixel"] = 0;
+G2L["7"]["TextSize"] = 20;
+G2L["7"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["7"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7"]["Size"] = UDim2.new(0, 25, 0, 25);
+G2L["7"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7"]["Text"] = [[X]];
+G2L["7"]["Name"] = [[CloseBtn]];
+-- Attributes
+G2L["7"]:SetAttribute([[_lemonadeUniqueId]], [[BaxfyC3BBaxf]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.TopBar.MinimizeBtn
+G2L["8"] = Instance.new("TextButton", G2L["4"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["TextSize"] = 23;
+G2L["8"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["Size"] = UDim2.new(0, 25, 0, 25);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[-]];
+G2L["8"]["Name"] = [[MinimizeBtn]];
+G2L["8"]["Position"] = UDim2.new(0.875, 0, 0, 0);
+-- Attributes
+G2L["8"]:SetAttribute([[_lemonadeUniqueId]], [[klSjg7rVklSj]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.TopBar.TitleLabel
+G2L["9"] = Instance.new("TextLabel", G2L["4"]);
+G2L["9"]["BorderSizePixel"] = 0;
+G2L["9"]["TextSize"] = 14;
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["BackgroundTransparency"] = 1;
+G2L["9"]["Size"] = UDim2.new(0, 150, 0, 25);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["Text"] = [[UNIVERSIAL SCRIPT GUI]];
+G2L["9"]["Name"] = [[TitleLabel]];
+G2L["9"]["Position"] = UDim2.new(0.125, 0, 0, 0);
+-- Attributes
+G2L["9"]:SetAttribute([[_lemonadeUniqueId]], [[6N0Uiy8A6N0U]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame
+G2L["a"] = Instance.new("ScrollingFrame", G2L["3"]);
+G2L["a"]["Active"] = true;
+G2L["a"]["Name"] = [[ContentFrame]];
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Size"] = UDim2.new(0, 200, 0, 220);
+G2L["a"]["ScrollBarImageColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["a"]["Position"] = UDim2.new(0, 0, 0.08889, 0);
+G2L["a"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+-- Attributes
+G2L["a"]:SetAttribute([[_lemonadeUniqueId]], [[Jb9slPNLJb9s]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1
+G2L["b"] = Instance.new("Frame", G2L["a"]);
+G2L["b"]["Visible"] = false;
+G2L["b"]["BorderSizePixel"] = 0;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["Size"] = UDim2.new(0, 200, 0, 354);
+G2L["b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["b"]["Name"] = [[Page1]];
+G2L["b"]["BackgroundTransparency"] = 1;
+-- Attributes
+G2L["b"]:SetAttribute([[_lemonadeUniqueId]], [[hihNRJOUhihN]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.AntiFlingRow
+G2L["c"] = Instance.new("Frame", G2L["b"]);
+G2L["c"]["BorderSizePixel"] = 0;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["c"]["Position"] = UDim2.new(0, 0, 0.18519, 0);
+G2L["c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["c"]["Name"] = [[AntiFlingRow]];
+-- Attributes
+G2L["c"]:SetAttribute([[_lemonadeUniqueId]], [[YuITBTgoYuIT]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.AntiFlingRow.AntiFlingScript
+G2L["d"] = Instance.new("LocalScript", G2L["c"]);
+G2L["d"]["Name"] = [[AntiFlingScript]];
+-- Attributes
+G2L["d"]:SetAttribute([[_lemonadeUniqueId]], [[0gYWpBfT0gYW]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.AntiFlingRow.AntiFlingLabel
+G2L["e"] = Instance.new("TextLabel", G2L["c"]);
+G2L["e"]["BorderSizePixel"] = 0;
+G2L["e"]["TextSize"] = 14;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e"]["Text"] = [[ANTI FLING]];
+G2L["e"]["Name"] = [[AntiFlingLabel]];
+-- Attributes
+G2L["e"]:SetAttribute([[_lemonadeUniqueId]], [[8y7Q08Ya8y7Q]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.AntiFlingRow.AntiFlingToggle
+G2L["f"] = Instance.new("TextButton", G2L["c"]);
+G2L["f"]["BorderSizePixel"] = 0;
+G2L["f"]["TextSize"] = 14;
+G2L["f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["f"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["f"]["Text"] = [[OFF]];
+G2L["f"]["Name"] = [[AntiFlingToggle]];
+G2L["f"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["f"]:SetAttribute([[_lemonadeUniqueId]], [[rtzb7luortzb]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.NoclipRow
+G2L["10"] = Instance.new("Frame", G2L["b"]);
+G2L["10"]["BorderSizePixel"] = 0;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["10"]["Position"] = UDim2.new(0, 0, 0.18519, 0);
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Name"] = [[NoclipRow]];
+-- Attributes
+G2L["10"]:SetAttribute([[_lemonadeUniqueId]], [[UB4mE5esUB4m]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.NoclipRow.NoclipScript
+G2L["11"] = Instance.new("LocalScript", G2L["10"]);
+G2L["11"]["Name"] = [[NoclipScript]];
+-- Attributes
+G2L["11"]:SetAttribute([[_lemonadeUniqueId]], [[An8qUz6kAn8q]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.NoclipRow.NoclipToggle
+G2L["12"] = Instance.new("TextButton", G2L["10"]);
+G2L["12"]["BorderSizePixel"] = 0;
+G2L["12"]["TextSize"] = 14;
+G2L["12"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["12"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Text"] = [[OFF]];
+G2L["12"]["Name"] = [[NoclipToggle]];
+G2L["12"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["12"]:SetAttribute([[_lemonadeUniqueId]], [[7cz9QZd77cz9]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.NoclipRow.NoclipLabel
+G2L["13"] = Instance.new("TextLabel", G2L["10"]);
+G2L["13"]["BorderSizePixel"] = 0;
+G2L["13"]["TextSize"] = 14;
+G2L["13"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["13"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["13"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["13"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["13"]["Text"] = [[NOCLIP]];
+G2L["13"]["Name"] = [[NoclipLabel]];
+-- Attributes
+G2L["13"]:SetAttribute([[_lemonadeUniqueId]], [[FyJW6ESKFyJW]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.GodModeRow
+G2L["14"] = Instance.new("Frame", G2L["b"]);
+G2L["14"]["BorderSizePixel"] = 0;
+G2L["14"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["14"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["14"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["14"]["Name"] = [[GodModeRow]];
+-- Attributes
+G2L["14"]:SetAttribute([[_lemonadeUniqueId]], [[Ch2PuMWoCh2P]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.GodModeRow.GodModeScript
+G2L["15"] = Instance.new("LocalScript", G2L["14"]);
+G2L["15"]["Name"] = [[GodModeScript]];
+-- Attributes
+G2L["15"]:SetAttribute([[_lemonadeUniqueId]], [[NqLzZLDNNqLz]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.GodModeRow.GodModeBtn
+G2L["16"] = Instance.new("TextLabel", G2L["14"]);
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["TextSize"] = 14;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["16"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Text"] = [[GOD MODE]];
+G2L["16"]["Name"] = [[GodModeBtn]];
+G2L["16"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["16"]:SetAttribute([[_lemonadeUniqueId]], [[WRIWdJCyWRIW]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.GodModeRow.GodModeToggle
+G2L["17"] = Instance.new("TextButton", G2L["14"]);
+G2L["17"]["BorderSizePixel"] = 0;
+G2L["17"]["TextSize"] = 14;
+G2L["17"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["17"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["17"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["17"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["17"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["17"]["Text"] = [[OFF]];
+G2L["17"]["Name"] = [[GodModeToggle]];
+G2L["17"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["17"]:SetAttribute([[_lemonadeUniqueId]], [[jl5rHZF3jl5r]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.InfJumpRow
+G2L["18"] = Instance.new("Frame", G2L["b"]);
+G2L["18"]["BorderSizePixel"] = 0;
+G2L["18"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["18"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["18"]["Position"] = UDim2.new(0, 0, 0.11599, 0);
+G2L["18"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["18"]["Name"] = [[InfJumpRow]];
+-- Attributes
+G2L["18"]:SetAttribute([[_lemonadeUniqueId]], [[JySN3gqQJySN]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.InfJumpRow.InfJumpScript
+G2L["19"] = Instance.new("LocalScript", G2L["18"]);
+G2L["19"]["Name"] = [[InfJumpScript]];
+-- Attributes
+G2L["19"]:SetAttribute([[_lemonadeUniqueId]], [[728JIGLH728J]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.InfJumpRow.InfJumpLabel
+G2L["1a"] = Instance.new("TextLabel", G2L["18"]);
+G2L["1a"]["BorderSizePixel"] = 0;
+G2L["1a"]["TextSize"] = 14;
+G2L["1a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["1a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1a"]["Text"] = [[INF JUMP]];
+G2L["1a"]["Name"] = [[InfJumpLabel]];
+G2L["1a"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["1a"]:SetAttribute([[_lemonadeUniqueId]], [[HO97rbkUHO97]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.InfJumpRow.InfJumpToggle
+G2L["1b"] = Instance.new("TextButton", G2L["18"]);
+G2L["1b"]["BorderSizePixel"] = 0;
+G2L["1b"]["TextSize"] = 14;
+G2L["1b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["1b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1b"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["1b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1b"]["Text"] = [[OFF]];
+G2L["1b"]["Name"] = [[InfJumpToggle]];
+G2L["1b"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["1b"]:SetAttribute([[_lemonadeUniqueId]], [[P7QPSfQ8P7QP]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.TeleportRow
+G2L["1c"] = Instance.new("Frame", G2L["b"]);
+G2L["1c"]["BorderSizePixel"] = 0;
+G2L["1c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1c"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["1c"]["Name"] = [[TeleportRow]];
+G2L["1c"]["LayoutOrder"] = 6;
+-- Attributes
+G2L["1c"]:SetAttribute([[_lemonadeUniqueId]], [[Oe2TOiDFOe2T]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.TeleportRow.TeleportScript
+G2L["1d"] = Instance.new("LocalScript", G2L["1c"]);
+G2L["1d"]["Name"] = [[TeleportScript]];
+-- Attributes
+G2L["1d"]:SetAttribute([[_lemonadeUniqueId]], [[RDbGTJ4aRDbG]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.TeleportRow.TeleportLabel
+G2L["1e"] = Instance.new("TextLabel", G2L["1c"]);
+G2L["1e"]["BorderSizePixel"] = 0;
+G2L["1e"]["TextSize"] = 14;
+G2L["1e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["1e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1e"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["1e"]["Text"] = [[TELEPORT TO PLAYER]];
+G2L["1e"]["Name"] = [[TeleportLabel]];
+-- Attributes
+G2L["1e"]:SetAttribute([[_lemonadeUniqueId]], [[dNEP9m6sdNEP]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.TeleportRow.TeleportButton
+G2L["1f"] = Instance.new("TextButton", G2L["1c"]);
+G2L["1f"]["TextWrapped"] = true;
+G2L["1f"]["BorderSizePixel"] = 0;
+G2L["1f"]["TextSize"] = 14;
+G2L["1f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["1f"]["BackgroundColor3"] = Color3.fromRGB(128, 128, 128);
+G2L["1f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["1f"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["1f"]["Text"] = [[SELECT PLAYER]];
+G2L["1f"]["Name"] = [[TeleportButton]];
+G2L["1f"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["1f"]:SetAttribute([[_lemonadeUniqueId]], [[pbNLR5LxpbNL]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.UIListLayout
+G2L["20"] = Instance.new("UIListLayout", G2L["b"]);
+G2L["20"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+-- Attributes
+G2L["20"]:SetAttribute([[_lemonadeUniqueId]], [[Sdh59EQsSdh5]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.InvisRow
+G2L["21"] = Instance.new("Frame", G2L["b"]);
+G2L["21"]["BorderSizePixel"] = 0;
+G2L["21"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["21"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["21"]["Position"] = UDim2.new(0, 0, 0.35311, 0);
+G2L["21"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["21"]["Name"] = [[InvisRow]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.InvisRow.InvisLabel
+G2L["22"] = Instance.new("TextLabel", G2L["21"]);
+G2L["22"]["TextWrapped"] = true;
+G2L["22"]["BorderSizePixel"] = 0;
+G2L["22"]["TextSize"] = 14;
+G2L["22"]["TextScaled"] = true;
+G2L["22"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["22"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["22"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["22"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["22"]["Text"] = [[INVISIBLE (adding it back soon)]];
+G2L["22"]["Name"] = [[InvisLabel]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.InvisRow.InvisToggle
+G2L["23"] = Instance.new("TextButton", G2L["21"]);
+G2L["23"]["BorderSizePixel"] = 0;
+G2L["23"]["TextSize"] = 14;
+G2L["23"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["23"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["23"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["23"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["23"]["Text"] = [[OFF]];
+G2L["23"]["Name"] = [[InvisToggle]];
+G2L["23"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2
+G2L["24"] = Instance.new("Frame", G2L["a"]);
+G2L["24"]["Visible"] = false;
+G2L["24"]["BorderSizePixel"] = 0;
+G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["Size"] = UDim2.new(0, 200, 0, 339);
+G2L["24"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["24"]["Name"] = [[Page2]];
+G2L["24"]["BackgroundTransparency"] = 1;
+-- Attributes
+G2L["24"]:SetAttribute([[_lemonadeUniqueId]], [[mKMoxwW6mKMo]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.RespawnRow
+G2L["25"] = Instance.new("Frame", G2L["24"]);
+G2L["25"]["BorderSizePixel"] = 0;
+G2L["25"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["25"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["25"]["Position"] = UDim2.new(0, 0, 0.14749, 0);
+G2L["25"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["25"]["Name"] = [[RespawnRow]];
+-- Attributes
+G2L["25"]:SetAttribute([[_lemonadeUniqueId]], [[X3BwVpdzX3Bw]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.RespawnRow.RespawnScript
+G2L["26"] = Instance.new("LocalScript", G2L["25"]);
+G2L["26"]["Name"] = [[RespawnScript]];
+-- Attributes
+G2L["26"]:SetAttribute([[_lemonadeUniqueId]], [[LKFZ3vC4LKFZ]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.RespawnRow.RespawnBtn
+G2L["27"] = Instance.new("TextButton", G2L["25"]);
+G2L["27"]["TextWrapped"] = true;
+G2L["27"]["BorderSizePixel"] = 0;
+G2L["27"]["TextSize"] = 14;
+G2L["27"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["27"]["BackgroundColor3"] = Color3.fromRGB(135, 0, 0);
+G2L["27"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["27"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["27"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["27"]["Text"] = [[RESPAWN CHARACTER]];
+G2L["27"]["Name"] = [[RespawnBtn]];
+-- Attributes
+G2L["27"]:SetAttribute([[_lemonadeUniqueId]], [[MDGAp37jMDGA]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.FlyRow
+G2L["28"] = Instance.new("Frame", G2L["24"]);
+G2L["28"]["BorderSizePixel"] = 0;
+G2L["28"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["28"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["28"]["Position"] = UDim2.new(0, 0, 0.23148, 0);
+G2L["28"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["28"]["Name"] = [[FlyRow]];
+G2L["28"]["LayoutOrder"] = 3;
+-- Attributes
+G2L["28"]:SetAttribute([[_lemonadeUniqueId]], [[oiG0foJ9oiG0]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.FlyRow.FlyScript
+G2L["29"] = Instance.new("LocalScript", G2L["28"]);
+G2L["29"]["Name"] = [[FlyScript]];
+-- Attributes
+G2L["29"]:SetAttribute([[_lemonadeUniqueId]], [[rsns3Uv7rsns]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.FlyRow.FlyLabel
+G2L["2a"] = Instance.new("TextLabel", G2L["28"]);
+G2L["2a"]["BorderSizePixel"] = 0;
+G2L["2a"]["TextSize"] = 14;
+G2L["2a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["2a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2a"]["Text"] = [[FLY]];
+G2L["2a"]["Name"] = [[FlyLabel]];
+G2L["2a"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+-- Attributes
+G2L["2a"]:SetAttribute([[_lemonadeUniqueId]], [[hBGSNSr3hBGS]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.FlyRow.FlyToggle
+G2L["2b"] = Instance.new("TextButton", G2L["28"]);
+G2L["2b"]["BorderSizePixel"] = 0;
+G2L["2b"]["TextSize"] = 14;
+G2L["2b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2b"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["2b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2b"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["2b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2b"]["Text"] = [[OFF]];
+G2L["2b"]["Name"] = [[FlyToggle]];
+G2L["2b"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["2b"]:SetAttribute([[_lemonadeUniqueId]], [[XZeGm5moXZeG]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.FlyRow.SpeedBox
+G2L["2c"] = Instance.new("TextBox", G2L["28"]);
+G2L["2c"]["Name"] = [[SpeedBox]];
+G2L["2c"]["BorderSizePixel"] = 0;
+G2L["2c"]["TextSize"] = 14;
+G2L["2c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["2c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2c"]["PlaceholderText"] = [[Default (50)]];
+G2L["2c"]["Size"] = UDim2.new(0, 60, 0, 25);
+G2L["2c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2c"]["Text"] = [[]];
+-- Attributes
+G2L["2c"]:SetAttribute([[_lemonadeUniqueId]], [[SwVxYwiqSwVx]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SpeedRow
+G2L["2d"] = Instance.new("Frame", G2L["24"]);
+G2L["2d"]["BorderSizePixel"] = 0;
+G2L["2d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2d"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["2d"]["Position"] = UDim2.new(0, 0, 0.23148, 0);
+G2L["2d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2d"]["Name"] = [[SpeedRow]];
+G2L["2d"]["LayoutOrder"] = 4;
+-- Attributes
+G2L["2d"]:SetAttribute([[_lemonadeUniqueId]], [[1S951pCa1S95]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SpeedRow.SpeedScript
+G2L["2e"] = Instance.new("LocalScript", G2L["2d"]);
+G2L["2e"]["Name"] = [[SpeedScript]];
+-- Attributes
+G2L["2e"]:SetAttribute([[_lemonadeUniqueId]], [[Kodi7hlhKodi]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SpeedRow.SpeedLabel
+G2L["2f"] = Instance.new("TextLabel", G2L["2d"]);
+G2L["2f"]["BorderSizePixel"] = 0;
+G2L["2f"]["TextSize"] = 14;
+G2L["2f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["2f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["2f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["2f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2f"]["Text"] = [[SPEED]];
+G2L["2f"]["Name"] = [[SpeedLabel]];
+G2L["2f"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+-- Attributes
+G2L["2f"]:SetAttribute([[_lemonadeUniqueId]], [[PlfvloaOPlfv]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SpeedRow.SpeedBox
+G2L["30"] = Instance.new("TextBox", G2L["2d"]);
+G2L["30"]["Name"] = [[SpeedBox]];
+G2L["30"]["BorderSizePixel"] = 0;
+G2L["30"]["TextSize"] = 14;
+G2L["30"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["30"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["30"]["PlaceholderText"] = [[Default (16)]];
+G2L["30"]["Size"] = UDim2.new(0, 60, 0, 25);
+G2L["30"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["30"]["Text"] = [[]];
+-- Attributes
+G2L["30"]:SetAttribute([[_lemonadeUniqueId]], [[G919Lf5JG919]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SpeedRow.SpeedToggle
+G2L["31"] = Instance.new("TextButton", G2L["2d"]);
+G2L["31"]["BorderSizePixel"] = 0;
+G2L["31"]["TextSize"] = 14;
+G2L["31"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["31"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["31"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["31"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["31"]["Text"] = [[OFF]];
+G2L["31"]["Name"] = [[SpeedToggle]];
+G2L["31"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["31"]:SetAttribute([[_lemonadeUniqueId]], [[QygHR08cQygH]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.JumpPowerRow
+G2L["32"] = Instance.new("Frame", G2L["24"]);
+G2L["32"]["BorderSizePixel"] = 0;
+G2L["32"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["32"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["32"]["Position"] = UDim2.new(0, 0, 0.29499, 0);
+G2L["32"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["32"]["Name"] = [[JumpPowerRow]];
+G2L["32"]["LayoutOrder"] = 5;
+-- Attributes
+G2L["32"]:SetAttribute([[_lemonadeUniqueId]], [[CTFRuGVrCTFR]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.JumpPowerRow.JumpPowerScript
+G2L["33"] = Instance.new("LocalScript", G2L["32"]);
+G2L["33"]["Name"] = [[JumpPowerScript]];
+-- Attributes
+G2L["33"]:SetAttribute([[_lemonadeUniqueId]], [[mzMdcE3jmzMd]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.JumpPowerRow.JumpPowerToggle
+G2L["34"] = Instance.new("TextButton", G2L["32"]);
+G2L["34"]["BorderSizePixel"] = 0;
+G2L["34"]["TextSize"] = 14;
+G2L["34"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["34"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["34"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["34"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["34"]["Text"] = [[OFF]];
+G2L["34"]["Name"] = [[JumpPowerToggle]];
+G2L["34"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["34"]:SetAttribute([[_lemonadeUniqueId]], [[3Nz2EepF3Nz2]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.JumpPowerRow.JumpPowerLabel
+G2L["35"] = Instance.new("TextLabel", G2L["32"]);
+G2L["35"]["BorderSizePixel"] = 0;
+G2L["35"]["TextSize"] = 14;
+G2L["35"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["35"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["35"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["35"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["35"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["35"]["Text"] = [[JUMPPOWER]];
+G2L["35"]["Name"] = [[JumpPowerLabel]];
+G2L["35"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+-- Attributes
+G2L["35"]:SetAttribute([[_lemonadeUniqueId]], [[PcTLwhpNPcTL]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.JumpPowerRow.JumpPowerBox
+G2L["36"] = Instance.new("TextBox", G2L["32"]);
+G2L["36"]["Name"] = [[JumpPowerBox]];
+G2L["36"]["BorderSizePixel"] = 0;
+G2L["36"]["TextSize"] = 14;
+G2L["36"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["36"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["36"]["PlaceholderText"] = [[Default (50)]];
+G2L["36"]["Size"] = UDim2.new(0, 60, 0, 25);
+G2L["36"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["36"]["Text"] = [[]];
+-- Attributes
+G2L["36"]:SetAttribute([[_lemonadeUniqueId]], [[suXI4YLvsuXI]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.AnimSpeedRow
+G2L["37"] = Instance.new("Frame", G2L["24"]);
+G2L["37"]["BorderSizePixel"] = 0;
+G2L["37"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["37"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["37"]["Position"] = UDim2.new(0, 0, 0.22124, 0);
+G2L["37"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["37"]["Name"] = [[AnimSpeedRow]];
+G2L["37"]["LayoutOrder"] = 6;
+-- Attributes
+G2L["37"]:SetAttribute([[_lemonadeUniqueId]], [[LUX9QzXjLUX9]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.AnimSpeedRow.AnimSpeedScript
+G2L["38"] = Instance.new("LocalScript", G2L["37"]);
+G2L["38"]["Name"] = [[AnimSpeedScript]];
+-- Attributes
+G2L["38"]:SetAttribute([[_lemonadeUniqueId]], [[Kp0WKOBvKp0W]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.AnimSpeedRow.AnimSpeedLabel
+G2L["39"] = Instance.new("TextLabel", G2L["37"]);
+G2L["39"]["BorderSizePixel"] = 0;
+G2L["39"]["TextSize"] = 10;
+G2L["39"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["39"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["39"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["39"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["39"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["39"]["Text"] = [[ANIMATION SPEED]];
+G2L["39"]["Name"] = [[AnimSpeedLabel]];
+G2L["39"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+-- Attributes
+G2L["39"]:SetAttribute([[_lemonadeUniqueId]], [[zPeUF5IuzPeU]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.AnimSpeedRow.AnimSpeedToggle
+G2L["3a"] = Instance.new("TextButton", G2L["37"]);
+G2L["3a"]["BorderSizePixel"] = 0;
+G2L["3a"]["TextSize"] = 14;
+G2L["3a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3a"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["3a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3a"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["3a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3a"]["Text"] = [[OFF]];
+G2L["3a"]["Name"] = [[AnimSpeedToggle]];
+G2L["3a"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["3a"]:SetAttribute([[_lemonadeUniqueId]], [[laMyZaiwlaMy]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.AnimSpeedRow.AnimSpeedBox
+G2L["3b"] = Instance.new("TextBox", G2L["37"]);
+G2L["3b"]["Name"] = [[AnimSpeedBox]];
+G2L["3b"]["BorderSizePixel"] = 0;
+G2L["3b"]["TextSize"] = 14;
+G2L["3b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3b"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["3b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3b"]["PlaceholderText"] = [[Default (1)]];
+G2L["3b"]["Size"] = UDim2.new(0, 60, 0, 25);
+G2L["3b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3b"]["Text"] = [[]];
+-- Attributes
+G2L["3b"]:SetAttribute([[_lemonadeUniqueId]], [[9DsOfp4m9DsO]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SaveRow
+G2L["3c"] = Instance.new("Frame", G2L["24"]);
+G2L["3c"]["BorderSizePixel"] = 0;
+G2L["3c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3c"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["3c"]["Position"] = UDim2.new(0, 0, 0.36873, 0);
+G2L["3c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3c"]["Name"] = [[SaveRow]];
+G2L["3c"]["LayoutOrder"] = 2;
+-- Attributes
+G2L["3c"]:SetAttribute([[_lemonadeUniqueId]], [[dOIEyrLldOIE]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SaveRow.SaveScript
+G2L["3d"] = Instance.new("LocalScript", G2L["3c"]);
+G2L["3d"]["Name"] = [[SaveScript]];
+-- Attributes
+G2L["3d"]:SetAttribute([[_lemonadeUniqueId]], [[NotHE2VdNotH]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SaveRow.SaveLabel
+G2L["3e"] = Instance.new("TextLabel", G2L["3c"]);
+G2L["3e"]["TextWrapped"] = true;
+G2L["3e"]["BorderSizePixel"] = 0;
+G2L["3e"]["TextSize"] = 14;
+G2L["3e"]["TextScaled"] = true;
+G2L["3e"]["BackgroundColor3"] = Color3.fromRGB(255, 239, 0);
+G2L["3e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3e"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["3e"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3e"]["Text"] = [[SAVE SCRIPTS (apon re-executing, ur scripts and settings will load back)]];
+G2L["3e"]["Name"] = [[SaveLabel]];
+-- Attributes
+G2L["3e"]:SetAttribute([[_lemonadeUniqueId]], [[kkri1gJ9kkri]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SaveRow.SaveToggle
+G2L["3f"] = Instance.new("TextButton", G2L["3c"]);
+G2L["3f"]["BorderSizePixel"] = 0;
+G2L["3f"]["TextSize"] = 14;
+G2L["3f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3f"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["3f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3f"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["3f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3f"]["Text"] = [[OFF]];
+G2L["3f"]["Name"] = [[SaveToggle]];
+G2L["3f"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["3f"]:SetAttribute([[_lemonadeUniqueId]], [[TGTKYW3XTGTK]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.RejoinRow
+G2L["40"] = Instance.new("Frame", G2L["24"]);
+G2L["40"]["BorderSizePixel"] = 0;
+G2L["40"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["40"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["40"]["Name"] = [[RejoinRow]];
+G2L["40"]["LayoutOrder"] = 1;
+-- Attributes
+G2L["40"]:SetAttribute([[_lemonadeUniqueId]], [[8zStU3008zSt]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.RejoinRow.RejoinScript
+G2L["41"] = Instance.new("LocalScript", G2L["40"]);
+G2L["41"]["Name"] = [[RejoinScript]];
+-- Attributes
+G2L["41"]:SetAttribute([[_lemonadeUniqueId]], [[rrpQEL8wrrpQ]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.RejoinRow.RejoinBtn
+G2L["42"] = Instance.new("TextButton", G2L["40"]);
+G2L["42"]["TextWrapped"] = true;
+G2L["42"]["BorderSizePixel"] = 0;
+G2L["42"]["TextSize"] = 14;
+G2L["42"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["42"]["BackgroundColor3"] = Color3.fromRGB(0, 101, 0);
+G2L["42"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["42"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["42"]["Text"] = [[REJOIN SERVER]];
+G2L["42"]["Name"] = [[RejoinBtn]];
+-- Attributes
+G2L["42"]:SetAttribute([[_lemonadeUniqueId]], [[m82Zo3Oom82Z]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.GravityRow
+G2L["43"] = Instance.new("Frame", G2L["24"]);
+G2L["43"]["BorderSizePixel"] = 0;
+G2L["43"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["43"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["43"]["Position"] = UDim2.new(0, 0, 0.2, 0);
+G2L["43"]["Name"] = [[GravityRow]];
+G2L["43"]["LayoutOrder"] = 7;
+-- Attributes
+G2L["43"]:SetAttribute([[_lemonadeUniqueId]], [[vCJCssg6vCJC]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.GravityRow.GravityScript
+G2L["44"] = Instance.new("LocalScript", G2L["43"]);
+G2L["44"]["Name"] = [[GravityScript]];
+-- Attributes
+G2L["44"]:SetAttribute([[_lemonadeUniqueId]], [[K9ZwSXp9K9Zw]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.GravityRow.GravityLabel
+G2L["45"] = Instance.new("TextLabel", G2L["43"]);
+G2L["45"]["BorderSizePixel"] = 0;
+G2L["45"]["TextSize"] = 14;
+G2L["45"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["45"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["45"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["45"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["45"]["Text"] = [[GRAVITY]];
+G2L["45"]["Name"] = [[GravityLabel]];
+G2L["45"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+-- Attributes
+G2L["45"]:SetAttribute([[_lemonadeUniqueId]], [[50IIjkmU50II]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.GravityRow.GravityBox
+G2L["46"] = Instance.new("TextBox", G2L["43"]);
+G2L["46"]["Name"] = [[GravityBox]];
+G2L["46"]["PlaceholderColor3"] = Color3.fromRGB(180, 180, 180);
+G2L["46"]["BorderSizePixel"] = 0;
+G2L["46"]["TextWrapped"] = true;
+G2L["46"]["TextSize"] = 14;
+G2L["46"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["46"]["TextScaled"] = true;
+G2L["46"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["46"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["46"]["PlaceholderText"] = [[Default (196.2)]];
+G2L["46"]["Size"] = UDim2.new(0, 60, 0, 25);
+G2L["46"]["Text"] = [[]];
+-- Attributes
+G2L["46"]:SetAttribute([[_lemonadeUniqueId]], [[RaFAHMoARaFA]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.GravityRow.GravityToggle
+G2L["47"] = Instance.new("TextButton", G2L["43"]);
+G2L["47"]["BorderSizePixel"] = 0;
+G2L["47"]["TextSize"] = 14;
+G2L["47"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["47"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["47"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["47"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["47"]["Text"] = [[OFF]];
+G2L["47"]["Name"] = [[GravityToggle]];
+G2L["47"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["47"]:SetAttribute([[_lemonadeUniqueId]], [[4XlQUNsS4XlQ]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.UIListLayout
+G2L["48"] = Instance.new("UIListLayout", G2L["24"]);
+G2L["48"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+-- Attributes
+G2L["48"]:SetAttribute([[_lemonadeUniqueId]], [[GIfeXbgIGIfe]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3
+G2L["49"] = Instance.new("Frame", G2L["a"]);
+G2L["49"]["Visible"] = false;
+G2L["49"]["BorderSizePixel"] = 0;
+G2L["49"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["49"]["Size"] = UDim2.new(0, 200, 0, 372);
+G2L["49"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["49"]["Name"] = [[Page3]];
+G2L["49"]["BackgroundTransparency"] = 1;
+-- Attributes
+G2L["49"]:SetAttribute([[_lemonadeUniqueId]], [[6BgxKcQE6Bgx]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPNameRow
+G2L["4a"] = Instance.new("Frame", G2L["49"]);
+G2L["4a"]["BorderSizePixel"] = 0;
+G2L["4a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4a"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["4a"]["Name"] = [[ESPNameRow]];
+G2L["4a"]["LayoutOrder"] = 2;
+-- Attributes
+G2L["4a"]:SetAttribute([[_lemonadeUniqueId]], [[i1WCY2oAi1WC]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPNameRow.ESPNameLabel
+G2L["4b"] = Instance.new("TextLabel", G2L["4a"]);
+G2L["4b"]["BorderSizePixel"] = 0;
+G2L["4b"]["TextSize"] = 14;
+G2L["4b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4b"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["4b"]["Text"] = [[ESP Name]];
+G2L["4b"]["Name"] = [[ESPNameLabel]];
+G2L["4b"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["4b"]:SetAttribute([[_lemonadeUniqueId]], [[aP5cIK93aP5c]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPNameRow.ESPNameToggle
+G2L["4c"] = Instance.new("TextButton", G2L["4a"]);
+G2L["4c"]["BorderSizePixel"] = 0;
+G2L["4c"]["TextSize"] = 14;
+G2L["4c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4c"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["4c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4c"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["4c"]["Text"] = [[OFF]];
+G2L["4c"]["Name"] = [[ESPNameToggle]];
+G2L["4c"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["4c"]:SetAttribute([[_lemonadeUniqueId]], [[Ni4HyCOMNi4H]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPHealthRow
+G2L["4d"] = Instance.new("Frame", G2L["49"]);
+G2L["4d"]["BorderSizePixel"] = 0;
+G2L["4d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4d"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["4d"]["Name"] = [[ESPHealthRow]];
+G2L["4d"]["LayoutOrder"] = 5;
+-- Attributes
+G2L["4d"]:SetAttribute([[_lemonadeUniqueId]], [[OtkRebemOtkR]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPHealthRow.ESPHealthLabel
+G2L["4e"] = Instance.new("TextLabel", G2L["4d"]);
+G2L["4e"]["BorderSizePixel"] = 0;
+G2L["4e"]["TextSize"] = 14;
+G2L["4e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4e"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["4e"]["Text"] = [[ESP Health Bar]];
+G2L["4e"]["Name"] = [[ESPHealthLabel]];
+G2L["4e"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["4e"]:SetAttribute([[_lemonadeUniqueId]], [[9WIagkwy9WIa]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPHealthRow.ESPHealthToggle
+G2L["4f"] = Instance.new("TextButton", G2L["4d"]);
+G2L["4f"]["BorderSizePixel"] = 0;
+G2L["4f"]["TextSize"] = 14;
+G2L["4f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4f"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["4f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4f"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["4f"]["Text"] = [[OFF]];
+G2L["4f"]["Name"] = [[ESPHealthToggle]];
+G2L["4f"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["4f"]:SetAttribute([[_lemonadeUniqueId]], [[W98zsUWWW98z]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPHighlightRow
+G2L["50"] = Instance.new("Frame", G2L["49"]);
+G2L["50"]["BorderSizePixel"] = 0;
+G2L["50"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["50"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["50"]["Name"] = [[ESPHighlightRow]];
+G2L["50"]["LayoutOrder"] = 3;
+-- Attributes
+G2L["50"]:SetAttribute([[_lemonadeUniqueId]], [[fPWL1X0qfPWL]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPHighlightRow.ESPHighlightLabel
+G2L["51"] = Instance.new("TextLabel", G2L["50"]);
+G2L["51"]["BorderSizePixel"] = 0;
+G2L["51"]["TextSize"] = 14;
+G2L["51"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["51"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["51"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["51"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["51"]["Text"] = [[ESP Highlight]];
+G2L["51"]["Name"] = [[ESPHighlightLabel]];
+G2L["51"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["51"]:SetAttribute([[_lemonadeUniqueId]], [[rmax9eswrmax]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPHighlightRow.ESPHighlightToggle
+G2L["52"] = Instance.new("TextButton", G2L["50"]);
+G2L["52"]["BorderSizePixel"] = 0;
+G2L["52"]["TextSize"] = 14;
+G2L["52"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["52"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["52"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["52"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["52"]["Text"] = [[OFF]];
+G2L["52"]["Name"] = [[ESPHighlightToggle]];
+G2L["52"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["52"]:SetAttribute([[_lemonadeUniqueId]], [[V7egWW5BV7eg]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPDistanceRow
+G2L["53"] = Instance.new("Frame", G2L["49"]);
+G2L["53"]["BorderSizePixel"] = 0;
+G2L["53"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["53"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["53"]["Position"] = UDim2.new(0, 0, 0.33602, 0);
+G2L["53"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["53"]["Name"] = [[ESPDistanceRow]];
+G2L["53"]["LayoutOrder"] = 4;
+-- Attributes
+G2L["53"]:SetAttribute([[_lemonadeUniqueId]], [[CBA6YDoMCBA6]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPDistanceRow.ESPDistanceToggle
+G2L["54"] = Instance.new("TextButton", G2L["53"]);
+G2L["54"]["BorderSizePixel"] = 0;
+G2L["54"]["TextSize"] = 14;
+G2L["54"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["54"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["54"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["54"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["54"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["54"]["Text"] = [[OFF]];
+G2L["54"]["Name"] = [[ESPDistanceToggle]];
+G2L["54"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["54"]:SetAttribute([[_lemonadeUniqueId]], [[PBxS1Ts4PBxS]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPDistanceRow.ESPDistanceLabel
+G2L["55"] = Instance.new("TextLabel", G2L["53"]);
+G2L["55"]["BorderSizePixel"] = 0;
+G2L["55"]["TextSize"] = 14;
+G2L["55"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["55"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["55"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["55"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["55"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["55"]["Text"] = [[ESP Distance]];
+G2L["55"]["Name"] = [[ESPDistanceLabel]];
+-- Attributes
+G2L["55"]:SetAttribute([[_lemonadeUniqueId]], [[j0jKe9Tlj0jK]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPBoxesRow
+G2L["56"] = Instance.new("Frame", G2L["49"]);
+G2L["56"]["BorderSizePixel"] = 0;
+G2L["56"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["56"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["56"]["Name"] = [[ESPBoxesRow]];
+G2L["56"]["LayoutOrder"] = 6;
+-- Attributes
+G2L["56"]:SetAttribute([[_lemonadeUniqueId]], [[toheoeU6tohe]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPBoxesRow.ESPBoxesLabel
+G2L["57"] = Instance.new("TextLabel", G2L["56"]);
+G2L["57"]["BorderSizePixel"] = 0;
+G2L["57"]["TextSize"] = 14;
+G2L["57"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["57"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["57"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["57"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["57"]["Text"] = [[ESP Boxes]];
+G2L["57"]["Name"] = [[ESPBoxesLabel]];
+G2L["57"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["57"]:SetAttribute([[_lemonadeUniqueId]], [[2zKq98cq2zKq]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPBoxesRow.ESPBoxesToggle
+G2L["58"] = Instance.new("TextButton", G2L["56"]);
+G2L["58"]["BorderSizePixel"] = 0;
+G2L["58"]["TextSize"] = 14;
+G2L["58"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["58"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["58"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["58"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["58"]["Text"] = [[OFF]];
+G2L["58"]["Name"] = [[ESPBoxesToggle]];
+G2L["58"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["58"]:SetAttribute([[_lemonadeUniqueId]], [[8qBCU6xt8qBC]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPToggleRow
+G2L["59"] = Instance.new("Frame", G2L["49"]);
+G2L["59"]["BorderSizePixel"] = 0;
+G2L["59"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["59"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["59"]["Name"] = [[ESPToggleRow]];
+G2L["59"]["LayoutOrder"] = 1;
+-- Attributes
+G2L["59"]:SetAttribute([[_lemonadeUniqueId]], [[Hey63Z35Hey6]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPToggleRow.ESPToggleScript
+G2L["5a"] = Instance.new("LocalScript", G2L["59"]);
+G2L["5a"]["Name"] = [[ESPToggleScript]];
+-- Attributes
+G2L["5a"]:SetAttribute([[_lemonadeUniqueId]], [[Szq93FRXSzq9]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPToggleRow.ESPToggleLabel
+G2L["5b"] = Instance.new("TextLabel", G2L["59"]);
+G2L["5b"]["BorderSizePixel"] = 0;
+G2L["5b"]["TextSize"] = 14;
+G2L["5b"]["BackgroundColor3"] = Color3.fromRGB(200, 200, 200);
+G2L["5b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5b"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5b"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["5b"]["Text"] = [[ENABLE ESP]];
+G2L["5b"]["Name"] = [[ESPToggleLabel]];
+G2L["5b"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["5b"]:SetAttribute([[_lemonadeUniqueId]], [[E6Uv8sv3E6Uv]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPToggleRow.ESPToggleToggle
+G2L["5c"] = Instance.new("TextButton", G2L["59"]);
+G2L["5c"]["BorderSizePixel"] = 0;
+G2L["5c"]["TextSize"] = 14;
+G2L["5c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5c"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["5c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5c"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["5c"]["Text"] = [[OFF]];
+G2L["5c"]["Name"] = [[ESPToggleToggle]];
+G2L["5c"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["5c"]:SetAttribute([[_lemonadeUniqueId]], [[iLhRbNS0iLhR]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPTracerRow
+G2L["5d"] = Instance.new("Frame", G2L["49"]);
+G2L["5d"]["BorderSizePixel"] = 0;
+G2L["5d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5d"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["5d"]["Name"] = [[ESPTracerRow]];
+G2L["5d"]["LayoutOrder"] = 7;
+-- Attributes
+G2L["5d"]:SetAttribute([[_lemonadeUniqueId]], [[YPu61t9NYPu6]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPTracerRow.ESPTracerLabel
+G2L["5e"] = Instance.new("TextLabel", G2L["5d"]);
+G2L["5e"]["TextWrapped"] = true;
+G2L["5e"]["BorderSizePixel"] = 0;
+G2L["5e"]["TextSize"] = 14;
+G2L["5e"]["TextScaled"] = true;
+G2L["5e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["5e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5e"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5e"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["5e"]["Text"] = [[ESP Tracer (under maintence)]];
+G2L["5e"]["Name"] = [[ESPTracerLabel]];
+G2L["5e"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["5e"]:SetAttribute([[_lemonadeUniqueId]], [[XWLQD78oXWLQ]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPTracerRow.ESPTracerToggle
+G2L["5f"] = Instance.new("TextButton", G2L["5d"]);
+G2L["5f"]["BorderSizePixel"] = 0;
+G2L["5f"]["TextSize"] = 14;
+G2L["5f"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["5f"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["5f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["5f"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["5f"]["Text"] = [[OFF]];
+G2L["5f"]["Name"] = [[ESPTracerToggle]];
+G2L["5f"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["5f"]:SetAttribute([[_lemonadeUniqueId]], [[yBUtpxBzyBUt]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPColorRow
+G2L["60"] = Instance.new("Frame", G2L["49"]);
+G2L["60"]["BorderSizePixel"] = 0;
+G2L["60"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["60"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["60"]["Name"] = [[ESPColorRow]];
+G2L["60"]["LayoutOrder"] = 1;
+-- Attributes
+G2L["60"]:SetAttribute([[_lemonadeUniqueId]], [[GH6SscRZGH6S]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPColorRow.ESPColorLabel
+G2L["61"] = Instance.new("TextLabel", G2L["60"]);
+G2L["61"]["BorderSizePixel"] = 0;
+G2L["61"]["TextSize"] = 14;
+G2L["61"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["61"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["61"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["61"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["61"]["Text"] = [[ESP Color]];
+G2L["61"]["Name"] = [[ESPColorLabel]];
+G2L["61"]["Position"] = UDim2.new(0, 0, -0.00571, 0);
+-- Attributes
+G2L["61"]:SetAttribute([[_lemonadeUniqueId]], [[HuwYFlOwHuwY]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPColorRow.ESPColorBtn
+G2L["62"] = Instance.new("TextButton", G2L["60"]);
+G2L["62"]["BorderSizePixel"] = 0;
+G2L["62"]["TextSize"] = 14;
+G2L["62"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["62"]["BackgroundColor3"] = Color3.fromRGB(128, 128, 128);
+G2L["62"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["62"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["62"]["Text"] = [[SELECT]];
+G2L["62"]["Name"] = [[ESPColorBtn]];
+G2L["62"]["Position"] = UDim2.new(0.625, 0, -0.00571, 0);
+-- Attributes
+G2L["62"]:SetAttribute([[_lemonadeUniqueId]], [[MqPm9KBJMqPm]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.UIListLayout
+G2L["63"] = Instance.new("UIListLayout", G2L["49"]);
+G2L["63"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+-- Attributes
+G2L["63"]:SetAttribute([[_lemonadeUniqueId]], [[FUJ0yGPJFUJ0]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4
+G2L["64"] = Instance.new("Frame", G2L["a"]);
+G2L["64"]["BorderSizePixel"] = 0;
+G2L["64"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["64"]["Size"] = UDim2.new(0, 200, 0, 406);
+G2L["64"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["64"]["Name"] = [[Page4]];
+G2L["64"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.TouchFlingRow
+G2L["65"] = Instance.new("Frame", G2L["64"]);
+G2L["65"]["BorderSizePixel"] = 0;
+G2L["65"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["65"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["65"]["Position"] = UDim2.new(0, 0, 0.13889, 0);
+G2L["65"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["65"]["Name"] = [[TouchFlingRow]];
+G2L["65"]["LayoutOrder"] = 1;
+-- Attributes
+G2L["65"]:SetAttribute([[_lemonadeUniqueId]], [[xHm0JIYKxHm0]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.TouchFlingRow.TouchFlingScript
+G2L["66"] = Instance.new("LocalScript", G2L["65"]);
+G2L["66"]["Name"] = [[TouchFlingScript]];
+-- Attributes
+G2L["66"]:SetAttribute([[_lemonadeUniqueId]], [[tXwNvblrtXwN]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.TouchFlingRow.TouchFlingLabel
+G2L["67"] = Instance.new("TextLabel", G2L["65"]);
+G2L["67"]["BorderSizePixel"] = 0;
+G2L["67"]["TextSize"] = 14;
+G2L["67"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["67"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["67"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["67"]["Size"] = UDim2.new(0, 125, 0, 25);
+G2L["67"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["67"]["Text"] = [[TOUCH FLING]];
+G2L["67"]["Name"] = [[TouchFlingLabel]];
+-- Attributes
+G2L["67"]:SetAttribute([[_lemonadeUniqueId]], [[UxDjA5L3UxDj]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.TouchFlingRow.TouchFlingToggle
+G2L["68"] = Instance.new("TextButton", G2L["65"]);
+G2L["68"]["BorderSizePixel"] = 0;
+G2L["68"]["TextSize"] = 14;
+G2L["68"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["68"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["68"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["68"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["68"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["68"]["Text"] = [[OFF]];
+G2L["68"]["Name"] = [[TouchFlingToggle]];
+G2L["68"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+-- Attributes
+G2L["68"]:SetAttribute([[_lemonadeUniqueId]], [[8bz0aDNz8bz0]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.BangRow
+G2L["69"] = Instance.new("Frame", G2L["64"]);
+G2L["69"]["BorderSizePixel"] = 0;
+G2L["69"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["69"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["69"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["69"]["Name"] = [[BangRow]];
+G2L["69"]["LayoutOrder"] = 2;
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.BangRow.BangScript
+G2L["6a"] = Instance.new("LocalScript", G2L["69"]);
+G2L["6a"]["Name"] = [[BangScript]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.BangRow.BangUser
+G2L["6b"] = Instance.new("TextBox", G2L["69"]);
+G2L["6b"]["Name"] = [[BangUser]];
+G2L["6b"]["BorderSizePixel"] = 0;
+G2L["6b"]["TextWrapped"] = true;
+G2L["6b"]["TextSize"] = 14;
+G2L["6b"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6b"]["TextScaled"] = true;
+G2L["6b"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["6b"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6b"]["PlaceholderText"] = [[Username]];
+G2L["6b"]["Size"] = UDim2.new(0, 60, 0, 25);
+G2L["6b"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6b"]["Text"] = [[]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.BangRow.BangLabel
+G2L["6c"] = Instance.new("TextLabel", G2L["69"]);
+G2L["6c"]["BorderSizePixel"] = 0;
+G2L["6c"]["TextSize"] = 14;
+G2L["6c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6c"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6c"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6c"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["6c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6c"]["Text"] = [[BANG]];
+G2L["6c"]["Name"] = [[BangLabel]];
+G2L["6c"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.BangRow.BangToggle
+G2L["6d"] = Instance.new("TextButton", G2L["69"]);
+G2L["6d"]["BorderSizePixel"] = 0;
+G2L["6d"]["TextSize"] = 14;
+G2L["6d"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6d"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["6d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6d"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["6d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6d"]["Text"] = [[OFF]];
+G2L["6d"]["Name"] = [[BangToggle]];
+G2L["6d"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.UIListLayout
+G2L["6e"] = Instance.new("UIListLayout", G2L["64"]);
+G2L["6e"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.OrbitRow
+G2L["6f"] = Instance.new("Frame", G2L["64"]);
+G2L["6f"]["BorderSizePixel"] = 0;
+G2L["6f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6f"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["6f"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6f"]["Name"] = [[OrbitRow]];
+G2L["6f"]["LayoutOrder"] = 10;
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.OrbitRow.OrbitScript
+G2L["70"] = Instance.new("LocalScript", G2L["6f"]);
+G2L["70"]["Name"] = [[OrbitScript]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.OrbitRow.OrbitUserBox
+G2L["71"] = Instance.new("TextBox", G2L["6f"]);
+G2L["71"]["Name"] = [[OrbitUserBox]];
+G2L["71"]["BorderSizePixel"] = 0;
+G2L["71"]["TextWrapped"] = true;
+G2L["71"]["TextSize"] = 14;
+G2L["71"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["71"]["TextScaled"] = true;
+G2L["71"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["71"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["71"]["PlaceholderText"] = [[Username]];
+G2L["71"]["Size"] = UDim2.new(0, 40, 0, 25);
+G2L["71"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["71"]["Text"] = [[]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.OrbitRow.OrbitLabel
+G2L["72"] = Instance.new("TextLabel", G2L["6f"]);
+G2L["72"]["BorderSizePixel"] = 0;
+G2L["72"]["TextSize"] = 14;
+G2L["72"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["72"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["72"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["72"]["Size"] = UDim2.new(0, 40, 0, 25);
+G2L["72"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["72"]["Text"] = [[ORBIT]];
+G2L["72"]["Name"] = [[OrbitLabel]];
+G2L["72"]["Position"] = UDim2.new(0.5, 0, 0, 0);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.OrbitRow.OrbitToggle
+G2L["73"] = Instance.new("TextButton", G2L["6f"]);
+G2L["73"]["BorderSizePixel"] = 0;
+G2L["73"]["TextSize"] = 14;
+G2L["73"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["73"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["73"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["73"]["Size"] = UDim2.new(0, 60, 0, 25);
+G2L["73"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["73"]["Text"] = [[OFF]];
+G2L["73"]["Name"] = [[OrbitToggle]];
+G2L["73"]["Position"] = UDim2.new(0.7, 0, 0, 0);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.OrbitRow.OrbitSpeedBox
+G2L["74"] = Instance.new("TextBox", G2L["6f"]);
+G2L["74"]["Name"] = [[OrbitSpeedBox]];
+G2L["74"]["BorderSizePixel"] = 0;
+G2L["74"]["TextWrapped"] = true;
+G2L["74"]["TextSize"] = 14;
+G2L["74"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["74"]["TextScaled"] = true;
+G2L["74"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["74"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["74"]["PlaceholderText"] = [[SPEED (1)]];
+G2L["74"]["Size"] = UDim2.new(0, 30, 0, 25);
+G2L["74"]["Position"] = UDim2.new(0.2, 0, 0, 0);
+G2L["74"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["74"]["Text"] = [[]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.OrbitRow.OrbitDistBox
+G2L["75"] = Instance.new("TextBox", G2L["6f"]);
+G2L["75"]["Name"] = [[OrbitDistBox]];
+G2L["75"]["BorderSizePixel"] = 0;
+G2L["75"]["TextWrapped"] = true;
+G2L["75"]["TextSize"] = 14;
+G2L["75"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["75"]["TextScaled"] = true;
+G2L["75"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["75"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["75"]["PlaceholderText"] = [[DIST (5)]];
+G2L["75"]["Size"] = UDim2.new(0, 30, 0, 25);
+G2L["75"]["Position"] = UDim2.new(0.35, 0, 0, 0);
+G2L["75"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["75"]["Text"] = [[]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.HeadSitRow
+G2L["76"] = Instance.new("Frame", G2L["64"]);
+G2L["76"]["BorderSizePixel"] = 0;
+G2L["76"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["76"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["76"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["76"]["Name"] = [[HeadSitRow]];
+G2L["76"]["LayoutOrder"] = 3;
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.HeadSitRow.HeadSitScript
+G2L["77"] = Instance.new("LocalScript", G2L["76"]);
+G2L["77"]["Name"] = [[HeadSitScript]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.HeadSitRow.HeadSitUser
+G2L["78"] = Instance.new("TextBox", G2L["76"]);
+G2L["78"]["Name"] = [[HeadSitUser]];
+G2L["78"]["BorderSizePixel"] = 0;
+G2L["78"]["TextWrapped"] = true;
+G2L["78"]["TextSize"] = 14;
+G2L["78"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["78"]["TextScaled"] = true;
+G2L["78"]["BackgroundColor3"] = Color3.fromRGB(153, 153, 153);
+G2L["78"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["78"]["PlaceholderText"] = [[Username]];
+G2L["78"]["Size"] = UDim2.new(0, 60, 0, 25);
+G2L["78"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["78"]["Text"] = [[]];
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.HeadSitRow.HeadSitLabel
+G2L["79"] = Instance.new("TextLabel", G2L["76"]);
+G2L["79"]["BorderSizePixel"] = 0;
+G2L["79"]["TextSize"] = 14;
+G2L["79"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["79"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["79"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["79"]["Size"] = UDim2.new(0, 65, 0, 25);
+G2L["79"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["79"]["Text"] = [[HEAD SIT]];
+G2L["79"]["Name"] = [[HeadSitLabel]];
+G2L["79"]["Position"] = UDim2.new(0.3, 0, 0, 0);
+
+
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.HeadSitRow.HeadSitToggle
+G2L["7a"] = Instance.new("TextButton", G2L["76"]);
+G2L["7a"]["BorderSizePixel"] = 0;
+G2L["7a"]["TextSize"] = 14;
+G2L["7a"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7a"]["BackgroundColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["7a"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7a"]["Size"] = UDim2.new(0, 75, 0, 25);
+G2L["7a"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7a"]["Text"] = [[OFF]];
+G2L["7a"]["Name"] = [[HeadSitToggle]];
+G2L["7a"]["Position"] = UDim2.new(0.625, 0, 0, 0);
+
+
+-- StarterGui.ExploitGui.MainFrame.BottomBar
+G2L["7b"] = Instance.new("Frame", G2L["3"]);
+G2L["7b"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7b"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["7b"]["Position"] = UDim2.new(0, 0, 0.90741, 0);
+G2L["7b"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7b"]["Name"] = [[BottomBar]];
+-- Attributes
+G2L["7b"]:SetAttribute([[_lemonadeUniqueId]], [[lLyDRM7dlLyD]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.BottomBar.CloseMinimizeScript
+G2L["7c"] = Instance.new("LocalScript", G2L["7b"]);
+G2L["7c"]["Name"] = [[CloseMinimizeScript]];
+-- Attributes
+G2L["7c"]:SetAttribute([[_lemonadeUniqueId]], [[UC3KDvOqUC3K]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.BottomBar.PageLabel
+G2L["7d"] = Instance.new("TextLabel", G2L["7b"]);
+G2L["7d"]["BorderSizePixel"] = 0;
+G2L["7d"]["TextSize"] = 14;
+G2L["7d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7d"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7d"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7d"]["BackgroundTransparency"] = 1;
+G2L["7d"]["Size"] = UDim2.new(0, 200, 0, 25);
+G2L["7d"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7d"]["Text"] = [[Made by agarvv]];
+G2L["7d"]["Name"] = [[PageLabel]];
+-- Attributes
+G2L["7d"]:SetAttribute([[_lemonadeUniqueId]], [[upcFlGzBupcF]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.BottomBar.NextBtn
+G2L["7e"] = Instance.new("TextButton", G2L["7b"]);
+G2L["7e"]["TextSize"] = 20;
+G2L["7e"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7e"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7e"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7e"]["Size"] = UDim2.new(0, 25, 0, 25);
+G2L["7e"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7e"]["Text"] = [[>]];
+G2L["7e"]["Name"] = [[NextBtn]];
+G2L["7e"]["Position"] = UDim2.new(0.875, 0, 0, 0);
+-- Attributes
+G2L["7e"]:SetAttribute([[_lemonadeUniqueId]], [[DD2KR5XpDD2K]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.BottomBar.PrevBtn
+G2L["7f"] = Instance.new("TextButton", G2L["7b"]);
+G2L["7f"]["TextSize"] = 20;
+G2L["7f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7f"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["7f"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["7f"]["Size"] = UDim2.new(0, 25, 0, 25);
+G2L["7f"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["7f"]["Text"] = [[<]];
+G2L["7f"]["Name"] = [[PrevBtn]];
+-- Attributes
+G2L["7f"]:SetAttribute([[_lemonadeUniqueId]], [[JpfpNxGWJpfp]]);
+
+
+-- StarterGui.ExploitGui.MainFrame.BottomBar.PageListBtn
+G2L["80"] = Instance.new("TextButton", G2L["7b"]);
+G2L["80"]["TextSize"] = 14;
+G2L["80"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["80"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["80"]["ZIndex"] = 1000;
+G2L["80"]["Size"] = UDim2.new(0, 60, 0, 20);
+G2L["80"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["Text"] = [[PAGE LIST]];
+G2L["80"]["Name"] = [[PageListBtn]];
+G2L["80"]["Position"] = UDim2.new(1.175, -95, 1.16, -50);
+-- Attributes
+G2L["80"]:SetAttribute([[_lemonadeUniqueId]], [[oVOqKpptoVOq]]);
+
+
+-- StarterGui.ExploitGui.PageListButtonSetup
+local function C_2()
+local script = G2L["2"];
 	task.wait(1) -- Initial wait
 	
 	local Players = game:GetService("Players")
@@ -1255,20 +1686,20 @@ local function XRTDLU_fake_script() -- ExploitGui.PageListButtonSetup
 	task.wait(3)
 	setupButton()
 	
-end
-coroutine.wrap(XRTDLU_fake_script)()
-local function TSEM_fake_script() -- TopBar.DragScript 
-	local script = Instance.new('LocalScript', TopBar)
-
+end;
+task.spawn(C_2);
+-- StarterGui.ExploitGui.MainFrame.TopBar.DragScript
+local function C_5()
+local script = G2L["5"];
 	local MainFrame = script.Parent.Parent
 	
 	MainFrame.Draggable = true
 	MainFrame.Active = true
-end
-coroutine.wrap(TSEM_fake_script)()
-local function KHZZ_fake_script() -- TopBar.DuplicateCheck 
-	local script = Instance.new('LocalScript', TopBar)
-
+end;
+task.spawn(C_5);
+-- StarterGui.ExploitGui.MainFrame.TopBar.DuplicateCheck
+local function C_6()
+local script = G2L["6"];
 	local CoreGui = game:GetService("CoreGui")
 	local PlayerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 	
@@ -1286,11 +1717,11 @@ local function KHZZ_fake_script() -- TopBar.DuplicateCheck
 	end
 	
 	destroyExisting()
-end
-coroutine.wrap(KHZZ_fake_script)()
-local function BMFTEU_fake_script() -- AntiFlingRow.AntiFlingScript 
-	local script = Instance.new('LocalScript', AntiFlingRow)
-
+end;
+task.spawn(C_6);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.AntiFlingRow.AntiFlingScript
+local function C_d()
+local script = G2L["d"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	
@@ -1353,11 +1784,11 @@ local function BMFTEU_fake_script() -- AntiFlingRow.AntiFlingScript
 			disableAntiFling()
 		end
 	end)
-end
-coroutine.wrap(BMFTEU_fake_script)()
-local function KKVKWYR_fake_script() -- NoclipRow.NoclipScript 
-	local script = Instance.new('LocalScript', NoclipRow)
-
+end;
+task.spawn(C_d);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.NoclipRow.NoclipScript
+local function C_11()
+local script = G2L["11"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	
@@ -1437,11 +1868,11 @@ local function KKVKWYR_fake_script() -- NoclipRow.NoclipScript
 			setCollisionDefaults()
 		end
 	end)
-end
-coroutine.wrap(KKVKWYR_fake_script)()
-local function DMVBW_fake_script() -- GodModeRow.GodModeScript 
-	local script = Instance.new('LocalScript', GodModeRow)
-
+end;
+task.spawn(C_11);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.GodModeRow.GodModeScript
+local function C_15()
+local script = G2L["15"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	
@@ -1548,11 +1979,11 @@ local function DMVBW_fake_script() -- GodModeRow.GodModeScript
 			end
 		end
 	end)
-end
-coroutine.wrap(DMVBW_fake_script)()
-local function UHDJCBG_fake_script() -- InfJumpRow.InfJumpScript 
-	local script = Instance.new('LocalScript', InfJumpRow)
-
+end;
+task.spawn(C_15);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.InfJumpRow.InfJumpScript
+local function C_19()
+local script = G2L["19"];
 	local UserInputService = game:GetService("UserInputService")
 	local Player = game.Players.LocalPlayer
 	local InfJumpToggle = script.Parent.InfJumpToggle
@@ -1590,11 +2021,11 @@ local function UHDJCBG_fake_script() -- InfJumpRow.InfJumpScript
 			end
 		end
 	end)
-end
-coroutine.wrap(UHDJCBG_fake_script)()
-local function EKRD_fake_script() -- TeleportRow.TeleportScript 
-	local script = Instance.new('LocalScript', TeleportRow)
-
+end;
+task.spawn(C_19);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page1.TeleportRow.TeleportScript
+local function C_1d()
+local script = G2L["1d"];
 	local Players = game:GetService("Players")
 	local TextService = game:GetService("TextService")
 	local teleportButton = script.Parent.TeleportButton
@@ -1876,11 +2307,11 @@ local function EKRD_fake_script() -- TeleportRow.TeleportScript
 			populatePlayerList()
 		end
 	end)
-end
-coroutine.wrap(EKRD_fake_script)()
-local function SHGI_fake_script() -- RespawnRow.RespawnScript 
-	local script = Instance.new('LocalScript', RespawnRow)
-
+end;
+task.spawn(C_1d);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.RespawnRow.RespawnScript
+local function C_26()
+local script = G2L["26"];
 	local Players = game:GetService("Players")
 	local localPlayer = Players.LocalPlayer
 	local RespawnBtn = script.Parent.RespawnBtn
@@ -1934,11 +2365,11 @@ local function SHGI_fake_script() -- RespawnRow.RespawnScript
 			if countdownThread then task.cancel(countdownThread) end
 		end
 	end)
-end
-coroutine.wrap(SHGI_fake_script)()
-local function GOCGFEB_fake_script() -- FlyRow.FlyScript 
-	local script = Instance.new('LocalScript', FlyRow)
-
+end;
+task.spawn(C_26);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.FlyRow.FlyScript
+local function C_29()
+local script = G2L["29"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	local UserInputService = game:GetService("UserInputService")
@@ -2117,11 +2548,11 @@ local function GOCGFEB_fake_script() -- FlyRow.FlyScript
 			disableFly()
 		end
 	end)
-end
-coroutine.wrap(GOCGFEB_fake_script)()
-local function FBYCJO_fake_script() -- SpeedRow.SpeedScript 
-	local script = Instance.new('LocalScript', SpeedRow)
-
+end;
+task.spawn(C_29);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SpeedRow.SpeedScript
+local function C_2e()
+local script = G2L["2e"];
 	local Players = game:GetService("Players")
 	
 	local localPlayer = Players.LocalPlayer
@@ -2198,11 +2629,11 @@ local function FBYCJO_fake_script() -- SpeedRow.SpeedScript
 			end
 		end
 	end)
-end
-coroutine.wrap(FBYCJO_fake_script)()
-local function ZMKM_fake_script() -- JumpPowerRow.JumpPowerScript 
-	local script = Instance.new('LocalScript', JumpPowerRow)
-
+end;
+task.spawn(C_2e);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.JumpPowerRow.JumpPowerScript
+local function C_33()
+local script = G2L["33"];
 	local Players = game:GetService("Players")
 	local localPlayer = Players.LocalPlayer
 	local JumpPowerEnabled = false
@@ -2283,11 +2714,11 @@ local function ZMKM_fake_script() -- JumpPowerRow.JumpPowerScript
 			end
 		end
 	end)
-end
-coroutine.wrap(ZMKM_fake_script)()
-local function ZWKZF_fake_script() -- AnimSpeedRow.AnimSpeedScript 
-	local script = Instance.new('LocalScript', AnimSpeedRow)
-
+end;
+task.spawn(C_33);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.AnimSpeedRow.AnimSpeedScript
+local function C_38()
+local script = G2L["38"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	
@@ -2370,11 +2801,11 @@ local function ZWKZF_fake_script() -- AnimSpeedRow.AnimSpeedScript
 			disableAnimSpeed()
 		end
 	end)
-end
-coroutine.wrap(ZWKZF_fake_script)()
-local function IQHW_fake_script() -- SaveRow.SaveScript 
-	local script = Instance.new('LocalScript', SaveRow)
-
+end;
+task.spawn(C_38);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SaveRow.SaveScript
+local function C_3d()
+local script = G2L["3d"];
 	local Players = game:GetService("Players")
 	local localPlayer = Players.LocalPlayer
 	
@@ -2704,11 +3135,11 @@ local function IQHW_fake_script() -- SaveRow.SaveScript
 	
 		showPopup(data)
 	end)
-end
-coroutine.wrap(IQHW_fake_script)()
-local function AYWXQM_fake_script() -- RejoinRow.RejoinScript 
-	local script = Instance.new('LocalScript', RejoinRow)
-
+end;
+task.spawn(C_3d);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.RejoinRow.RejoinScript
+local function C_41()
+local script = G2L["41"];
 	local Players = game:GetService("Players")
 	local TeleportService = game:GetService("TeleportService")
 	local localPlayer = Players.LocalPlayer
@@ -2767,11 +3198,11 @@ local function AYWXQM_fake_script() -- RejoinRow.RejoinScript
 			if countdownThread then task.cancel(countdownThread) end
 		end
 	end)
-end
-coroutine.wrap(AYWXQM_fake_script)()
-local function CLLF_fake_script() -- GravityRow.GravityScript 
-	local script = Instance.new('LocalScript', GravityRow)
-
+end;
+task.spawn(C_41);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.GravityRow.GravityScript
+local function C_44()
+local script = G2L["44"];
 	local Players = game:GetService("Players")
 	
 	local localPlayer = Players.LocalPlayer
@@ -2854,11 +3285,11 @@ local function CLLF_fake_script() -- GravityRow.GravityScript
 			workspace.Gravity = DEFAULT_GRAVITY
 		end
 	end)
-end
-coroutine.wrap(CLLF_fake_script)()
-local function QXTIJ_fake_script() -- ESPToggleRow.ESPToggleScript 
-	local script = Instance.new('LocalScript', ESPToggleRow)
-
+end;
+task.spawn(C_44);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page3.ESPToggleRow.ESPToggleScript
+local function C_5a()
+local script = G2L["5a"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	
@@ -3641,11 +4072,11 @@ local function QXTIJ_fake_script() -- ESPToggleRow.ESPToggleScript
 			if colorPickerGui then colorPickerGui:Destroy() end
 		end
 	end)
-end
-coroutine.wrap(QXTIJ_fake_script)()
-local function BIQRDQ_fake_script() -- TouchFlingRow.TouchFlingScript 
-	local script = Instance.new('LocalScript', TouchFlingRow)
-
+end;
+task.spawn(C_5a);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.TouchFlingRow.TouchFlingScript
+local function C_66()
+local script = G2L["66"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	
@@ -3686,11 +4117,11 @@ local function BIQRDQ_fake_script() -- TouchFlingRow.TouchFlingScript
 			touchFlingEnabled = false
 		end
 	end)
-end
-coroutine.wrap(BIQRDQ_fake_script)()
-local function HYQFCTN_fake_script() -- BangRow.BangScript 
-	local script = Instance.new('LocalScript', BangRow)
-
+end;
+task.spawn(C_66);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.BangRow.BangScript
+local function C_6a()
+local script = G2L["6a"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	local localPlayer = Players.LocalPlayer
@@ -3801,11 +4232,11 @@ local function HYQFCTN_fake_script() -- BangRow.BangScript
 			stopBang()
 		end
 	end)
-end
-coroutine.wrap(HYQFCTN_fake_script)()
-local function NUCPGLQ_fake_script() -- OrbitRow.OrbitScript 
-	local script = Instance.new('LocalScript', OrbitRow)
-
+end;
+task.spawn(C_6a);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.OrbitRow.OrbitScript
+local function C_70()
+local script = G2L["70"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	local localPlayer = Players.LocalPlayer
@@ -3892,11 +4323,11 @@ local function NUCPGLQ_fake_script() -- OrbitRow.OrbitScript
 			stopOrbit()
 		end
 	end)
-end
-coroutine.wrap(NUCPGLQ_fake_script)()
-local function SSTKM_fake_script() -- HeadSitRow.HeadSitScript 
-	local script = Instance.new('LocalScript', HeadSitRow)
-
+end;
+task.spawn(C_70);
+-- StarterGui.ExploitGui.MainFrame.ContentFrame.Page4.HeadSitRow.HeadSitScript
+local function C_77()
+local script = G2L["77"];
 	local Players = game:GetService("Players")
 	local RunService = game:GetService("RunService")
 	local localPlayer = Players.LocalPlayer
@@ -4015,11 +4446,11 @@ local function SSTKM_fake_script() -- HeadSitRow.HeadSitScript
 			stopSit()
 		end
 	end)
-end
-coroutine.wrap(SSTKM_fake_script)()
-local function QTDDN_fake_script() -- BottomBar.CloseMinimizeScript 
-	local script = Instance.new('LocalScript', BottomBar)
-
+end;
+task.spawn(C_77);
+-- StarterGui.ExploitGui.MainFrame.BottomBar.CloseMinimizeScript
+local function C_7c()
+local script = G2L["7c"];
 	task.wait()
 	local MainFrame = script.Parent.Parent
 	local TopBar = MainFrame.TopBar
@@ -4239,5 +4670,7 @@ local function QTDDN_fake_script() -- BottomBar.CloseMinimizeScript
 	PageListBtn.MouseButton1Click:Connect(function()
 		togglePageList()
 	end)
-end
-coroutine.wrap(QTDDN_fake_script)()
+end;
+task.spawn(C_7c);
+
+return G2L["1"], require;

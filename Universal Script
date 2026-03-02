@@ -1007,7 +1007,7 @@ PageListBtn.TextSize = 14.000
 
 -- Scripts:
 
-local function LAEPUPL_fake_script() -- ExploitGui.PageListButtonSetup 
+local function KYCWL_fake_script() -- ExploitGui.PageListButtonSetup 
 	local script = Instance.new('LocalScript', ExploitGui)
 
 	task.wait(1) -- Initial wait
@@ -1066,8 +1066,8 @@ local function LAEPUPL_fake_script() -- ExploitGui.PageListButtonSetup
 	setupButton()
 	
 end
-coroutine.wrap(LAEPUPL_fake_script)()
-local function OXRI_fake_script() -- TopBar.DragScript 
+coroutine.wrap(KYCWL_fake_script)()
+local function KLVA_fake_script() -- TopBar.DragScript 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local MainFrame = script.Parent.Parent
@@ -1075,8 +1075,8 @@ local function OXRI_fake_script() -- TopBar.DragScript
 	MainFrame.Draggable = true
 	MainFrame.Active = true
 end
-coroutine.wrap(OXRI_fake_script)()
-local function SYPFTM_fake_script() -- TopBar.DuplicateCheck 
+coroutine.wrap(KLVA_fake_script)()
+local function ZOLP_fake_script() -- TopBar.DuplicateCheck 
 	local script = Instance.new('LocalScript', TopBar)
 
 	local CoreGui = game:GetService("CoreGui")
@@ -1097,8 +1097,8 @@ local function SYPFTM_fake_script() -- TopBar.DuplicateCheck
 	
 	destroyExisting()
 end
-coroutine.wrap(SYPFTM_fake_script)()
-local function VYPCXIY_fake_script() -- AntiFlingRow.AntiFlingScript 
+coroutine.wrap(ZOLP_fake_script)()
+local function KUTXGR_fake_script() -- AntiFlingRow.AntiFlingScript 
 	local script = Instance.new('LocalScript', AntiFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1164,8 +1164,8 @@ local function VYPCXIY_fake_script() -- AntiFlingRow.AntiFlingScript
 		end
 	end)
 end
-coroutine.wrap(VYPCXIY_fake_script)()
-local function JEFI_fake_script() -- NoclipRow.NoclipScript 
+coroutine.wrap(KUTXGR_fake_script)()
+local function YAWOK_fake_script() -- NoclipRow.NoclipScript 
 	local script = Instance.new('LocalScript', NoclipRow)
 
 	local Players = game:GetService("Players")
@@ -1248,8 +1248,8 @@ local function JEFI_fake_script() -- NoclipRow.NoclipScript
 		end
 	end)
 end
-coroutine.wrap(JEFI_fake_script)()
-local function EIGZSN_fake_script() -- GodModeRow.GodModeScript 
+coroutine.wrap(YAWOK_fake_script)()
+local function AGKB_fake_script() -- GodModeRow.GodModeScript 
 	local script = Instance.new('LocalScript', GodModeRow)
 
 	local Players = game:GetService("Players")
@@ -1359,8 +1359,8 @@ local function EIGZSN_fake_script() -- GodModeRow.GodModeScript
 		end
 	end)
 end
-coroutine.wrap(EIGZSN_fake_script)()
-local function HCGRGMY_fake_script() -- InfJumpRow.InfJumpScript 
+coroutine.wrap(AGKB_fake_script)()
+local function JKUE_fake_script() -- InfJumpRow.InfJumpScript 
 	local script = Instance.new('LocalScript', InfJumpRow)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -1401,8 +1401,8 @@ local function HCGRGMY_fake_script() -- InfJumpRow.InfJumpScript
 		end
 	end)
 end
-coroutine.wrap(HCGRGMY_fake_script)()
-local function ZYGB_fake_script() -- TouchFlingRow.TouchFlingScript 
+coroutine.wrap(JKUE_fake_script)()
+local function DSENGD_fake_script() -- TouchFlingRow.TouchFlingScript 
 	local script = Instance.new('LocalScript', TouchFlingRow)
 
 	local Players = game:GetService("Players")
@@ -1446,8 +1446,8 @@ local function ZYGB_fake_script() -- TouchFlingRow.TouchFlingScript
 		end
 	end)
 end
-coroutine.wrap(ZYGB_fake_script)()
-local function JNWMBN_fake_script() -- TeleportRow.TeleportScript 
+coroutine.wrap(DSENGD_fake_script)()
+local function KCERSWM_fake_script() -- TeleportRow.TeleportScript 
 	local script = Instance.new('LocalScript', TeleportRow)
 
 	local Players = game:GetService("Players")
@@ -1732,8 +1732,8 @@ local function JNWMBN_fake_script() -- TeleportRow.TeleportScript
 		end
 	end)
 end
-coroutine.wrap(JNWMBN_fake_script)()
-local function DJIPTS_fake_script() -- UnfilteredRow.UnfilteredScript 
+coroutine.wrap(KCERSWM_fake_script)()
+local function CRYERF_fake_script() -- UnfilteredRow.UnfilteredScript 
 	local script = Instance.new('LocalScript', UnfilteredRow)
 
 	local Players = game:GetService("Players")
@@ -1743,33 +1743,99 @@ local function DJIPTS_fake_script() -- UnfilteredRow.UnfilteredScript
 	local UnfilteredToggle = script.Parent.UnfilteredToggle
 	
 	local unfilteredEnabled = false
-	local originalCallback = nil
+	local messageConnection = nil
 	
-	local function enableUnfiltered()
-		originalCallback = TextChatService.OnIncomingMessage
-		TextChatService.OnIncomingMessage = function(message)
-			local result = originalCallback and originalCallback(message) or Instance.new("TextChatMessageProperties")
+	-- create a screen gui to display unfiltered messages
+	local unfilteredGui = Instance.new("ScreenGui")
+	unfilteredGui.Name = "UnfilteredGui"
+	unfilteredGui.ResetOnSpawn = false
+	unfilteredGui.Enabled = false
+	unfilteredGui.Parent = localPlayer.PlayerGui
 	
-			if message.TextSource then
-				local player = Players:GetPlayerByUserId(message.TextSource.UserId)
-				if player and player ~= localPlayer then
-					-- show raw unfiltered text if roblox filtered it
-					if message.Text ~= message.Status and message.Text ~= "" then
-						result.Text = message.Text
-					end
+	local frame = Instance.new("ScrollingFrame")
+	frame.Size = UDim2.new(0, 300, 0, 200)
+	frame.Position = UDim2.new(0, 5, 1, -280)
+	frame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	frame.BackgroundTransparency = 0.3
+	frame.BorderSizePixel = 1
+	frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	frame.ScrollBarThickness = 4
+	frame.ScrollBarImageColor3 = Color3.fromRGB(255, 255, 255)
+	frame.CanvasSize = UDim2.new(0, 0, 0, 0)
+	frame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+	frame.Parent = unfilteredGui
+	
+	local titleBar = Instance.new("TextLabel")
+	titleBar.Size = UDim2.new(1, 0, 0, 20)
+	titleBar.Position = UDim2.new(0, 0, 0, -20)
+	titleBar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	titleBar.BackgroundTransparency = 0.3
+	titleBar.BorderSizePixel = 1
+	titleBar.BorderColor3 = Color3.fromRGB(255, 255, 255)
+	titleBar.Text = "UNFILTERED CHATS"
+	titleBar.TextColor3 = Color3.fromRGB(255, 255, 255)
+	titleBar.TextScaled = true
+	titleBar.Font = Enum.Font.SourceSans
+	titleBar.Parent = frame
+	
+	local layout = Instance.new("UIListLayout")
+	layout.SortOrder = Enum.SortOrder.LayoutOrder
+	layout.Padding = UDim.new(0, 2)
+	layout.Parent = frame
+	
+	local messageCount = 0
+	local maxMessages = 50
+	
+	local function addMessage(playerName, rawText, filteredText)
+		messageCount = messageCount + 1
+	
+		-- remove old messages if too many
+		if messageCount > maxMessages then
+			local children = frame:GetChildren()
+			for _, child in pairs(children) do
+				if child:IsA("TextLabel") then
+					child:Destroy()
+					messageCount = messageCount - 1
+					break
 				end
 			end
-	
-			return result
 		end
+	
+		local wasFiltered = rawText ~= filteredText and filteredText:find("#")
+	
+		local label = Instance.new("TextLabel")
+		label.Size = UDim2.new(1, -8, 0, 0)
+		label.AutomaticSize = Enum.AutomaticSize.Y
+		label.Position = UDim2.new(0, 4, 0, 0)
+		label.BackgroundTransparency = 1
+		label.Text = playerName .. ": " .. rawText .. (wasFiltered and " [FILTERED]" or "")
+		label.TextColor3 = wasFiltered and Color3.fromRGB(255, 100, 100) or Color3.fromRGB(255, 255, 255)
+		label.TextSize = 12
+		label.Font = Enum.Font.SourceSans
+		label.TextXAlignment = Enum.TextXAlignment.Left
+		label.TextWrapped = true
+		label.LayoutOrder = messageCount
+		label.Parent = frame
+	end
+	
+	local function enableUnfiltered()
+		unfilteredGui.Enabled = true
+		messageConnection = TextChatService.MessageReceived:Connect(function(message)
+			if message.TextSource then
+				local player = Players:GetPlayerByUserId(message.TextSource.UserId)
+				local playerName = player and player.Name or "Unknown"
+				local rawText = message.Text or ""
+				local filteredText = message.Text or ""
+				addMessage(playerName, rawText, filteredText)
+			end
+		end)
 	end
 	
 	local function disableUnfiltered()
-		if originalCallback then
-			TextChatService.OnIncomingMessage = originalCallback
-			originalCallback = nil
-		else
-			TextChatService.OnIncomingMessage = nil
+		unfilteredGui.Enabled = false
+		if messageConnection then
+			messageConnection:Disconnect()
+			messageConnection = nil
 		end
 	end
 	
@@ -1791,11 +1857,12 @@ local function DJIPTS_fake_script() -- UnfilteredRow.UnfilteredScript
 			if unfilteredEnabled then
 				disableUnfiltered()
 			end
+			unfilteredGui:Destroy()
 		end
 	end)
 end
-coroutine.wrap(DJIPTS_fake_script)()
-local function EBRLM_fake_script() -- RespawnRow.RespawnScript 
+coroutine.wrap(CRYERF_fake_script)()
+local function NPGTCK_fake_script() -- RespawnRow.RespawnScript 
 	local script = Instance.new('LocalScript', RespawnRow)
 
 	local Players = game:GetService("Players")
@@ -1852,8 +1919,8 @@ local function EBRLM_fake_script() -- RespawnRow.RespawnScript
 		end
 	end)
 end
-coroutine.wrap(EBRLM_fake_script)()
-local function RBQU_fake_script() -- FlyRow.FlyScript 
+coroutine.wrap(NPGTCK_fake_script)()
+local function OHEAKP_fake_script() -- FlyRow.FlyScript 
 	local script = Instance.new('LocalScript', FlyRow)
 
 	local Players = game:GetService("Players")
@@ -2035,8 +2102,8 @@ local function RBQU_fake_script() -- FlyRow.FlyScript
 		end
 	end)
 end
-coroutine.wrap(RBQU_fake_script)()
-local function HEPY_fake_script() -- SpeedRow.SpeedScript 
+coroutine.wrap(OHEAKP_fake_script)()
+local function BEQIOWI_fake_script() -- SpeedRow.SpeedScript 
 	local script = Instance.new('LocalScript', SpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2116,8 +2183,8 @@ local function HEPY_fake_script() -- SpeedRow.SpeedScript
 		end
 	end)
 end
-coroutine.wrap(HEPY_fake_script)()
-local function NFZXE_fake_script() -- JumpPowerRow.JumpPowerScript 
+coroutine.wrap(BEQIOWI_fake_script)()
+local function KEXHX_fake_script() -- JumpPowerRow.JumpPowerScript 
 	local script = Instance.new('LocalScript', JumpPowerRow)
 
 	local Players = game:GetService("Players")
@@ -2201,8 +2268,8 @@ local function NFZXE_fake_script() -- JumpPowerRow.JumpPowerScript
 		end
 	end)
 end
-coroutine.wrap(NFZXE_fake_script)()
-local function NRXN_fake_script() -- AnimSpeedRow.AnimSpeedScript 
+coroutine.wrap(KEXHX_fake_script)()
+local function CXMUJ_fake_script() -- AnimSpeedRow.AnimSpeedScript 
 	local script = Instance.new('LocalScript', AnimSpeedRow)
 
 	local Players = game:GetService("Players")
@@ -2288,8 +2355,8 @@ local function NRXN_fake_script() -- AnimSpeedRow.AnimSpeedScript
 		end
 	end)
 end
-coroutine.wrap(NRXN_fake_script)()
-local function GBSPE_fake_script() -- SaveRow.SaveScript 
+coroutine.wrap(CXMUJ_fake_script)()
+local function GHUDMAQ_fake_script() -- SaveRow.SaveScript 
 	local script = Instance.new('LocalScript', SaveRow)
 
 	local Players = game:GetService("Players")
@@ -2622,8 +2689,8 @@ local function GBSPE_fake_script() -- SaveRow.SaveScript
 		showPopup(data)
 	end)
 end
-coroutine.wrap(GBSPE_fake_script)()
-local function QSAWUM_fake_script() -- RejoinRow.RejoinScript 
+coroutine.wrap(GHUDMAQ_fake_script)()
+local function IKSIK_fake_script() -- RejoinRow.RejoinScript 
 	local script = Instance.new('LocalScript', RejoinRow)
 
 	local Players = game:GetService("Players")
@@ -2685,8 +2752,8 @@ local function QSAWUM_fake_script() -- RejoinRow.RejoinScript
 		end
 	end)
 end
-coroutine.wrap(QSAWUM_fake_script)()
-local function CWRA_fake_script() -- GravityRow.GravityScript 
+coroutine.wrap(IKSIK_fake_script)()
+local function YPWWBXX_fake_script() -- GravityRow.GravityScript 
 	local script = Instance.new('LocalScript', GravityRow)
 
 	local Players = game:GetService("Players")
@@ -2772,8 +2839,8 @@ local function CWRA_fake_script() -- GravityRow.GravityScript
 		end
 	end)
 end
-coroutine.wrap(CWRA_fake_script)()
-local function WAVVKPN_fake_script() -- ESPToggleRow.ESPToggleScript 
+coroutine.wrap(YPWWBXX_fake_script)()
+local function HGSING_fake_script() -- ESPToggleRow.ESPToggleScript 
 	local script = Instance.new('LocalScript', ESPToggleRow)
 
 	local Players = game:GetService("Players")
@@ -3559,8 +3626,8 @@ local function WAVVKPN_fake_script() -- ESPToggleRow.ESPToggleScript
 		end
 	end)
 end
-coroutine.wrap(WAVVKPN_fake_script)()
-local function YMOM_fake_script() -- BottomBar.CloseMinimizeScript 
+coroutine.wrap(HGSING_fake_script)()
+local function DPHCVT_fake_script() -- BottomBar.CloseMinimizeScript 
 	local script = Instance.new('LocalScript', BottomBar)
 
 	task.wait()
@@ -3783,4 +3850,4 @@ local function YMOM_fake_script() -- BottomBar.CloseMinimizeScript
 		togglePageList()
 	end)
 end
-coroutine.wrap(YMOM_fake_script)()
+coroutine.wrap(DPHCVT_fake_script)()

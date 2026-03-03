@@ -534,7 +534,6 @@ G2L["2b"]:SetAttribute([[_lemonadeUniqueId]], [[XZeGm5moXZeG]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.FlyRow.SpeedBox
 G2L["2c"] = Instance.new("TextBox", G2L["28"]);
-G2L["2c"]["CursorPosition"] = -1;
 G2L["2c"]["Name"] = [[SpeedBox]];
 G2L["2c"]["BorderSizePixel"] = 0;
 G2L["2c"]["TextSize"] = 14;
@@ -587,7 +586,6 @@ G2L["2f"]:SetAttribute([[_lemonadeUniqueId]], [[PlfvloaOPlfv]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.SpeedRow.SpeedBox
 G2L["30"] = Instance.new("TextBox", G2L["2d"]);
-G2L["30"]["CursorPosition"] = -1;
 G2L["30"]["Name"] = [[SpeedBox]];
 G2L["30"]["BorderSizePixel"] = 0;
 G2L["30"]["TextSize"] = 14;
@@ -672,7 +670,6 @@ G2L["35"]:SetAttribute([[_lemonadeUniqueId]], [[PcTLwhpNPcTL]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.JumpPowerRow.JumpPowerBox
 G2L["36"] = Instance.new("TextBox", G2L["32"]);
-G2L["36"]["CursorPosition"] = -1;
 G2L["36"]["Name"] = [[JumpPowerBox]];
 G2L["36"]["BorderSizePixel"] = 0;
 G2L["36"]["TextSize"] = 14;
@@ -741,7 +738,6 @@ G2L["3a"]:SetAttribute([[_lemonadeUniqueId]], [[laMyZaiwlaMy]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.AnimSpeedRow.AnimSpeedBox
 G2L["3b"] = Instance.new("TextBox", G2L["37"]);
-G2L["3b"]["CursorPosition"] = -1;
 G2L["3b"]["Name"] = [[AnimSpeedBox]];
 G2L["3b"]["BorderSizePixel"] = 0;
 G2L["3b"]["TextSize"] = 14;
@@ -878,7 +874,6 @@ G2L["45"]:SetAttribute([[_lemonadeUniqueId]], [[50IIjkmU50II]]);
 
 -- StarterGui.ExploitGui.MainFrame.ContentFrame.Page2.GravityRow.GravityBox
 G2L["46"] = Instance.new("TextBox", G2L["43"]);
-G2L["46"]["CursorPosition"] = -1;
 G2L["46"]["Name"] = [[GravityBox]];
 G2L["46"]["PlaceholderColor3"] = Color3.fromRGB(180, 180, 180);
 G2L["46"]["BorderSizePixel"] = 0;
@@ -3755,7 +3750,7 @@ local script = G2L["5a"];
 		line.Name = "TracerLine_" .. targetPlayer.Name
 		line.BackgroundColor3 = ESPColor
 		line.BorderSizePixel = 0
-		line.AnchorPoint = Vector2.new(0, 0)
+		line.AnchorPoint = Vector2.new(0, 0.5)
 		line.Visible = false
 		line.Parent = tracerCanvas
 		tracerLines[targetPlayer] = line
